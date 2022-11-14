@@ -1,4 +1,3 @@
 # VieSureDemo
-Just a test.
 
-TODO: write a proper one.
+Just a test project.

@@ -14,6 +14,19 @@
 		850C7475291E542F0058BB99 /* VieSureDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7474291E542F0058BB99 /* VieSureDemoTests.swift */; };
 		850C747F291E542F0058BB99 /* VieSureDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C747E291E542F0058BB99 /* VieSureDemoUITests.swift */; };
 		850C7481291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7480291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift */; };
+		850C748F292180310058BB99 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C748E292180310058BB99 /* APIModel.swift */; };
+		850C7491292183830058BB99 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7490292183830058BB99 /* NetworkManager.swift */; };
+		850C7494292183DC0058BB99 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7493292183DC0058BB99 /* TypeAliases.swift */; };
+		850C7496292185040058BB99 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7495292185040058BB99 /* APIClient.swift */; };
+		850C7498292185A50058BB99 /* VSAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7497292185A50058BB99 /* VSAPIClient.swift */; };
+		850C749A29226DFF0058BB99 /* APIClient+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C749929226DFF0058BB99 /* APIClient+Error.swift */; };
+		850C749D29226E6D0058BB99 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C749C29226E6D0058BB99 /* HTTPStatusCodes.swift */; };
+		850C749F292275930058BB99 /* APIClient+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C749E292275930058BB99 /* APIClient+Parsing.swift */; };
+		850C74A1292275BB0058BB99 /* APIClient+ErrorMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */; };
+		850C74A52922972D0058BB99 /* VSAPIClient+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A42922972D0058BB99 /* VSAPIClient+Parsing.swift */; };
+		850C74A82922981E0058BB99 /* VSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A72922981E0058BB99 /* VSError.swift */; };
+		850C74AA29229B110058BB99 /* VSError+APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A929229B110058BB99 /* VSError+APIError.swift */; };
+		850C74AC29229ECD0058BB99 /* UnexpectedCodePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74AB29229ECD0058BB99 /* UnexpectedCodePath.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +57,19 @@
 		850C747A291E542F0058BB99 /* VieSureDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VieSureDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		850C747E291E542F0058BB99 /* VieSureDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieSureDemoUITests.swift; sourceTree = "<group>"; };
 		850C7480291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieSureDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		850C748E292180310058BB99 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		850C7490292183830058BB99 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		850C7493292183DC0058BB99 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		850C7495292185040058BB99 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		850C7497292185A50058BB99 /* VSAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSAPIClient.swift; sourceTree = "<group>"; };
+		850C749929226DFF0058BB99 /* APIClient+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Error.swift"; sourceTree = "<group>"; };
+		850C749C29226E6D0058BB99 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
+		850C749E292275930058BB99 /* APIClient+Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Parsing.swift"; sourceTree = "<group>"; };
+		850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+ErrorMapping.swift"; sourceTree = "<group>"; };
+		850C74A42922972D0058BB99 /* VSAPIClient+Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSAPIClient+Parsing.swift"; sourceTree = "<group>"; };
+		850C74A72922981E0058BB99 /* VSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSError.swift; sourceTree = "<group>"; };
+		850C74A929229B110058BB99 /* VSError+APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSError+APIError.swift"; sourceTree = "<group>"; };
+		850C74AB29229ECD0058BB99 /* UnexpectedCodePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnexpectedCodePath.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +120,9 @@
 		850C7462291E542D0058BB99 /* VieSureDemo */ = {
 			isa = PBXGroup;
 			children = (
+				850C74A62922980E0058BB99 /* Error Handling */,
+				850C7492292183C70058BB99 /* Utility */,
+				850C748D291EDB440058BB99 /* Network Layer */,
 				850C7463291E542D0058BB99 /* VieSureDemoApp.swift */,
 				850C7465291E542D0058BB99 /* ContentView.swift */,
 				850C7467291E542F0058BB99 /* Assets.xcassets */,
@@ -125,6 +154,64 @@
 				850C7480291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift */,
 			);
 			path = VieSureDemoUITests;
+			sourceTree = "<group>";
+		};
+		850C748D291EDB440058BB99 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				850C749B29226E5D0058BB99 /* Definitions */,
+				850C74A22922806E0058BB99 /* Base APIClient */,
+				850C74A3292297080058BB99 /* VSAPIClient */,
+				850C748E292180310058BB99 /* APIModel.swift */,
+				850C7490292183830058BB99 /* NetworkManager.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		850C7492292183C70058BB99 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				850C7493292183DC0058BB99 /* TypeAliases.swift */,
+				850C74AB29229ECD0058BB99 /* UnexpectedCodePath.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		850C749B29226E5D0058BB99 /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				850C749C29226E6D0058BB99 /* HTTPStatusCodes.swift */,
+			);
+			path = Definitions;
+			sourceTree = "<group>";
+		};
+		850C74A22922806E0058BB99 /* Base APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				850C7495292185040058BB99 /* APIClient.swift */,
+				850C749929226DFF0058BB99 /* APIClient+Error.swift */,
+				850C749E292275930058BB99 /* APIClient+Parsing.swift */,
+				850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */,
+			);
+			path = "Base APIClient";
+			sourceTree = "<group>";
+		};
+		850C74A3292297080058BB99 /* VSAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				850C7497292185A50058BB99 /* VSAPIClient.swift */,
+				850C74A42922972D0058BB99 /* VSAPIClient+Parsing.swift */,
+			);
+			path = VSAPIClient;
+			sourceTree = "<group>";
+		};
+		850C74A62922980E0058BB99 /* Error Handling */ = {
+			isa = PBXGroup;
+			children = (
+				850C74A72922981E0058BB99 /* VSError.swift */,
+				850C74A929229B110058BB99 /* VSError+APIError.swift */,
+			);
+			path = "Error Handling";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +344,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850C7491292183830058BB99 /* NetworkManager.swift in Sources */,
+				850C74AC29229ECD0058BB99 /* UnexpectedCodePath.swift in Sources */,
+				850C74AA29229B110058BB99 /* VSError+APIError.swift in Sources */,
 				850C7466291E542D0058BB99 /* ContentView.swift in Sources */,
+				850C748F292180310058BB99 /* APIModel.swift in Sources */,
+				850C7498292185A50058BB99 /* VSAPIClient.swift in Sources */,
+				850C7494292183DC0058BB99 /* TypeAliases.swift in Sources */,
+				850C74A52922972D0058BB99 /* VSAPIClient+Parsing.swift in Sources */,
 				850C7464291E542D0058BB99 /* VieSureDemoApp.swift in Sources */,
+				850C74A82922981E0058BB99 /* VSError.swift in Sources */,
+				850C749F292275930058BB99 /* APIClient+Parsing.swift in Sources */,
+				850C749A29226DFF0058BB99 /* APIClient+Error.swift in Sources */,
+				850C749D29226E6D0058BB99 /* HTTPStatusCodes.swift in Sources */,
+				850C7496292185040058BB99 /* APIClient.swift in Sources */,
+				850C74A1292275BB0058BB99 /* APIClient+ErrorMapping.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
