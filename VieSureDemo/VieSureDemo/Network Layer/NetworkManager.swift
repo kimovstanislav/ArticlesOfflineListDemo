@@ -19,27 +19,26 @@ protocol API {
  But NetworkManager may come in handy when implementing unit tests with Mock data. Will think about it on that step.
  */
 class NetworkManager: API {
+    // TODO: read on options where to store this object for the global app architecture. Later, just for myself.
+    // For this example singleton is fine.
+    static let shared = NetworkManager()
+    
     private let client: VSAPIClient = VSAPIClient()
     
     func getArticles(completion: @escaping CompletionResult<([APIModel.Response.Article]), VSError>) {
         client.getArticles() { [weak self] result in
+            print(">> NetworkManager - getArticles - result: \(result)")
             guard let self = self else { return }
-            let clientCompletion: CompletionResult<[APIModel.Response.Article], VSError> = { response in
-                switch response {
-                case let .success(data):
-                    completion(.success(data))
-                case let .failure(error):
-                    completion(.failure(error))
-                }
-            }
-            self.processClientResult(result, completion: clientCompletion)
+            self.processClientResult(result, completion: completion)
         }
     }
     
-    private func processClientResult<CompletionType: Codable>(_ result: Result<Data, VSError>, completion: CompletionResult<CompletionType, VSError>) {
+    private func processClientResult<CompletionType: Decodable>(_ result: Result<Data, VSError>, completion: CompletionResult<CompletionType, VSError>) {
         switch result {
         case let .success(data):
             do {
+                let prettyStr = data.prettyPrintedJSONString!
+                print(">> JSON: \(prettyStr)")
                 let decodedData: CompletionType = try JSONDecoder().decode(CompletionType.self, from: data)
                 completion(.success(decodedData))
             } catch {
@@ -48,5 +47,16 @@ class NetworkManager: API {
         case let .failure(error):
             completion(.failure(error))
         }
+    }
+}
+
+// TODO: remove later
+extension Data {
+    var prettyPrintedJSONString: NSString? { /// NSString gives us a nice sanitized debugDescription
+        guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
+              let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
+              let prettyPrintedString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else { return nil }
+
+        return prettyPrintedString
     }
 }

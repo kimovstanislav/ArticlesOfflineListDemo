@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ArticlesListView: View {
+    @ObservedObject var viewModel: ArticlesListViewModel
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -17,10 +19,11 @@ struct ContentView: View {
         }
         .padding()
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ArticlesListView(viewModel: ArticlesListViewModel())
     }
 }

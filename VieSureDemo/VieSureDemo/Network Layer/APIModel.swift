@@ -13,8 +13,8 @@ enum APIModel {}
 
 extension APIModel {
     enum Response {
-        struct Article: Codable {
-            let id: String
+        struct Article: Decodable {
+            let id: Int
             let title: String
             let description: String
             let author: String

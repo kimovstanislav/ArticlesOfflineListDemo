@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		850C7464291E542D0058BB99 /* VieSureDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7463291E542D0058BB99 /* VieSureDemoApp.swift */; };
-		850C7466291E542D0058BB99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7465291E542D0058BB99 /* ContentView.swift */; };
+		850C7466291E542D0058BB99 /* ArticlesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7465291E542D0058BB99 /* ArticlesListView.swift */; };
 		850C7468291E542F0058BB99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850C7467291E542F0058BB99 /* Assets.xcassets */; };
 		850C746B291E542F0058BB99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850C746A291E542F0058BB99 /* Preview Assets.xcassets */; };
 		850C7475291E542F0058BB99 /* VieSureDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7474291E542F0058BB99 /* VieSureDemoTests.swift */; };
@@ -27,6 +27,7 @@
 		850C74A82922981E0058BB99 /* VSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A72922981E0058BB99 /* VSError.swift */; };
 		850C74AA29229B110058BB99 /* VSError+APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A929229B110058BB99 /* VSError+APIError.swift */; };
 		850C74AC29229ECD0058BB99 /* UnexpectedCodePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74AB29229ECD0058BB99 /* UnexpectedCodePath.swift */; };
+		85B48645292A41AB0006D3DF /* ArticlesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48644292A41AB0006D3DF /* ArticlesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,7 @@
 /* Begin PBXFileReference section */
 		850C7460291E542D0058BB99 /* VieSureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VieSureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		850C7463291E542D0058BB99 /* VieSureDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieSureDemoApp.swift; sourceTree = "<group>"; };
-		850C7465291E542D0058BB99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		850C7465291E542D0058BB99 /* ArticlesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListView.swift; sourceTree = "<group>"; };
 		850C7467291E542F0058BB99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		850C746A291E542F0058BB99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		850C7470291E542F0058BB99 /* VieSureDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VieSureDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +71,7 @@
 		850C74A72922981E0058BB99 /* VSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSError.swift; sourceTree = "<group>"; };
 		850C74A929229B110058BB99 /* VSError+APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSError+APIError.swift"; sourceTree = "<group>"; };
 		850C74AB29229ECD0058BB99 /* UnexpectedCodePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnexpectedCodePath.swift; sourceTree = "<group>"; };
+		85B48644292A41AB0006D3DF /* ArticlesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +122,11 @@
 		850C7462291E542D0058BB99 /* VieSureDemo */ = {
 			isa = PBXGroup;
 			children = (
+				85B48643292A41990006D3DF /* View */,
 				850C74A62922980E0058BB99 /* Error Handling */,
 				850C7492292183C70058BB99 /* Utility */,
 				850C748D291EDB440058BB99 /* Network Layer */,
 				850C7463291E542D0058BB99 /* VieSureDemoApp.swift */,
-				850C7465291E542D0058BB99 /* ContentView.swift */,
 				850C7467291E542F0058BB99 /* Assets.xcassets */,
 				850C7469291E542F0058BB99 /* Preview Content */,
 			);
@@ -212,6 +214,15 @@
 				850C74A929229B110058BB99 /* VSError+APIError.swift */,
 			);
 			path = "Error Handling";
+			sourceTree = "<group>";
+		};
+		85B48643292A41990006D3DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				850C7465291E542D0058BB99 /* ArticlesListView.swift */,
+				85B48644292A41AB0006D3DF /* ArticlesListViewModel.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,8 +358,9 @@
 				850C7491292183830058BB99 /* NetworkManager.swift in Sources */,
 				850C74AC29229ECD0058BB99 /* UnexpectedCodePath.swift in Sources */,
 				850C74AA29229B110058BB99 /* VSError+APIError.swift in Sources */,
-				850C7466291E542D0058BB99 /* ContentView.swift in Sources */,
+				850C7466291E542D0058BB99 /* ArticlesListView.swift in Sources */,
 				850C748F292180310058BB99 /* APIModel.swift in Sources */,
+				85B48645292A41AB0006D3DF /* ArticlesListViewModel.swift in Sources */,
 				850C7498292185A50058BB99 /* VSAPIClient.swift in Sources */,
 				850C7494292183DC0058BB99 /* TypeAliases.swift in Sources */,
 				850C74A52922972D0058BB99 /* VSAPIClient+Parsing.swift in Sources */,

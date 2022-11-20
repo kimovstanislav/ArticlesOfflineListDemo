@@ -11,7 +11,7 @@ import SwiftUI
 struct VieSureDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ArticlesListView(viewModel: ArticlesListViewModel())
         }
     }
 }

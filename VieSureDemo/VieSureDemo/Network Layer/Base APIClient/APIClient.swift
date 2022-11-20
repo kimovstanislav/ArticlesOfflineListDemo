@@ -16,16 +16,16 @@ class APIClient: NSObject {
         let request = URLRequest.Factory.makeGetRequest(url: url)
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
             if let error = error {
-                print("> HTTP Request Failed: \(error)")
+                print("> APIClient - getArticles HTTP Request Failed: \(error)")
                 let apiError: APIClient.Error = APIClient.ErrorMapper.convertToAPIError(error as! APIClient.Error)
                 completion(.failure(apiError))
             }
             else if let data = data {
-                print("> HTTP Request success.")
+                print("> APIClient - HTTP Request success.")
                 completion(.success(data))
             }
             else {
-                print("> HTTP Request empty data.")
+                print("> APIClient - HTTP Request empty data.")
                 // Could create a different error here, but don't care for current simple app.
                 let unknownApiError = APIClient.Error.custom(APIClient.CustomError.unknown)
                 completion(.failure(unknownApiError))
