@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: change to use Combine
 protocol API {
     func getArticles(completion: @escaping CompletionResult<([APIModel.Response.Article]), VSError>)
 }

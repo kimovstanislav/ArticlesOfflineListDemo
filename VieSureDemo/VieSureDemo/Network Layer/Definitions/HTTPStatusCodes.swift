@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Only adding the ones we actually need for this example
 enum HTTPStatusCode: Int, Error {
     //
     // Client Error - 4xx

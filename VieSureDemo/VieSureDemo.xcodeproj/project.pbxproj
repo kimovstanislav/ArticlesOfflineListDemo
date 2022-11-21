@@ -72,6 +72,7 @@
 		850C74A929229B110058BB99 /* VSError+APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSError+APIError.swift"; sourceTree = "<group>"; };
 		850C74AB29229ECD0058BB99 /* UnexpectedCodePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnexpectedCodePath.swift; sourceTree = "<group>"; };
 		85B48644292A41AB0006D3DF /* ArticlesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListViewModel.swift; sourceTree = "<group>"; };
+		85B48648292BC3590006D3DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +123,7 @@
 		850C7462291E542D0058BB99 /* VieSureDemo */ = {
 			isa = PBXGroup;
 			children = (
+				85B48648292BC3590006D3DF /* Info.plist */,
 				85B48643292A41990006D3DF /* View */,
 				850C74A62922980E0058BB99 /* Error Handling */,
 				850C7492292183C70058BB99 /* Utility */,
@@ -532,6 +534,7 @@
 				DEVELOPMENT_TEAM = 6VB98JTGYY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VieSureDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -561,6 +564,7 @@
 				DEVELOPMENT_TEAM = 6VB98JTGYY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VieSureDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

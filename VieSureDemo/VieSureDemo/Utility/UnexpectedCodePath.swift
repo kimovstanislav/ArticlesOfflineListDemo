@@ -10,6 +10,6 @@ import Foundation
 /// Crashes the app when an unexpected code path is executed and logs the error
 func unexpectedCodePath(message: String, file: String = #file, line: Int = #line, function: String = #function) -> Never {
     let error = VSError(source: .unknown, code: VSError.ErrorCode.unexpectedCodePath.rawValue, title: "Unexpected Code Path", message: message)
-    // Could also log this error here.
+    // Could also log this error here, if had any logging like Firebase or whatever.
     fatalError(message)
 }
