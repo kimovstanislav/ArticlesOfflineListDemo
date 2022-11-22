@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol APIClient {
+protocol IVSAPI {
     func getArticles(completion: @escaping CompletionResult<Data, VSError>)
 }

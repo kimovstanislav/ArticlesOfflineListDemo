@@ -13,12 +13,12 @@ import Foundation
 // Not caring for localization in this simple app.
 // If cared, would use SwiftGen — https://github.com/SwiftGen/SwiftGen to generate enums for easy access to localized strings.
 
-extension BaseAPIClient {
+extension APIClient {
     enum Error: Swift.Error, Equatable {
         case notConnectedToInternet
         case cannotConnectToHost
         case internalServerError
-        case custom(BaseAPIClient.CustomError)
+        case custom(APIClient.CustomError)
 
         var code: Int {
             switch self {
@@ -50,9 +50,9 @@ extension BaseAPIClient {
 
 // MARK: - APIClient.CustomError
 
-extension BaseAPIClient {
+extension APIClient {
     struct CustomError: Swift.Error, Equatable {
-        static let unknown = BaseAPIClient.CustomError(
+        static let unknown = APIClient.CustomError(
             statusCode: HTTPStatusCode.teapot.rawValue,
             title: "Error",
             message: "Unknown error. Please try again."

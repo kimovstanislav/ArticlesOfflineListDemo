@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension BaseAPIClient {
-    typealias APIError = BaseAPIClient.Error
+extension APIClient {
+    typealias APIError = APIClient.Error
     
     enum ErrorMapper {
         static func convertToAPIError(_ error: Error) -> APIError {
@@ -16,7 +16,7 @@ extension BaseAPIClient {
                 return parseError(error)
             }
             else {
-                return APIError.custom(BaseAPIClient.CustomError.unknown)
+                return APIError.custom(APIClient.CustomError.unknown)
             }
         }
 
@@ -32,7 +32,7 @@ extension BaseAPIClient {
             }
 
             let defaultErrorMessage = "Unknown error. Please try again."
-            let customError = BaseAPIClient.CustomError(statusCode: error.code, message: error.localizedFailureReason ?? defaultErrorMessage)
+            let customError = APIClient.CustomError(statusCode: error.code, message: error.localizedFailureReason ?? defaultErrorMessage)
             return APIError.custom(customError)
         }
     }

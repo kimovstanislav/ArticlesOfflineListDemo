@@ -8,7 +8,7 @@
 import Foundation
 
 extension VSError {
-    init(apiError: BaseAPIClient.Error, file: String = #file, function: String = #function, line: Int = #line) {
+    init(apiError: APIClient.Error, file: String = #file, function: String = #function, line: Int = #line) {
         self.init(
             source: .api,
             code: apiError.code,

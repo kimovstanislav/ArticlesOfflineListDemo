@@ -8,9 +8,9 @@
 import Foundation
 
 // TODO: change to use Combine
-protocol VSAPI {
-    func getArticles(completion: @escaping CompletionResult<([APIModel.Response.Article]), VSError>)
-}
+//protocol VSAPI {
+//    func getArticles(completion: @escaping CompletionResult<([APIModel.Response.Article]), VSError>)
+//}
 
 // TODO: check to simplify later.
 /*
@@ -19,13 +19,13 @@ protocol VSAPI {
  May just make VSAPIClient to take NetworkManager's place and implement API interface.
  But NetworkManager may come in handy when implementing unit tests with Mock data. Will think about it on that step.
  */
-class NetworkManager: VSAPI {
+class NetworkManager {//: VSAPI {
     // TODO: read on options where to store this object for the global app architecture. Later, just for myself.
     // For this example singleton is fine.
     static let shared = NetworkManager()
     
     // TODO: inject properly
-    private let client: APIClient = VSAPIClient()
+    private let client: IVSAPI = VSAPIClient()
     
     func getArticles(completion: @escaping CompletionResult<([APIModel.Response.Article]), VSError>) {
         client.getArticles() { [weak self] result in
