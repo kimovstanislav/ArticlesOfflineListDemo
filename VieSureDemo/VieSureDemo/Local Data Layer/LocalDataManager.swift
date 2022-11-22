@@ -13,6 +13,7 @@ protocol VSLocalData {
     func getArticles(completion: @escaping CompletionResult<[Article], VSError>)
 }
 
+// TODO: add encryption later, maybe.
 class LocalDataManager: VSLocalData {
     static let shared = LocalDataManager()
     

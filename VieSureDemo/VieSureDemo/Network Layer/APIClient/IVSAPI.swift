@@ -9,4 +9,5 @@ import Foundation
 
 protocol IVSAPI {
     func getArticles(completion: @escaping CompletionResult<Data, VSError>)
+//    func getArticles(completion: @escaping CompletionResult<[APIModel.Response.Article], VSError>)
 }

@@ -7,7 +7,6 @@
 
 import Foundation
 
-// TODO: somehow may better belong inside Error Handling folder with VSError stuff. Need to consider.
 extension VSAPIClient {
     enum Parser {
         static func parseResponse(from result: Result<Data, APIClient.Error>) -> Result<Data, VSError> {
