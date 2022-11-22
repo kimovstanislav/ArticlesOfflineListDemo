@@ -236,9 +236,17 @@
 			isa = PBXGroup;
 			children = (
 				85B4864A292BE1AE0006D3DF /* LocalDataManager.swift */,
-				85B4864C292CD5030006D3DF /* Article.swift */,
+				85B4864E292CEF4D0006D3DF /* Models */,
 			);
 			path = "Local Data Layer";
+			sourceTree = "<group>";
+		};
+		85B4864E292CEF4D0006D3DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85B4864C292CD5030006D3DF /* Article.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

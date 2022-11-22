@@ -9,8 +9,8 @@ import Foundation
 
 // TODO: use combine, maybe create a different struct for article, not use the API response 1 to 1
 protocol VSLocalData {
-    func writeArticles(articles: [APIModel.Response.Article], completion: @escaping CompletionResult<Void, VSError>)
-    func getArticles(completion: @escaping CompletionResult<[APIModel.Response.Article], VSError>)
+    func writeArticles(articles: [Article], completion: @escaping CompletionResult<Void, VSError>)
+    func getArticles(completion: @escaping CompletionResult<[Article], VSError>)
 }
 
 class LocalDataManager: VSLocalData {
@@ -19,7 +19,7 @@ class LocalDataManager: VSLocalData {
     let articlesKey = "Articles"
     
     // TODO: cleanup error handling
-    func writeArticles(articles: [APIModel.Response.Article], completion: @escaping CompletionResult<Void, VSError>) {
+    func writeArticles(articles: [Article], completion: @escaping CompletionResult<Void, VSError>) {
         do {
             let data = try JSONEncoder().encode(articles)
             UserDefaults.standard.set(data, forKey: articlesKey)
@@ -35,11 +35,11 @@ class LocalDataManager: VSLocalData {
         }
     }
     
-    func getArticles(completion: @escaping CompletionResult<[APIModel.Response.Article], VSError>) {
+    func getArticles(completion: @escaping CompletionResult<[Article], VSError>) {
         // Read/Get Data
         if let data = UserDefaults.standard.data(forKey: articlesKey) {
             do {
-                let articles = try JSONDecoder().decode([APIModel.Response.Article].self, from: data)
+                let articles = try JSONDecoder().decode([Article].self, from: data)
                 completion(.success(articles))
             }
             catch {
@@ -51,7 +51,7 @@ class LocalDataManager: VSLocalData {
         }
         else {
             // Not an error, if no data is yet saved. Return empty list.
-            completion(.success([APIModel.Response.Article]()))
+            completion(.success([Article]()))
         }
     }
 }

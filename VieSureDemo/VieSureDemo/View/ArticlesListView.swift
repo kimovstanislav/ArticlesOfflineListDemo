@@ -33,13 +33,13 @@ struct ArticlesListView: View {
     
     // MARK: - Articles list
     
-    private func articlesListView(articles: [APIModel.Response.Article]) -> some View {
+    private func articlesListView(articles: [Article]) -> some View {
         List(articles) { article in
             articleCell(article: article)
         }
     }
     
-    private func articleCell(article: APIModel.Response.Article) -> some View {
+    private func articleCell(article: Article) -> some View {
         HStack(spacing: 16) {
             // TODO: should cache the images for local storage
             AsyncImage(url: URL(string: article.image)) { image in

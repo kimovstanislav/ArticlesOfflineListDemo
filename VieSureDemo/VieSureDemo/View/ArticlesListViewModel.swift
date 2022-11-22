@@ -7,11 +7,10 @@
 
 import Foundation
 
-// TODO: add a data object for article (almost the same as APIModel.Response.Article). Create data layer.
 class ArticlesListViewModel: ObservableObject {
     enum ViewState {
         case loading
-        case showArticles(articles: [APIModel.Response.Article])
+        case showArticles(articles: [Article])
         case showError(errorMessage: String)
     }
     @Published var viewState: ViewState = .loading
@@ -52,7 +51,7 @@ class ArticlesListViewModel: ObservableObject {
         }
     }
     
-    private func writeArticlesToLocalData(_ articles: [APIModel.Response.Article], completion: @escaping VoidClosure) {
+    private func writeArticlesToLocalData(_ articles: [Article], completion: @escaping VoidClosure) {
         LocalDataManager.shared.writeArticles(articles: articles) { result in
             switch result {
             case .success():
@@ -78,7 +77,8 @@ class ArticlesListViewModel: ObservableObject {
         NetworkManager.shared.getArticles { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case let .success(articles):
+            case let .success(apiArticles):
+                let articles: [Article] = apiArticles.map({ Article(apiResponse: $0) })
                 self.processLoadedArticles(articles)
             case let .failure(error):
                 // TODO: handle reloading 3 times with 2 seconds interval on internet/server failure later.
@@ -89,11 +89,11 @@ class ArticlesListViewModel: ObservableObject {
         }
     }
     
-    private func processLoadedArticles(_ articles: [APIModel.Response.Article]) {
+    private func processLoadedArticles(_ articles: [Article]) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/YYYY"
         let sortedArticles = articles.sorted { article1, article2 in
-            guard let date1 = dateFormatter.date(from: article1.release_date), let date2 = dateFormatter.date(from: article2.release_date) else {
+            guard let date1 = dateFormatter.date(from: article1.releaseDate), let date2 = dateFormatter.date(from: article2.releaseDate) else {
                 unexpectedCodePath(message: "Wrong article date format.")
             }
             return date1 < date2
