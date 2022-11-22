@@ -29,7 +29,7 @@ extension APIClient {
                 return APIClient.APIError.internalServerError
             }
 
-            let defaultErrorMessage = "Unknown error. Please try again."
+            let defaultErrorMessage = VSStrings.Error.API.unknownMessage
             let customError = APIClient.CustomError(statusCode: error.code, message: error.localizedFailureReason ?? defaultErrorMessage)
             return APIClient.APIError.custom(customError)
         }

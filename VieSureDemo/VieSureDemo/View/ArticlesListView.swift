@@ -42,7 +42,8 @@ struct ArticlesListView: View {
     private func articleCell(article: Article) -> some View {
         HStack(spacing: 16) {
             // TODO: should cache the images for local storage
-            AsyncImage(url: URL(string: article.image)) { image in
+            // TODO: AsyncImage is from iOS 15, we need from 14, to fix
+            /*AsyncImage(url: URL(string: article.image)) { image in
                 image
                     .resizable()
                     .scaledToFill()
@@ -50,7 +51,7 @@ struct ArticlesListView: View {
                 ProgressView()
             }
             .frame(width: 40, height: 40, alignment: .center)
-            .clipShape(Circle())
+            .clipShape(Circle())*/
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(article.title)

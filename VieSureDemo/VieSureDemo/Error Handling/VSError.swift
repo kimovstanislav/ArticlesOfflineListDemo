@@ -22,11 +22,11 @@ struct VSError: Error {
     /// Error location in code, for internal logging
     let location: String
     
-    init(source: VSError.Source = .unknown, code: Int, title: String = "Error", message: String, isSilent: Bool = false, cause: Error? = nil, file: String = #file, function: String = #function, line: Int = #line) {
+    init(source: VSError.Source = .unknown, code: Int, title: String = VSStrings.Error.API.title, message: String, isSilent: Bool = false, cause: Error? = nil, file: String = #file, function: String = #function, line: Int = #line) {
         self.source = source
         self.code = code
         self.title = title
-        self.message = message + "\n(Error code: \(code)"
+        self.message = message + String(format: VSStrings.Error.API.formattedErrorCode, code)
         self.isSilent = isSilent
         self.cause = cause
         location = "\(file):\(line), \(function)"
@@ -35,8 +35,8 @@ struct VSError: Error {
     static let unknown = VSError(
         source: .unknown,
         code: ErrorCode.unknown.rawValue,
-        title: "Error",
-        message: "Unknown error. Please try again."
+        title: VSStrings.Error.API.title,
+        message: VSStrings.Error.API.unknownMessage
     )
 }
 

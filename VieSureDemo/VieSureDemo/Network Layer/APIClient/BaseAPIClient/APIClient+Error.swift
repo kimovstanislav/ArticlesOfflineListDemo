@@ -9,17 +9,13 @@ import Foundation
 
 // MARK: - APIClient.Error
 
-// TODO: create some VSStrings file with all the strings as constants? Cringe having hardcoded strings.
-// Not caring for localization in this simple app.
-// If cared, would use SwiftGen — https://github.com/SwiftGen/SwiftGen to generate enums for easy access to localized strings.
-
 extension APIClient {
     enum APIError: Error, Equatable {
         case notConnectedToInternet
         case cannotConnectToHost
         case internalServerError
         case custom(APIClient.CustomError)
-
+        
         var code: Int {
             switch self {
             case .notConnectedToInternet: return URLError.notConnectedToInternet.rawValue
@@ -31,41 +27,36 @@ extension APIClient {
 
         var title: String {
             switch self {
-            case .notConnectedToInternet, .cannotConnectToHost: return "No internet connection"
-            case .internalServerError: return "Server error"
+            case .notConnectedToInternet, .cannotConnectToHost: return VSStrings.Error.API.noInternetConnectionTitle
+            case .internalServerError: return VSStrings.Error.API.internalServerErrorTitle
             case let .custom(error): return error.title
             }
         }
 
         var message: String {
             switch self {
-            case .notConnectedToInternet, .cannotConnectToHost: return "No internet connection description"
-            case .internalServerError: return "Server error description"
+            case .notConnectedToInternet, .cannotConnectToHost: return VSStrings.Error.API.noInternetConnectionMessage
+            case .internalServerError: return VSStrings.Error.API.internalServerErrorMessage
             case let .custom(error): return error.message
             }
         }
     }
-}
-
-
-// MARK: - APIClient.CustomError
-
-extension APIClient {
-    struct CustomError: Swift.Error, Equatable {
-        static let unknown = APIClient.CustomError(
-            statusCode: HTTPStatusCode.teapot.rawValue,
-            title: "Error",
-            message: "Unknown error. Please try again."
-        )
-
+    
+    struct CustomError: Error, Equatable {
         let statusCode: Int
         let title: String
         let message: String
 
-        init(statusCode: Int, title: String = "Error", message: String) {
+        init(statusCode: Int, title: String = VSStrings.Error.API.title, message: String) {
             self.statusCode = statusCode
             self.title = title
             self.message = message
         }
+        
+        static let unknown = APIClient.CustomError(
+            statusCode: HTTPStatusCode.teapot.rawValue,
+            title: VSStrings.Error.API.title,
+            message: VSStrings.Error.API.unknownMessage
+        )
     }
 }
