@@ -14,7 +14,7 @@ import Foundation
 // If cared, would use SwiftGen — https://github.com/SwiftGen/SwiftGen to generate enums for easy access to localized strings.
 
 extension APIClient {
-    enum Error: Swift.Error, Equatable {
+    enum APIError: Error, Equatable {
         case notConnectedToInternet
         case cannotConnectToHost
         case internalServerError

@@ -22,25 +22,6 @@ class NetworkManager {
     private let client: IVSAPI = VSAPIClient()
     
     func getArticles(completion: @escaping CompletionResult<([APIModel.Response.Article]), VSError>) {
-//        client.getArticles(completion: completion)
-        client.getArticles() { [weak self] result in
-            print(">> NetworkManager - getArticles - result: \(result)")
-            guard let self = self else { return }
-            self.processClientResult(result, completion: completion)
-        }
-    }
-    
-    private func processClientResult<CompletionType: Decodable>(_ result: Result<Data, VSError>, completion: CompletionResult<CompletionType, VSError>) {
-        switch result {
-        case let .success(data):
-            do {
-                let decodedData: CompletionType = try JSONDecoder().decode(CompletionType.self, from: data)
-                completion(.success(decodedData))
-            } catch {
-                completion(.failure(VSError.unknown))
-            }
-        case let .failure(error):
-            completion(.failure(error))
-        }
+        client.getArticles(completion: completion)
     }
 }

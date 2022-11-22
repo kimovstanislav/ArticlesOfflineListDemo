@@ -8,18 +8,17 @@
 import Foundation
 
 // TODO: add a way to cancel a request? (in a case it's not responding for a while)
-// TODO: why NSObject btw? To check.
-class APIClient: NSObject {
+class APIClient {
     @discardableResult
     func genericGetRequest(
         url: URL,
-        completion: @escaping CompletionResult<Data, APIClient.Error>
+        completion: @escaping CompletionResult<Data, APIClient.APIError>
     ) -> URLRequest {
         let request = URLRequest.Factory.makeGetRequest(url: url)
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            if let error = error {
+            if let error: Error = error {
                 print("> APIClient - HTTP GET Request Failed: \(error)")
-                let apiError: APIClient.Error = APIClient.ErrorMapper.convertToAPIError(error as! APIClient.Error)
+                let apiError: APIClient.APIError = APIClient.ErrorMapper.convertToAPIError(error)
                 completion(.failure(apiError))
             }
             else if let data = data {
@@ -29,7 +28,7 @@ class APIClient: NSObject {
             else {
                 print("> APIClient - HTTP GET Request empty data.")
                 // Could create a different error here, but don't care for current simple app.
-                let unknownApiError = APIClient.Error.custom(APIClient.CustomError.unknown)
+                let unknownApiError = APIClient.APIError.custom(APIClient.CustomError.unknown)
                 completion(.failure(unknownApiError))
             }
         }
