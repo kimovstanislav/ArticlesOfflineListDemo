@@ -7,18 +7,17 @@
 
 import Foundation
 
-//extension VSError {
-//    init(localError: Error, code: Int, title: String, message: String, file: String = #file, function: String = #function, line: Int = #line) {
-//        self.init(
-//            source: .api,
-//            code: apiError.code,
-//            title: apiError.title,
-//            message: apiError.message,
-//            isSilent: false,
-//            cause: localError,
-//            file: file,
-//            function: function,
-//            line: line
-//        )
-//    }
-//}
+extension VSError {
+    init(localDataError: Error, code: Int, file: String = #file, function: String = #function, line: Int = #line) {
+        self.init(
+            source: .localData,
+            code: code,
+            message: localDataError.localizedDescription,
+            isSilent: false,
+            cause: localDataError,
+            file: file,
+            function: function,
+            line: line
+        )
+    }
+}

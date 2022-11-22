@@ -24,31 +24,10 @@ extension APIClient {
                 completion(.success(decodedData))
             }
             catch let error {
-                // TODO: create a parsing error + code for it?
-                let decodingError = VSError(source: .api, code: 666, message: error.localizedDescription)
+                // TODO: is the source API or not in this case? To read more on this.
+                let decodingError = VSError(source: .api, code: VSError.ErrorCode.errorDecodingApiResponse.rawValue, message: error.localizedDescription)
                 completion(.failure(decodingError))
             }
         }
     }
 }
-
-// TODO: sync, returning result instead of completion. To remove if not needed in the end.
-/*static func XparseResponse<CompletionType: Decodable>(from result: Result<Data, APIClient.APIError>) -> Result<CompletionType, VSError> {
-    switch result {
-    case let .success(data):
-        let result: Result<CompletionType, VSError> = XprocessResponseData(data)
-        return result
-    case let .failure(error):
-        return .failure(VSError(apiError: error))
-    }
-}
-
-private static func XprocessResponseData<CompletionType: Decodable>(_ data: Data) -> Result<CompletionType, VSError> {
-    do {
-        let decodedData: CompletionType = try JSONDecoder().decode(CompletionType.self, from: data)
-        return .success(decodedData)
-    }
-    catch {
-        return .failure(VSError.unknown)
-    }
-}*/

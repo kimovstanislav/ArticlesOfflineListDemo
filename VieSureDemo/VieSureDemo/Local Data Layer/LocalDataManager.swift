@@ -30,8 +30,7 @@ class LocalDataManager: VSLocalData {
         }
         catch {
             print("Unable to Encode Articles (\(error))")
-            // TODO: properly
-            let vsError = VSError(code: VSError.ErrorCode.errorWritingLocalData.rawValue, message: error.localizedDescription)
+            let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorWritingLocalData.rawValue)
             completion(.failure(vsError))
         }
     }
@@ -45,8 +44,7 @@ class LocalDataManager: VSLocalData {
             }
             catch {
                 print("Unable to Decode Articles (\(error))")
-                // TODO: properly
-                let vsError = VSError(code: VSError.ErrorCode.errorReadingLocalData.rawValue, message: error.localizedDescription)
+                let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorReadingLocalData.rawValue)
                 completion(.failure(vsError))
             }
         }
