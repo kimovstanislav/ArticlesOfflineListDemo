@@ -8,27 +8,28 @@
 import Foundation
 
 // TODO: add a way to cancel a request? (in a case it's not responding for a while)
-class APIClient: NSObject {
+// TODO: why NSObject btw? To check.
+class BaseAPIClient: NSObject {
     @discardableResult
     func genericGetRequest(
         url: URL,
-        completion: @escaping CompletionResult<Data, APIClient.Error>
+        completion: @escaping CompletionResult<Data, BaseAPIClient.Error>
     ) -> URLRequest {
         let request = URLRequest.Factory.makeGetRequest(url: url)
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
             if let error = error {
-                print("> APIClient - HTTP GET Request Failed: \(error)")
-                let apiError: APIClient.Error = APIClient.ErrorMapper.convertToAPIError(error as! APIClient.Error)
+                print("> BaseAPIClient - HTTP GET Request Failed: \(error)")
+                let apiError: BaseAPIClient.Error = BaseAPIClient.ErrorMapper.convertToAPIError(error as! BaseAPIClient.Error)
                 completion(.failure(apiError))
             }
             else if let data = data {
-                print("> APIClient - HTTP GET Request success.")
+                print("> BaseAPIClient - HTTP GET Request success.")
                 completion(.success(data))
             }
             else {
-                print("> APIClient - HTTP GET Request empty data.")
+                print("> BaseAPIClient - HTTP GET Request empty data.")
                 // Could create a different error here, but don't care for current simple app.
-                let unknownApiError = APIClient.Error.custom(APIClient.CustomError.unknown)
+                let unknownApiError = BaseAPIClient.Error.custom(BaseAPIClient.CustomError.unknown)
                 completion(.failure(unknownApiError))
             }
         }

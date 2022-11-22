@@ -24,7 +24,8 @@ class NetworkManager: VSAPI {
     // For this example singleton is fine.
     static let shared = NetworkManager()
     
-    private let client: VSAPIClient = VSAPIClient()
+    // TODO: inject properly
+    private let client: APIClient = VSAPIClient()
     
     func getArticles(completion: @escaping CompletionResult<([APIModel.Response.Article]), VSError>) {
         client.getArticles() { [weak self] result in
@@ -38,8 +39,6 @@ class NetworkManager: VSAPI {
         switch result {
         case let .success(data):
             do {
-                let prettyStr = data.prettyPrintedJSONString!
-                print(">> JSON: \(prettyStr)")
                 let decodedData: CompletionType = try JSONDecoder().decode(CompletionType.self, from: data)
                 completion(.success(decodedData))
             } catch {
@@ -48,16 +47,5 @@ class NetworkManager: VSAPI {
         case let .failure(error):
             completion(.failure(error))
         }
-    }
-}
-
-// TODO: remove later
-extension Data {
-    var prettyPrintedJSONString: NSString? { /// NSString gives us a nice sanitized debugDescription
-        guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
-              let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
-              let prettyPrintedString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else { return nil }
-
-        return prettyPrintedString
     }
 }

@@ -100,7 +100,9 @@ class ArticlesListViewModel: ObservableObject {
         }
         writeArticlesToLocalData(sortedArticles) { [weak self] in
             guard let self = self else { return }
-            self.viewState = .showArticles(articles: sortedArticles)
+            DispatchQueue.main.async {
+                self.viewState = .showArticles(articles: sortedArticles)
+            }
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class VSAPIClient: APIClient {
+class VSAPIClient: BaseAPIClient, APIClient {
     /// GET 'https://run.mocky.io/v3/de42e6d9-2d03-40e2-a426-8953c7c94fb8'
     func getArticles(completion: @escaping CompletionResult<Data, VSError>) {
         // Could create a separate class with all urls and parameters as constant strings, but no need here for a single entry.

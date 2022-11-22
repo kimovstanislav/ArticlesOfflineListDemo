@@ -7,7 +7,7 @@
 
 import Foundation
 
-// TODO: use combine, maybe create a different struct for article, not use the API response 1 to 1
+// TODO: use combine
 protocol VSLocalData {
     func writeArticles(articles: [Article], completion: @escaping CompletionResult<Void, VSError>)
     func getArticles(completion: @escaping CompletionResult<[Article], VSError>)
@@ -30,7 +30,7 @@ class LocalDataManager: VSLocalData {
         catch {
             print("Unable to Encode Articles (\(error))")
             // TODO: properly
-            let vsError = VSError(code: 666, message: "AAaaa!")
+            let vsError = VSError(code: VSError.ErrorCode.errorWritingLocalData.rawValue, message: error.localizedDescription)
             completion(.failure(vsError))
         }
     }
@@ -45,7 +45,7 @@ class LocalDataManager: VSLocalData {
             catch {
                 print("Unable to Decode Articles (\(error))")
                 // TODO: properly
-                let vsError = VSError(code: 666, message: "AAaaa!")
+                let vsError = VSError(code: VSError.ErrorCode.errorReadingLocalData.rawValue, message: error.localizedDescription)
                 completion(.failure(vsError))
             }
         }

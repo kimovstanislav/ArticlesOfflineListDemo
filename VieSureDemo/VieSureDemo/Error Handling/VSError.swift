@@ -19,7 +19,7 @@ struct VSError: Error {
     let isSilent: Bool
     /// The underlying error that caused this error
     let cause: Error?
-    
+    /// Error location in code, for internal logging
     let location: String
     
     init(source: VSError.Source = .unknown, code: Int, title: String = "Error", message: String, isSilent: Bool = false, cause: Error? = nil, file: String = #file, function: String = #function, line: Int = #line) {
@@ -42,7 +42,7 @@ struct VSError: Error {
 
 extension VSError {
     enum Source: String {
-        case api, localStorage, unknown
+        case api, localData, unknown
     }
 }
 
@@ -50,5 +50,8 @@ extension VSError {
     enum ErrorCode: Int {
         case unknown = -1
         case unexpectedCodePath = 0
+        // Very rough, just for this example. Say.., 1000+ is for non-api errors. 1000-1100 is for local data errors.
+        case errorWritingLocalData = 1001
+        case errorReadingLocalData = 1002
     }
 }

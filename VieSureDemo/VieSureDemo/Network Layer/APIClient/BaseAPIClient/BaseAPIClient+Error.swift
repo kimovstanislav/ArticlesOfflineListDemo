@@ -9,15 +9,16 @@ import Foundation
 
 // MARK: - APIClient.Error
 
+// TODO: create some VSStrings file with all the strings as constants? Cringe having hardcoded strings.
 // Not caring for localization in this simple app.
 // If cared, would use SwiftGen — https://github.com/SwiftGen/SwiftGen to generate enums for easy access to localized strings.
 
-extension APIClient {
+extension BaseAPIClient {
     enum Error: Swift.Error, Equatable {
         case notConnectedToInternet
         case cannotConnectToHost
         case internalServerError
-        case custom(APIClient.CustomError)
+        case custom(BaseAPIClient.CustomError)
 
         var code: Int {
             switch self {
@@ -49,9 +50,9 @@ extension APIClient {
 
 // MARK: - APIClient.CustomError
 
-extension APIClient {
+extension BaseAPIClient {
     struct CustomError: Swift.Error, Equatable {
-        static let unknown = APIClient.CustomError(
+        static let unknown = BaseAPIClient.CustomError(
             statusCode: HTTPStatusCode.teapot.rawValue,
             title: "Error",
             message: "Unknown error. Please try again."

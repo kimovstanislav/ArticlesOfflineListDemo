@@ -7,14 +7,14 @@
 
 import Foundation
 
-extension APIClient {
+extension BaseAPIClient {
     enum Parser {
-        static func parseResponse(_ response: Result<Data, Error>) -> Result<Data, APIClient.Error> {
+        static func parseResponse(_ response: Result<Data, Error>) -> Result<Data, BaseAPIClient.Error> {
             switch response {
             case let .success(data):
                 return .success(data)
             case let .failure(error):
-                let apiError = APIClient.ErrorMapper.convertToAPIError(error)
+                let apiError = BaseAPIClient.ErrorMapper.convertToAPIError(error)
                 return .failure(apiError)
             }
         }
