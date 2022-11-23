@@ -91,7 +91,7 @@ class ArticlesListViewModel: ObservableObject {
     
     private func processLoadedArticles(_ articles: [Article]) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/YYYY"
+        dateFormatter.dateFormat = DateFormats.monthDayYear
         let sortedArticles = articles.sorted { article1, article2 in
             guard let date1 = dateFormatter.date(from: article1.releaseDate), let date2 = dateFormatter.date(from: article2.releaseDate) else {
                 unexpectedCodePath(message: "Wrong article date format.")
