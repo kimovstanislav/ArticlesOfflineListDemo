@@ -34,6 +34,8 @@
 		85B48652292CF8140006D3DF /* VSError+LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48651292CF8140006D3DF /* VSError+LocalData.swift */; };
 		85B48657292D86A80006D3DF /* VSStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48656292D86A80006D3DF /* VSStrings.swift */; };
 		85B48659292DA6FA0006D3DF /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48658292DA6FA0006D3DF /* DateFormats.swift */; };
+		85B4865D292E2EF60006D3DF /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4865C292E2EF60006D3DF /* AlertViewModel.swift */; };
+		85B4865F292E30260006D3DF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4865E292E30260006D3DF /* BaseViewModel.swift */; };
 		B4DA92EA1FCC2767C379C0F8 /* Pods_VieSureDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EFA9627843E088991A640B /* Pods_VieSureDemoTests.framework */; };
 		CDF93E82A1F351B476561647 /* Pods_VieSureDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +95,8 @@
 		85B48651292CF8140006D3DF /* VSError+LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSError+LocalData.swift"; sourceTree = "<group>"; };
 		85B48656292D86A80006D3DF /* VSStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSStrings.swift; sourceTree = "<group>"; };
 		85B48658292DA6FA0006D3DF /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
+		85B4865C292E2EF60006D3DF /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
+		85B4865E292E30260006D3DF /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieSureDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCE5254D364211823726D7E /* Pods-VieSureDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo.release.xcconfig"; path = "Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,8 +253,8 @@
 		85B48643292A41990006D3DF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				850C7465291E542D0058BB99 /* ArticlesListView.swift */,
-				85B48644292A41AB0006D3DF /* ArticlesListViewModel.swift */,
+				85B4865B292E2E160006D3DF /* General */,
+				85B4865A292E2E0D0006D3DF /* Articles List */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +285,24 @@
 				850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */,
 			);
 			path = BaseAPIClient;
+			sourceTree = "<group>";
+		};
+		85B4865A292E2E0D0006D3DF /* Articles List */ = {
+			isa = PBXGroup;
+			children = (
+				850C7465291E542D0058BB99 /* ArticlesListView.swift */,
+				85B48644292A41AB0006D3DF /* ArticlesListViewModel.swift */,
+			);
+			path = "Articles List";
+			sourceTree = "<group>";
+		};
+		85B4865B292E2E160006D3DF /* General */ = {
+			isa = PBXGroup;
+			children = (
+				85B4865C292E2EF60006D3DF /* AlertViewModel.swift */,
+				85B4865E292E30260006D3DF /* BaseViewModel.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		8D4B7906EA71722BAEE369F1 /* Pods */ = {
@@ -549,6 +571,7 @@
 				85B4864D292CD5030006D3DF /* Article.swift in Sources */,
 				850C74AA29229B110058BB99 /* VSError+API.swift in Sources */,
 				850C7466291E542D0058BB99 /* ArticlesListView.swift in Sources */,
+				85B4865D292E2EF60006D3DF /* AlertViewModel.swift in Sources */,
 				850C748F292180310058BB99 /* APIModel.swift in Sources */,
 				85B48650292CF55C0006D3DF /* IVSAPI.swift in Sources */,
 				85B48645292A41AB0006D3DF /* ArticlesListViewModel.swift in Sources */,
@@ -557,6 +580,7 @@
 				850C7464291E542D0058BB99 /* VieSureDemoApp.swift in Sources */,
 				850C74A82922981E0058BB99 /* VSError.swift in Sources */,
 				85B48659292DA6FA0006D3DF /* DateFormats.swift in Sources */,
+				85B4865F292E30260006D3DF /* BaseViewModel.swift in Sources */,
 				85B48652292CF8140006D3DF /* VSError+LocalData.swift in Sources */,
 				850C749F292275930058BB99 /* APIClient+Parsing.swift in Sources */,
 				850C749A29226DFF0058BB99 /* APIClient+Error.swift in Sources */,

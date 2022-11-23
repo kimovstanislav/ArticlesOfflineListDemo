@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ArticlesListViewModel: ObservableObject {
+class ArticlesListViewModel: BaseViewModel {
     enum ViewState {
         case loading
         case showArticles(articles: [Article])
@@ -15,7 +15,12 @@ class ArticlesListViewModel: ObservableObject {
     }
     @Published var viewState: ViewState = .loading
     
-    init() {
+    var retryCount = 0
+    let maxNumberOfRetries = 3
+    let retryInterval = 2.0
+    
+    override init() {
+        super.init()
         loadInitialArticles()
     }
     
@@ -79,17 +84,14 @@ class ArticlesListViewModel: ObservableObject {
             switch result {
             case let .success(apiArticles):
                 let articles: [Article] = apiArticles.map({ Article(apiResponse: $0) })
-                self.processLoadedArticles(articles)
+                self.handleGetApiArticlesSuccess(articles)
             case let .failure(error):
-                // TODO: handle reloading 3 times with 2 seconds interval on internet/server failure later.
-                DispatchQueue.main.async {
-                    self.viewState = .showError(errorMessage: error.localizedDescription)
-                }
+                self.handleGetApiArticlesFailure(error)
             }
         }
     }
     
-    private func processLoadedArticles(_ articles: [Article]) {
+    private func handleGetApiArticlesSuccess(_ articles: [Article]) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = DateFormats.monthDayYear
         let sortedArticles = articles.sorted { article1, article2 in
@@ -102,6 +104,25 @@ class ArticlesListViewModel: ObservableObject {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.viewState = .showArticles(articles: sortedArticles)
+            }
+        }
+    }
+    
+    // TODO: will know if it works properly with retry after creating unit tests.
+    private func handleGetApiArticlesFailure(_ error: VSError) {
+        if error.isDataSynchronizationError == true && retryCount < maxNumberOfRetries {
+            retryCount += 1
+            DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + retryInterval) { [weak self] in
+                self?.loadArticlesFromServer()
+            }
+        }
+        else {
+            retryCount = 0
+            // If local data exists, show it (if not, we still show an empty list).
+            loadArticlesFromLocalData { }
+            DispatchQueue.main.async {
+                // TODO: we don't need an error state actually, should be enough to display an alert and then a local/empty list.
+                self.viewState = .showError(errorMessage: error.localizedDescription)
             }
         }
     }

@@ -25,4 +25,8 @@ enum VSStrings {
         enum LocalData {
         }
     }
+    
+    enum Button {
+        static let close = "Close"
+    }
 }

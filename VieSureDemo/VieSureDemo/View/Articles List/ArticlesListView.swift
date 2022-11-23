@@ -12,16 +12,21 @@ struct ArticlesListView: View {
     @ObservedObject var viewModel: ArticlesListViewModel
     
     var body: some View {
-        switch viewModel.viewState {
-        case .loading:
-            loaderView()
+        Group {
+            switch viewModel.viewState {
+            case .loading:
+                loaderView()
 
-        case .showArticles(let articles):
-            articlesListView(articles: articles)
+            case .showArticles(let articles):
+                articlesListView(articles: articles)
 
-        case .showError(let errorMessage):
-            errorView(errorMessage: errorMessage)
+            case .showError(let errorMessage):
+                errorView(errorMessage: errorMessage)
+            }
         }
+        .alert(isPresented: $viewModel.alertModel.showAlert, content: { () -> Alert in
+            Alert(title: Text(viewModel.alertModel.title), message: Text(viewModel.alertModel.message), dismissButton: .default(Text(VSStrings.Button.close)))
+        })
     }
     
     
