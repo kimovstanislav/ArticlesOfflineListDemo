@@ -10,7 +10,9 @@ import Foundation
 class ArticlesListViewModel: BaseViewModel {
     enum ViewState {
         case loading
+        case showEmptyList
         case showArticles(articles: [Article])
+        // We don't use an error state actually, should be enough to display an alert and then a local/empty list.
         case showError(errorMessage: String)
     }
     @Published var viewState: ViewState = .loading
@@ -22,6 +24,15 @@ class ArticlesListViewModel: BaseViewModel {
     override init() {
         super.init()
         loadInitialArticles()
+    }
+    
+    private func updateArticlesList(_ articles: [Article]) {
+        if articles.isEmpty {
+            self.viewState = .showEmptyList
+        }
+        else {
+            self.viewState = .showArticles(articles: articles)
+        }
     }
     
     
@@ -41,7 +52,7 @@ class ArticlesListViewModel: BaseViewModel {
             switch result {
             case let .success(articles):
                 DispatchQueue.main.async {
-                    self.viewState = .showArticles(articles: articles)
+                    self.updateArticlesList(articles)
                     completion()
                 }
             case let .failure(error):
@@ -103,7 +114,7 @@ class ArticlesListViewModel: BaseViewModel {
         writeArticlesToLocalData(sortedArticles) { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                self.viewState = .showArticles(articles: sortedArticles)
+                self.updateArticlesList(sortedArticles)
             }
         }
     }
@@ -120,10 +131,6 @@ class ArticlesListViewModel: BaseViewModel {
             retryCount = 0
             // If local data exists, show it (if not, we still show an empty list).
             loadArticlesFromLocalData { }
-            DispatchQueue.main.async {
-                // TODO: we don't need an error state actually, should be enough to display an alert and then a local/empty list.
-                self.viewState = .showError(errorMessage: error.localizedDescription)
-            }
         }
     }
 }

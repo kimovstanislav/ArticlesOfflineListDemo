@@ -12,8 +12,6 @@ class BaseViewModel: ObservableObject {
     
     func showAlert(title: String, message: String) {
         alertModel.show(title: title, message: message)
-        // TODO: find the best way to propagate nested object change
-        self.objectWillChange.send()
     }
 
     func hide() {

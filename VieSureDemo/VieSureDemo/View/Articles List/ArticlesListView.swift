@@ -16,6 +16,9 @@ struct ArticlesListView: View {
             switch viewModel.viewState {
             case .loading:
                 loaderView()
+                
+            case .showEmptyList:
+                emptyListView()
 
             case .showArticles(let articles):
                 articlesListView(articles: articles)
@@ -34,6 +37,13 @@ struct ArticlesListView: View {
     
     private func loaderView() -> some View {
         ProgressView()
+    }
+    
+    
+    // MARK: - Empty list
+    
+    private func emptyListView() -> some View {
+        Text("No articles")
     }
     
     
