@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import Combine
 
 protocol IVSAPI {
-    func getArticles(completion: @escaping CompletionResult<[APIModel.Response.Article], VSError>)
+    static func articlesList() -> AnyPublisher<[APIModel.Response.Article], VSError>
 }

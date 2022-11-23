@@ -22,7 +22,6 @@
 		850C7498292185A50058BB99 /* VSAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7497292185A50058BB99 /* VSAPIClient.swift */; };
 		850C749A29226DFF0058BB99 /* APIClient+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C749929226DFF0058BB99 /* APIClient+Error.swift */; };
 		850C749D29226E6D0058BB99 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C749C29226E6D0058BB99 /* HTTPStatusCodes.swift */; };
-		850C749F292275930058BB99 /* APIClient+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C749E292275930058BB99 /* APIClient+Parsing.swift */; };
 		850C74A1292275BB0058BB99 /* APIClient+ErrorMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */; };
 		850C74A82922981E0058BB99 /* VSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A72922981E0058BB99 /* VSError.swift */; };
 		850C74AA29229B110058BB99 /* VSError+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A929229B110058BB99 /* VSError+API.swift */; };
@@ -82,7 +81,6 @@
 		850C7497292185A50058BB99 /* VSAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSAPIClient.swift; sourceTree = "<group>"; };
 		850C749929226DFF0058BB99 /* APIClient+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Error.swift"; sourceTree = "<group>"; };
 		850C749C29226E6D0058BB99 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
-		850C749E292275930058BB99 /* APIClient+Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Parsing.swift"; sourceTree = "<group>"; };
 		850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+ErrorMapping.swift"; sourceTree = "<group>"; };
 		850C74A72922981E0058BB99 /* VSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSError.swift; sourceTree = "<group>"; };
 		850C74A929229B110058BB99 /* VSError+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSError+API.swift"; sourceTree = "<group>"; };
@@ -281,7 +279,6 @@
 			children = (
 				850C7495292185040058BB99 /* APIClient.swift */,
 				850C749929226DFF0058BB99 /* APIClient+Error.swift */,
-				850C749E292275930058BB99 /* APIClient+Parsing.swift */,
 				850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */,
 			);
 			path = BaseAPIClient;
@@ -582,7 +579,6 @@
 				85B48659292DA6FA0006D3DF /* DateFormats.swift in Sources */,
 				85B4865F292E30260006D3DF /* BaseViewModel.swift in Sources */,
 				85B48652292CF8140006D3DF /* VSError+LocalData.swift in Sources */,
-				850C749F292275930058BB99 /* APIClient+Parsing.swift in Sources */,
 				850C749A29226DFF0058BB99 /* APIClient+Error.swift in Sources */,
 				85B48657292D86A80006D3DF /* VSStrings.swift in Sources */,
 				85B4864B292BE1AE0006D3DF /* LocalDataManager.swift in Sources */,

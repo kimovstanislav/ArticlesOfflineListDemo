@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: - APIClient.Error
 
+// TODO: see that APIError and VSError are both not overengineered later.
 extension APIClient {
     enum APIError: Error, Equatable {
         case notConnectedToInternet

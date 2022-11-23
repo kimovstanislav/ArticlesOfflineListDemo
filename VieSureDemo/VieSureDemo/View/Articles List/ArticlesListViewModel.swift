@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class ArticlesListViewModel: BaseViewModel {
     enum ViewState {
@@ -20,6 +21,9 @@ class ArticlesListViewModel: BaseViewModel {
     var retryCount = 0
     let maxNumberOfRetries = 3
     let retryInterval = 2.0
+    
+    // TODO: make sure we handle it correctly
+    private var cancellables: Set<AnyCancellable> = []
     
     override init() {
         super.init()
@@ -90,16 +94,17 @@ class ArticlesListViewModel: BaseViewModel {
     }
     
     private func loadArticlesFromServer() {
-        NetworkManager.shared.getArticles { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case let .success(apiArticles):
-                let articles: [Article] = apiArticles.map({ Article(apiResponse: $0) })
-                self.handleGetApiArticlesSuccess(articles)
+        NetworkManager.articlesList().sink { [weak self] completion in
+            switch completion {
             case let .failure(error):
-                self.handleGetApiArticlesFailure(error)
+                self?.handleGetApiArticlesFailure(error)
+            case .finished:
+                break
             }
-        }
+        } receiveValue: { [weak self] articles in
+            let articles: [Article] = articles.map({ Article(apiResponse: $0) })
+            self?.handleGetApiArticlesSuccess(articles)
+        }.store(in: &cancellables)
     }
     
     private func handleGetApiArticlesSuccess(_ articles: [Article]) {

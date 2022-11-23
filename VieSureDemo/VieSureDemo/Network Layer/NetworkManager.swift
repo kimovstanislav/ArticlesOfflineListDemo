@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 // TODO: check to simplify later.
 /*
@@ -20,8 +21,9 @@ class NetworkManager {
     
     // TODO: inject properly later, when having mocks and tests
     private let client: IVSAPI = VSAPIClient()
+
     
-    func getArticles(completion: @escaping CompletionResult<([APIModel.Response.Article]), VSError>) {
-        client.getArticles(completion: completion)
+    static func articlesList() -> AnyPublisher<[APIModel.Response.Article], VSError> {
+        return VSAPIClient.articlesList()
     }
 }
