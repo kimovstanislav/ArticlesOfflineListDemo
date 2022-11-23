@@ -19,7 +19,6 @@ class LocalDataManager: VSLocalData {
     
     let articlesKey = "Articles"
     
-    // TODO: cleanup error handling
     func writeArticles(articles: [Article], completion: @escaping CompletionResult<Void, VSError>) {
         do {
             let data = try JSONEncoder().encode(articles)

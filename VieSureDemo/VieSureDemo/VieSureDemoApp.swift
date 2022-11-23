@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+import SDWebImage
 
 @main
 struct VieSureDemoApp: App {

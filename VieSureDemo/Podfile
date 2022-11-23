@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'VieSureDemo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for VieSureDemo
+  pod 'SDWebImageSwiftUI'
+
+  target 'VieSureDemoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'VieSureDemoUITests' do
+    # Pods for testing
+  end
+
+end
