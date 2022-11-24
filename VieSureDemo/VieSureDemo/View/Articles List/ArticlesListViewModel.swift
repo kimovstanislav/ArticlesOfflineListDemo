@@ -23,6 +23,8 @@ class ArticlesListViewModel: BaseViewModel {
     let retryInterval = 2.0
     
     // TODO: make sure we handle it correctly
+    // TODO: split to server and local?
+    // TODO: cancel before starting a new request?
     private var cancellables: Set<AnyCancellable> = []
     
     override init() {
@@ -30,6 +32,7 @@ class ArticlesListViewModel: BaseViewModel {
         loadInitialArticles()
     }
     
+    // TODO: create articles var and tie output to it, then on change call this function. For nicer Combine code?
     private func updateArticlesList(_ articles: [Article]) {
         if articles.isEmpty {
             self.viewState = .showEmptyList
@@ -106,12 +109,12 @@ class ArticlesListViewModel: BaseViewModel {
                 break
             }
         } receiveValue: { [weak self] articles in
-            let articles: [Article] = articles.map({ Article(apiResponse: $0) })
             self?.handleGetApiArticlesSuccess(articles)
         }.store(in: &cancellables)
     }
     
-    private func handleGetApiArticlesSuccess(_ articles: [Article]) {
+    private func handleGetApiArticlesSuccess(_ apiArticles: [APIModel.Response.Article]) {
+        let articles: [Article] = apiArticles.map({ Article(apiResponse: $0) })
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = DateFormats.monthDayYear
         let sortedArticles = articles.sorted { article1, article2 in
