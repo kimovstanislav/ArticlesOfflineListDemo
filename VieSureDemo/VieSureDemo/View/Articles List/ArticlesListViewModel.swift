@@ -39,9 +39,6 @@ class ArticlesListViewModel: BaseViewModel {
         }
     }
     
-    
-    // MARK: - Load from local storage
-    
     private func loadInitialArticles() {
         // First load locally stored articles, so they can be displayed right away. Then load from API and refresh the data.
         loadArticlesFromLocalData { [weak self] in
@@ -50,14 +47,16 @@ class ArticlesListViewModel: BaseViewModel {
         }
     }
     
+    
+    // MARK: - Load from local storage
+    
     private func loadArticlesFromLocalData(completion: @escaping VoidClosure) {
         LocalDataManager.shared.getArticles().sink { [weak self] dataCompletion in
             guard let self = self else { return }
             switch dataCompletion {
             case let .failure(error):
                 // Don't care for error, if failed to load local, just keep displaying loading, will still be loaded from Server.
-                // But can log the error here still, if we had logging.
-                print("Error loading local articles: \(error.localizedDescription)")
+                ErrorLogger.logError(error)
                 DispatchQueue.main.async {
                     self.viewState = .loading
                     completion()
@@ -79,8 +78,7 @@ class ArticlesListViewModel: BaseViewModel {
             switch dataCompletion {
             case let .failure(error):
                 // Don't actually care if it succeeded or not, no difference for the UI, user needs not know.
-                // But can log the error here still, if we had logging.
-                print("Error writing to local articles: \(error.localizedDescription)")
+                ErrorLogger.logError(error)
                 completion()
             case .finished:
                 completion()

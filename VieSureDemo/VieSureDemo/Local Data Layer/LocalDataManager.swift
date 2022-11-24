@@ -25,12 +25,10 @@ class LocalDataManager: VSLocalData {
             do {
                 let data = try JSONEncoder().encode(articles)
                 UserDefaults.standard.set(data, forKey: key)
-                
                 // TODO: must compile without (()), it's ugly, to fix
                 promise(.success(()))
             }
             catch {
-                print("Unable to Encode Articles: (\(error))")
                 let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorWritingLocalData.rawValue)
                 promise(.failure(vsError))
             }
@@ -47,7 +45,6 @@ class LocalDataManager: VSLocalData {
                     promise(.success(articles))
                 }
                 catch {
-                    print("Unable to Decode Articles: (\(error))")
                     let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorReadingLocalData.rawValue)
                     promise(.failure(vsError))
                 }
