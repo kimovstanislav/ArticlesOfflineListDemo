@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol IVSAPI {
-    static func articlesList() -> AnyPublisher<[APIModel.Response.Article], VSError>
+    func articlesList() -> AnyPublisher<[APIModel.Response.Article], VSError>
 }

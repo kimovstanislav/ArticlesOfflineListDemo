@@ -6,8 +6,18 @@
 //
 
 import Foundation
+import Combine
 
-// TODO: add a way to cancel a request? (in a case it's not responding for a while)
 class APIClient {
-    // TODO: move the agent here
+    func performRequest<T: Decodable>(_ request: URLRequest) -> AnyPublisher<T, VSError> {
+        return URLSession.shared
+            .dataTaskPublisher(for: request)
+            .map { $0.data }
+            .handleEvents(receiveOutput: { print(NSString(data: $0, encoding: String.Encoding.utf8.rawValue)!) })
+            .decode(type: T.self, decoder: JSONDecoder())
+            .mapError { APIClient.ErrorMapper.convertToAPIError($0) }
+            .mapError { VSError(apiError: $0) }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
 }

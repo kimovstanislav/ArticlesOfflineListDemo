@@ -88,13 +88,14 @@ class ArticlesListViewModel: BaseViewModel {
     
     // MARK: - Load from server
     
+    // TODO: add pull to refresh UI and use this function. Just nice to have.
     private func reloadArticlesFromServer() {
         // On reload not displaying loading. Just update the UI when there is new data.
         loadArticlesFromServer()
     }
     
     private func loadArticlesFromServer() {
-        NetworkManager.articlesList().sink { [weak self] completion in
+        NetworkManager.shared.articlesList().sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.handleGetApiArticlesFailure(error)
