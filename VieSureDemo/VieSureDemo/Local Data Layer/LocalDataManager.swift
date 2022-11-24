@@ -10,7 +10,7 @@ import Combine
 
 protocol VSLocalData {
     func writeArticles(articles: [Article]) -> AnyPublisher<Void, VSError>
-    func getArticles() -> AnyPublisher<[Article], VSError>
+    func getArticles() -> AnyPublisher<[Article]?, VSError>
 }
 
 // TODO: add encryption later, maybe.
@@ -36,7 +36,7 @@ class LocalDataManager: VSLocalData {
     }
     
     
-    func getArticles() -> AnyPublisher<[Article], VSError> {
+    func getArticles() -> AnyPublisher<[Article]?, VSError> {
         let key = articlesKey
         return Future { promise in
             if let data = UserDefaults.standard.data(forKey: key) {
@@ -50,8 +50,8 @@ class LocalDataManager: VSLocalData {
                 }
             }
             else {
-                // Not an error, if no data is yet saved. Return empty list.
-                promise(.success([Article]()))
+                // If no data was yet saved, it's not an error. Return nil.
+                promise(.success(nil))
             }
         }.eraseToAnyPublisher()
     }
