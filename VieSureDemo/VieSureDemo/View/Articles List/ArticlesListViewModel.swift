@@ -51,14 +51,9 @@ class ArticlesListViewModel: BaseViewModel {
     }
     
     private func loadArticlesFromLocalData(completion: @escaping VoidClosure) {
-        LocalDataManager.shared.getArticles { [weak self] result in
+        LocalDataManager.shared.getArticles().sink { [weak self] dataCompletion in
             guard let self = self else { return }
-            switch result {
-            case let .success(articles):
-                DispatchQueue.main.async {
-                    self.updateArticlesList(articles)
-                    completion()
-                }
+            switch dataCompletion {
             case let .failure(error):
                 // Don't care for error, if failed to load local, just keep displaying loading, will still be loaded from Server.
                 // But can log the error here still, if we had logging.
@@ -67,22 +62,32 @@ class ArticlesListViewModel: BaseViewModel {
                     self.viewState = .loading
                     completion()
                 }
+            case .finished:
+                completion()
+                break
             }
-        }
+        } receiveValue: { [weak self] articles in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.updateArticlesList(articles)
+            }
+        }.store(in: &cancellables)
     }
     
     private func writeArticlesToLocalData(_ articles: [Article], completion: @escaping VoidClosure) {
-        LocalDataManager.shared.writeArticles(articles: articles) { result in
-            switch result {
-            case .success():
-                completion()
+        LocalDataManager.shared.writeArticles(articles: articles).sink { dataCompletion in
+            switch dataCompletion {
             case let .failure(error):
                 // Don't actually care if it succeeded or not, no difference for the UI, user needs not know.
                 // But can log the error here still, if we had logging.
                 print("Error writing to local articles: \(error.localizedDescription)")
                 completion()
+            case .finished:
+                completion()
             }
-        }
+        } receiveValue: {
+            // Nothing
+        }.store(in: &cancellables)
     }
     
     

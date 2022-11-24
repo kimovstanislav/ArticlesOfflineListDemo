@@ -6,11 +6,11 @@
 //
 
 import Foundation
+import Combine
 
-// TODO: use combine
 protocol VSLocalData {
-    func writeArticles(articles: [Article], completion: @escaping CompletionResult<Void, VSError>)
-    func getArticles(completion: @escaping CompletionResult<[Article], VSError>)
+    func writeArticles(articles: [Article]) -> AnyPublisher<Void, VSError>
+    func getArticles() -> AnyPublisher<[Article], VSError>
 }
 
 // TODO: add encryption later, maybe.
@@ -19,37 +19,43 @@ class LocalDataManager: VSLocalData {
     
     let articlesKey = "Articles"
     
-    func writeArticles(articles: [Article], completion: @escaping CompletionResult<Void, VSError>) {
-        do {
-            let data = try JSONEncoder().encode(articles)
-            UserDefaults.standard.set(data, forKey: articlesKey)
-            
-            // TODO: must compile without (()), to fix
-            completion(.success(()))
-        }
-        catch {
-            print("Unable to Encode Articles: (\(error))")
-            let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorWritingLocalData.rawValue)
-            completion(.failure(vsError))
-        }
-    }
-    
-    func getArticles(completion: @escaping CompletionResult<[Article], VSError>) {
-        // Read/Get Data
-        if let data = UserDefaults.standard.data(forKey: articlesKey) {
+    func writeArticles(articles: [Article]) -> AnyPublisher<Void, VSError> {
+        let key = articlesKey
+        return Future { promise in
             do {
-                let articles = try JSONDecoder().decode([Article].self, from: data)
-                completion(.success(articles))
+                let data = try JSONEncoder().encode(articles)
+                UserDefaults.standard.set(data, forKey: key)
+                
+                // TODO: must compile without (()), it's ugly, to fix
+                promise(.success(()))
             }
             catch {
-                print("Unable to Decode Articles: (\(error))")
-                let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorReadingLocalData.rawValue)
-                completion(.failure(vsError))
+                print("Unable to Encode Articles: (\(error))")
+                let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorWritingLocalData.rawValue)
+                promise(.failure(vsError))
             }
-        }
-        else {
-            // Not an error, if no data is yet saved. Return empty list.
-            completion(.success([Article]()))
-        }
+        }.eraseToAnyPublisher()
+    }
+    
+    
+    func getArticles() -> AnyPublisher<[Article], VSError> {
+        let key = articlesKey
+        return Future { promise in
+            if let data = UserDefaults.standard.data(forKey: key) {
+                do {
+                    let articles = try JSONDecoder().decode([Article].self, from: data)
+                    promise(.success(articles))
+                }
+                catch {
+                    print("Unable to Decode Articles: (\(error))")
+                    let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorReadingLocalData.rawValue)
+                    promise(.failure(vsError))
+                }
+            }
+            else {
+                // Not an error, if no data is yet saved. Return empty list.
+                promise(.success([Article]()))
+            }
+        }.eraseToAnyPublisher()
     }
 }
