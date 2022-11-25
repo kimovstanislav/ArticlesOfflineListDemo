@@ -124,7 +124,8 @@ extension ArticlesListViewModel {
             retryCount = 0
             // If local data exists, show it (if not, we still show an empty list).
             loadArticlesFromLocalData()
-            // TODO: display error alert that failed to load articles from API.
+            // And display an alert for the error for failing to load articles from API.
+            self.showAlert(title: VSStrings.Error.API.title, message: VSStrings.Error.API.loadingArticlesFromServerErrorMessage)
         }
     }
 }
