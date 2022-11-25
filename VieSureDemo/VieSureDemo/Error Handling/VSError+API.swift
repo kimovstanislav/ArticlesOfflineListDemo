@@ -26,3 +26,15 @@ extension VSError {
         code == HTTPStatusCode.internalServerError.rawValue || code == URLError.notConnectedToInternet.rawValue || code == URLError.cannotConnectToHost.rawValue
     }
 }
+
+extension VSError {
+    static func makeDecodingError() -> VSError {
+        VSError(
+                source: .api,
+                code: ErrorCode.errorDecodingApiResponse.rawValue,
+                title: VSStrings.Error.API.title,
+                message: VSStrings.Error.API.decodingApiResponseFailedMessage,
+                isSilent: false
+            )
+    }
+}

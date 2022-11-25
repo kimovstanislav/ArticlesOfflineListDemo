@@ -20,6 +20,7 @@ enum VSStrings {
             static let noInternetConnectionMessage = "No internet connection description"
             static let internalServerErrorTitle = "Server error"
             static let internalServerErrorMessage = "Server error description"
+            static let decodingApiResponseFailedMessage = "Api response object decoding failed"
             static let loadingArticlesFromServerErrorMessage = "Failed to load articles from server"
         }
         
