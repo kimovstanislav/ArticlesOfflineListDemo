@@ -9,6 +9,9 @@ import Foundation
 import Combine
 
 class ArticlesListViewModel: BaseViewModel {
+    private var localDataClient: ILocalData!
+    private var apiClient: IVSAPI!
+    
     @Published var viewState: ViewState = .loading
     
     var retryCount = 0
@@ -20,8 +23,10 @@ class ArticlesListViewModel: BaseViewModel {
     // TODO: cancel before starting a new request?
     private var cancellables: Set<AnyCancellable> = []
     
-    override init() {
+    init(localDataClient: ILocalData, apiClient: IVSAPI) {
         super.init()
+        self.localDataClient = localDataClient
+        self.apiClient = apiClient
         handleEvent(.onAppear)
     }
     
@@ -45,7 +50,7 @@ class ArticlesListViewModel: BaseViewModel {
 
 extension ArticlesListViewModel {
     private func loadArticlesFromLocalData() {
-        LocalDataManager.shared.getArticles().sink { [weak self] completion in
+        localDataClient.getArticles().sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.handleEvent(.onFailedToLoadLocalArticles(error))
@@ -58,7 +63,7 @@ extension ArticlesListViewModel {
     }
     
     private func writeArticlesToLocalData(_ articles: [Article]) {
-        LocalDataManager.shared.writeArticles(articles: articles).sink { [weak self] completion in
+        localDataClient.writeArticles(articles: articles).sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.handleEvent(.onFailedToSaveArticlesToLocalData(articles, error))
@@ -76,7 +81,7 @@ extension ArticlesListViewModel {
 
 extension ArticlesListViewModel {
     private func loadArticlesFromServer() {
-        NetworkManager.shared.articlesList().sink { [weak self] completion in
+        apiClient.articlesList().sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.handleEvent(.onFailedToLoadApiArticles(error))

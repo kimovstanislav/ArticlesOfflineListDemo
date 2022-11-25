@@ -57,5 +57,7 @@ extension VSError {
         // Very rough, just for this example. Say.., 1000+ is for non-api errors. 1000-1100 is for local data errors.
         case errorWritingLocalData = 1001
         case errorReadingLocalData = 1002
+        case errorEncryptingLocalData = 1003
+        case errorDecryptingLocalData = 1004
     }
 }

@@ -7,13 +7,12 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
-import SDWebImage
 
 @main
 struct VieSureDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ArticlesListView(viewModel: ArticlesListViewModel())
+            ArticlesListView(viewModel: ViewModelFactory.shared.makeArticlesListViewModel())
         }
     }
 }

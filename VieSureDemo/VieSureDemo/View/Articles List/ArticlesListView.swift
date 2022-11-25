@@ -93,8 +93,9 @@ struct ArticlesListView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+/*struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        // TODO: insert mock localdata and api clients here
         ArticlesListView(viewModel: ArticlesListViewModel())
     }
-}
+}*/

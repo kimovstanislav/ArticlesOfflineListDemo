@@ -16,10 +16,8 @@
 		850C747F291E542F0058BB99 /* VieSureDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C747E291E542F0058BB99 /* VieSureDemoUITests.swift */; };
 		850C7481291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7480291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift */; };
 		850C748F292180310058BB99 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C748E292180310058BB99 /* APIModel.swift */; };
-		850C7491292183830058BB99 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7490292183830058BB99 /* NetworkManager.swift */; };
 		850C7494292183DC0058BB99 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7493292183DC0058BB99 /* TypeAliases.swift */; };
 		850C7496292185040058BB99 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7495292185040058BB99 /* APIClient.swift */; };
-		850C7498292185A50058BB99 /* VSAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7497292185A50058BB99 /* VSAPIClient.swift */; };
 		850C749A29226DFF0058BB99 /* APIClient+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C749929226DFF0058BB99 /* APIClient+Error.swift */; };
 		850C749D29226E6D0058BB99 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C749C29226E6D0058BB99 /* HTTPStatusCodes.swift */; };
 		850C74A1292275BB0058BB99 /* APIClient+ErrorMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */; };
@@ -27,7 +25,7 @@
 		850C74AA29229B110058BB99 /* VSError+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A929229B110058BB99 /* VSError+API.swift */; };
 		850C74AC29229ECD0058BB99 /* UnexpectedCodePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74AB29229ECD0058BB99 /* UnexpectedCodePath.swift */; };
 		85B48645292A41AB0006D3DF /* ArticlesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48644292A41AB0006D3DF /* ArticlesListViewModel.swift */; };
-		85B4864B292BE1AE0006D3DF /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4864A292BE1AE0006D3DF /* LocalDataManager.swift */; };
+		85B4864B292BE1AE0006D3DF /* LocalDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4864A292BE1AE0006D3DF /* LocalDataClient.swift */; };
 		85B4864D292CD5030006D3DF /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4864C292CD5030006D3DF /* Article.swift */; };
 		85B48650292CF55C0006D3DF /* IVSAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4864F292CF55C0006D3DF /* IVSAPI.swift */; };
 		85B48652292CF8140006D3DF /* VSError+LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48651292CF8140006D3DF /* VSError+LocalData.swift */; };
@@ -36,6 +34,9 @@
 		85B4865D292E2EF60006D3DF /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4865C292E2EF60006D3DF /* AlertViewModel.swift */; };
 		85B4865F292E30260006D3DF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4865E292E30260006D3DF /* BaseViewModel.swift */; };
 		85B48661292FA70A0006D3DF /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48660292FA70A0006D3DF /* ErrorLogger.swift */; };
+		85B48663292FCDA70006D3DF /* EncryptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48662292FCDA70006D3DF /* EncryptionManager.swift */; };
+		85B486672930B2910006D3DF /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486662930B2910006D3DF /* ViewModelFactory.swift */; };
+		85B486692930BA090006D3DF /* ILocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486682930BA090006D3DF /* ILocalData.swift */; };
 		B4DA92EA1FCC2767C379C0F8 /* Pods_VieSureDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EFA9627843E088991A640B /* Pods_VieSureDemoTests.framework */; };
 		CDF93E82A1F351B476561647 /* Pods_VieSureDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */; };
 /* End PBXBuildFile section */
@@ -76,10 +77,8 @@
 		850C747E291E542F0058BB99 /* VieSureDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieSureDemoUITests.swift; sourceTree = "<group>"; };
 		850C7480291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieSureDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		850C748E292180310058BB99 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
-		850C7490292183830058BB99 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		850C7493292183DC0058BB99 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		850C7495292185040058BB99 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		850C7497292185A50058BB99 /* VSAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSAPIClient.swift; sourceTree = "<group>"; };
 		850C749929226DFF0058BB99 /* APIClient+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Error.swift"; sourceTree = "<group>"; };
 		850C749C29226E6D0058BB99 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
 		850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+ErrorMapping.swift"; sourceTree = "<group>"; };
@@ -88,7 +87,7 @@
 		850C74AB29229ECD0058BB99 /* UnexpectedCodePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnexpectedCodePath.swift; sourceTree = "<group>"; };
 		85B48644292A41AB0006D3DF /* ArticlesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListViewModel.swift; sourceTree = "<group>"; };
 		85B48648292BC3590006D3DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		85B4864A292BE1AE0006D3DF /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		85B4864A292BE1AE0006D3DF /* LocalDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataClient.swift; sourceTree = "<group>"; };
 		85B4864C292CD5030006D3DF /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		85B4864F292CF55C0006D3DF /* IVSAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVSAPI.swift; sourceTree = "<group>"; };
 		85B48651292CF8140006D3DF /* VSError+LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSError+LocalData.swift"; sourceTree = "<group>"; };
@@ -97,6 +96,9 @@
 		85B4865C292E2EF60006D3DF /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		85B4865E292E30260006D3DF /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		85B48660292FA70A0006D3DF /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
+		85B48662292FCDA70006D3DF /* EncryptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManager.swift; sourceTree = "<group>"; };
+		85B486662930B2910006D3DF /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		85B486682930BA090006D3DF /* ILocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocalData.swift; sourceTree = "<group>"; };
 		8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieSureDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCE5254D364211823726D7E /* Pods-VieSureDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo.release.xcconfig"; path = "Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,7 +163,6 @@
 				850C748D291EDB440058BB99 /* Network Layer */,
 				85B48649292BE0680006D3DF /* Local Data Layer */,
 				850C7463291E542D0058BB99 /* VieSureDemoApp.swift */,
-				85B48656292D86A80006D3DF /* VSStrings.swift */,
 				850C7467291E542F0058BB99 /* Assets.xcassets */,
 				850C7469291E542F0058BB99 /* Preview Content */,
 			);
@@ -196,11 +197,10 @@
 		850C748D291EDB440058BB99 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
-				850C749B29226E5D0058BB99 /* Definitions */,
-				850C74A22922806E0058BB99 /* APIClient */,
-				850C74A3292297080058BB99 /* VSAPIClient */,
+				85B4864F292CF55C0006D3DF /* IVSAPI.swift */,
 				850C748E292180310058BB99 /* APIModel.swift */,
-				850C7490292183830058BB99 /* NetworkManager.swift */,
+				85B48653292CFA3E0006D3DF /* APIClient */,
+				850C749B29226E5D0058BB99 /* Definitions */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -212,6 +212,7 @@
 				850C74AB29229ECD0058BB99 /* UnexpectedCodePath.swift */,
 				85B48658292DA6FA0006D3DF /* DateFormats.swift */,
 				85B48660292FA70A0006D3DF /* ErrorLogger.swift */,
+				85B48656292D86A80006D3DF /* VSStrings.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -222,23 +223,6 @@
 				850C749C29226E6D0058BB99 /* HTTPStatusCodes.swift */,
 			);
 			path = Definitions;
-			sourceTree = "<group>";
-		};
-		850C74A22922806E0058BB99 /* APIClient */ = {
-			isa = PBXGroup;
-			children = (
-				85B4864F292CF55C0006D3DF /* IVSAPI.swift */,
-				85B48653292CFA3E0006D3DF /* BaseAPIClient */,
-			);
-			path = APIClient;
-			sourceTree = "<group>";
-		};
-		850C74A3292297080058BB99 /* VSAPIClient */ = {
-			isa = PBXGroup;
-			children = (
-				850C7497292185A50058BB99 /* VSAPIClient.swift */,
-			);
-			path = VSAPIClient;
 			sourceTree = "<group>";
 		};
 		850C74A62922980E0058BB99 /* Error Handling */ = {
@@ -254,6 +238,7 @@
 		85B48643292A41990006D3DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				85B486662930B2910006D3DF /* ViewModelFactory.swift */,
 				85B4865B292E2E160006D3DF /* General */,
 				85B4865A292E2E0D0006D3DF /* Articles List */,
 			);
@@ -263,7 +248,9 @@
 		85B48649292BE0680006D3DF /* Local Data Layer */ = {
 			isa = PBXGroup;
 			children = (
-				85B4864A292BE1AE0006D3DF /* LocalDataManager.swift */,
+				85B486682930BA090006D3DF /* ILocalData.swift */,
+				85B4864A292BE1AE0006D3DF /* LocalDataClient.swift */,
+				85B48662292FCDA70006D3DF /* EncryptionManager.swift */,
 				85B4864E292CEF4D0006D3DF /* Models */,
 			);
 			path = "Local Data Layer";
@@ -277,14 +264,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		85B48653292CFA3E0006D3DF /* BaseAPIClient */ = {
+		85B48653292CFA3E0006D3DF /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
 				850C7495292185040058BB99 /* APIClient.swift */,
 				850C749929226DFF0058BB99 /* APIClient+Error.swift */,
 				850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */,
 			);
-			path = BaseAPIClient;
+			path = APIClient;
 			sourceTree = "<group>";
 		};
 		85B4865A292E2E0D0006D3DF /* Articles List */ = {
@@ -566,17 +553,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				850C7491292183830058BB99 /* NetworkManager.swift in Sources */,
 				850C74AC29229ECD0058BB99 /* UnexpectedCodePath.swift in Sources */,
 				85B48661292FA70A0006D3DF /* ErrorLogger.swift in Sources */,
+				85B486672930B2910006D3DF /* ViewModelFactory.swift in Sources */,
 				85B4864D292CD5030006D3DF /* Article.swift in Sources */,
 				850C74AA29229B110058BB99 /* VSError+API.swift in Sources */,
 				850C7466291E542D0058BB99 /* ArticlesListView.swift in Sources */,
 				85B4865D292E2EF60006D3DF /* AlertViewModel.swift in Sources */,
 				850C748F292180310058BB99 /* APIModel.swift in Sources */,
+				85B48663292FCDA70006D3DF /* EncryptionManager.swift in Sources */,
+				85B486692930BA090006D3DF /* ILocalData.swift in Sources */,
 				85B48650292CF55C0006D3DF /* IVSAPI.swift in Sources */,
 				85B48645292A41AB0006D3DF /* ArticlesListViewModel.swift in Sources */,
-				850C7498292185A50058BB99 /* VSAPIClient.swift in Sources */,
 				850C7494292183DC0058BB99 /* TypeAliases.swift in Sources */,
 				850C7464291E542D0058BB99 /* VieSureDemoApp.swift in Sources */,
 				850C74A82922981E0058BB99 /* VSError.swift in Sources */,
@@ -585,7 +573,7 @@
 				85B48652292CF8140006D3DF /* VSError+LocalData.swift in Sources */,
 				850C749A29226DFF0058BB99 /* APIClient+Error.swift in Sources */,
 				85B48657292D86A80006D3DF /* VSStrings.swift in Sources */,
-				85B4864B292BE1AE0006D3DF /* LocalDataManager.swift in Sources */,
+				85B4864B292BE1AE0006D3DF /* LocalDataClient.swift in Sources */,
 				850C749D29226E6D0058BB99 /* HTTPStatusCodes.swift in Sources */,
 				850C7496292185040058BB99 /* APIClient.swift in Sources */,
 				850C74A1292275BB0058BB99 /* APIClient+ErrorMapping.swift in Sources */,
