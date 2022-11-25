@@ -37,6 +37,9 @@
 		85B48663292FCDA70006D3DF /* EncryptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48662292FCDA70006D3DF /* EncryptionManager.swift */; };
 		85B486672930B2910006D3DF /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486662930B2910006D3DF /* ViewModelFactory.swift */; };
 		85B486692930BA090006D3DF /* ILocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486682930BA090006D3DF /* ILocalData.swift */; };
+		85B4866C2930C6410006D3DF /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4866B2930C6410006D3DF /* MockAPIClient.swift */; };
+		85B486702930CF880006D3DF /* articles_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 85B4866F2930CF880006D3DF /* articles_list.json */; };
+		85B486722930D0750006D3DF /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486712930D0750006D3DF /* JsonHelper.swift */; };
 		B4DA92EA1FCC2767C379C0F8 /* Pods_VieSureDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EFA9627843E088991A640B /* Pods_VieSureDemoTests.framework */; };
 		CDF93E82A1F351B476561647 /* Pods_VieSureDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +102,9 @@
 		85B48662292FCDA70006D3DF /* EncryptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManager.swift; sourceTree = "<group>"; };
 		85B486662930B2910006D3DF /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		85B486682930BA090006D3DF /* ILocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocalData.swift; sourceTree = "<group>"; };
+		85B4866B2930C6410006D3DF /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
+		85B4866F2930CF880006D3DF /* articles_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles_list.json; sourceTree = "<group>"; };
+		85B486712930D0750006D3DF /* JsonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
 		8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieSureDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCE5254D364211823726D7E /* Pods-VieSureDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo.release.xcconfig"; path = "Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,8 +166,7 @@
 				85B48643292A41990006D3DF /* View */,
 				850C74A62922980E0058BB99 /* Error Handling */,
 				850C7492292183C70058BB99 /* Utility */,
-				850C748D291EDB440058BB99 /* Network Layer */,
-				85B48649292BE0680006D3DF /* Local Data Layer */,
+				85B4866D2930CF0F0006D3DF /* Data Layer */,
 				850C7463291E542D0058BB99 /* VieSureDemoApp.swift */,
 				850C7467291E542F0058BB99 /* Assets.xcassets */,
 				850C7469291E542F0058BB99 /* Preview Content */,
@@ -200,6 +205,7 @@
 				85B4864F292CF55C0006D3DF /* IVSAPI.swift */,
 				850C748E292180310058BB99 /* APIModel.swift */,
 				85B48653292CFA3E0006D3DF /* APIClient */,
+				85B4866A2930C61F0006D3DF /* MockAPIClient */,
 				850C749B29226E5D0058BB99 /* Definitions */,
 			);
 			path = "Network Layer";
@@ -213,6 +219,7 @@
 				85B48658292DA6FA0006D3DF /* DateFormats.swift */,
 				85B48660292FA70A0006D3DF /* ErrorLogger.swift */,
 				85B48656292D86A80006D3DF /* VSStrings.swift */,
+				85B486712930D0750006D3DF /* JsonHelper.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -290,6 +297,32 @@
 				85B4865E292E30260006D3DF /* BaseViewModel.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		85B4866A2930C61F0006D3DF /* MockAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				85B4866B2930C6410006D3DF /* MockAPIClient.swift */,
+				85B4866E2930CF670006D3DF /* Mock Json */,
+			);
+			path = MockAPIClient;
+			sourceTree = "<group>";
+		};
+		85B4866D2930CF0F0006D3DF /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				85B48649292BE0680006D3DF /* Local Data Layer */,
+				850C748D291EDB440058BB99 /* Network Layer */,
+			);
+			path = "Data Layer";
+			sourceTree = "<group>";
+		};
+		85B4866E2930CF670006D3DF /* Mock Json */ = {
+			isa = PBXGroup;
+			children = (
+				85B4866F2930CF880006D3DF /* articles_list.json */,
+			);
+			path = "Mock Json";
 			sourceTree = "<group>";
 		};
 		8D4B7906EA71722BAEE369F1 /* Pods */ = {
@@ -426,6 +459,7 @@
 			files = (
 				850C746B291E542F0058BB99 /* Preview Assets.xcassets in Resources */,
 				850C7468291E542F0058BB99 /* Assets.xcassets in Resources */,
+				85B486702930CF880006D3DF /* articles_list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +590,9 @@
 				850C74AC29229ECD0058BB99 /* UnexpectedCodePath.swift in Sources */,
 				85B48661292FA70A0006D3DF /* ErrorLogger.swift in Sources */,
 				85B486672930B2910006D3DF /* ViewModelFactory.swift in Sources */,
+				85B486722930D0750006D3DF /* JsonHelper.swift in Sources */,
 				85B4864D292CD5030006D3DF /* Article.swift in Sources */,
+				85B4866C2930C6410006D3DF /* MockAPIClient.swift in Sources */,
 				850C74AA29229B110058BB99 /* VSError+API.swift in Sources */,
 				850C7466291E542D0058BB99 /* ArticlesListView.swift in Sources */,
 				85B4865D292E2EF60006D3DF /* AlertViewModel.swift in Sources */,
