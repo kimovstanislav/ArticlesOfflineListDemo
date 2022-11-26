@@ -40,6 +40,9 @@
 		85B4866C2930C6410006D3DF /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4866B2930C6410006D3DF /* MockAPIClient.swift */; };
 		85B486702930CF880006D3DF /* articles_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 85B4866F2930CF880006D3DF /* articles_list.json */; };
 		85B486722930D0750006D3DF /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486712930D0750006D3DF /* JsonHelper.swift */; };
+		85B4867629314EE80006D3DF /* ApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867529314EE80006D3DF /* ApiTest.swift */; };
+		85B4867829314F050006D3DF /* LocalDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867729314F050006D3DF /* LocalDataTest.swift */; };
+		85B4867A29314F520006D3DF /* ArticlesListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867929314F520006D3DF /* ArticlesListTest.swift */; };
 		B4DA92EA1FCC2767C379C0F8 /* Pods_VieSureDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EFA9627843E088991A640B /* Pods_VieSureDemoTests.framework */; };
 		CDF93E82A1F351B476561647 /* Pods_VieSureDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */; };
 /* End PBXBuildFile section */
@@ -105,6 +108,9 @@
 		85B4866B2930C6410006D3DF /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
 		85B4866F2930CF880006D3DF /* articles_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles_list.json; sourceTree = "<group>"; };
 		85B486712930D0750006D3DF /* JsonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
+		85B4867529314EE80006D3DF /* ApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTest.swift; sourceTree = "<group>"; };
+		85B4867729314F050006D3DF /* LocalDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataTest.swift; sourceTree = "<group>"; };
+		85B4867929314F520006D3DF /* ArticlesListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListTest.swift; sourceTree = "<group>"; };
 		8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieSureDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCE5254D364211823726D7E /* Pods-VieSureDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo.release.xcconfig"; path = "Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				850C7474291E542F0058BB99 /* VieSureDemoTests.swift */,
+				85B4867529314EE80006D3DF /* ApiTest.swift */,
+				85B4867729314F050006D3DF /* LocalDataTest.swift */,
+				85B4867929314F520006D3DF /* ArticlesListTest.swift */,
 			);
 			path = VieSureDemoTests;
 			sourceTree = "<group>";
@@ -620,6 +629,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85B4867A29314F520006D3DF /* ArticlesListTest.swift in Sources */,
+				85B4867829314F050006D3DF /* LocalDataTest.swift in Sources */,
+				85B4867629314EE80006D3DF /* ApiTest.swift in Sources */,
 				850C7475291E542F0058BB99 /* VieSureDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

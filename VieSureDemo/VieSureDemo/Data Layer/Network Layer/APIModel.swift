@@ -13,7 +13,6 @@ enum APIModel {}
 
 extension APIModel {
     enum Response {
-        // TODO: think later do we want to create data layer where we have this struct kinda copied with some changes for use in the app.
         struct Article: Codable, Identifiable {
             let id: Int
             let title: String

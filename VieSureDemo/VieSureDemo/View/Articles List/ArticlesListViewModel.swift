@@ -33,15 +33,21 @@ class ArticlesListViewModel: BaseViewModel {
     // TODO: create articles var and tie output to it, then on change call this function. For nicer Combine code?
     private func updateArticlesList(_ articles: [Article]) {
         if articles.isEmpty {
-            viewState = .showEmptyList
+            setViewState(.showEmptyList)
         }
         else {
-            viewState = .showArticles(articles: articles)
+            setViewState(.showArticles(articles: articles))
         }
     }
     
     private func showLoading() {
-        viewState = .loading
+        setViewState(.loading)
+    }
+    
+    private func setViewState(_ state: ViewState) {
+        DispatchQueue.main.async {
+            self.viewState = state
+        }
     }
 }
 
@@ -50,29 +56,27 @@ class ArticlesListViewModel: BaseViewModel {
 
 extension ArticlesListViewModel {
     private func loadArticlesFromLocalData() {
-        localDataClient.getArticles().sink { [weak self] completion in
-            switch completion {
-            case let .failure(error):
-                self?.handleEvent(.onFailedToLoadLocalArticles(error))
-            case .finished:
-                break
+        Task { [weak self] in
+            do {
+                let articles = try await localDataClient.getArticles()
+                self?.handleEvent(.onLocalArticlesLoaded(articles))
             }
-        } receiveValue: { [weak self] articles in
-            self?.handleEvent(.onLocalArticlesLoaded(articles))
-        }.store(in: &cancellables)
+            catch let error as VSError  {
+                self?.handleEvent(.onFailedToLoadLocalArticles(error))
+            }
+        }
     }
     
     private func writeArticlesToLocalData(_ articles: [Article]) {
-        localDataClient.writeArticles(articles: articles).sink { [weak self] completion in
-            switch completion {
-            case let .failure(error):
-                self?.handleEvent(.onFailedToSaveArticlesToLocalData(articles, error))
-            case .finished:
+        Task { [weak self] in
+            do {
+                try await localDataClient.writeArticles(articles: articles)
                 self?.handleEvent(.onArticlesSavedToLocalData(articles))
             }
-        } receiveValue: {
-            // Nothing
-        }.store(in: &cancellables)
+            catch let error as VSError {
+                self?.handleEvent(.onFailedToSaveArticlesToLocalData(articles, error))
+            }
+        }
     }
 }
 
@@ -125,7 +129,9 @@ extension ArticlesListViewModel {
             // If local data exists, show it (if not, we still show an empty list).
             loadArticlesFromLocalData()
             // And display an alert for the error for failing to load articles from API.
-            self.showAlert(title: VSStrings.Error.API.title, message: VSStrings.Error.API.loadingArticlesFromServerErrorMessage)
+            DispatchQueue.main.async {
+                self.showAlert(title: VSStrings.Error.API.title, message: VSStrings.Error.API.loadingArticlesFromServerErrorMessage)
+            }
         }
     }
 }

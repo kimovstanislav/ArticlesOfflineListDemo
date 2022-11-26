@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Article: Codable, Identifiable {
+struct Article: Codable, Identifiable, Equatable {
     let id: Int
     let title: String
     let description: String
@@ -22,5 +22,14 @@ struct Article: Codable, Identifiable {
         self.author = apiResponse.author
         self.releaseDate = apiResponse.release_date
         self.image = apiResponse.image
+    }
+    
+    init(id: Int, title: String, description: String, author: String, releaseDate: String, image: String) {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.author = author
+        self.releaseDate = releaseDate
+        self.image = image
     }
 }

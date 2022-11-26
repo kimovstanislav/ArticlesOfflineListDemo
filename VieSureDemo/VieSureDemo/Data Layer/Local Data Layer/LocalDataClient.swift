@@ -14,39 +14,34 @@ class LocalDataClient: ILocalData {
         static let articlesKey = "Articles"
     }
     
-    func writeArticles(articles: [Article]) -> AnyPublisher<Void, VSError> {
+    func writeArticles(articles: [Article]) async throws {
         let key = Keys.articlesKey
-        return Future { promise in
-            do {
-                let data = try JSONEncoder().encode(articles)
-                UserDefaults.standard.set(data, forKey: key)
-                // TODO: must compile without (()), it's ugly, to fix
-                promise(.success(()))
-            }
-            catch {
-                let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorWritingLocalData.rawValue)
-                promise(.failure(vsError))
-            }
-        }.eraseToAnyPublisher()
+        do {
+            let data = try JSONEncoder().encode(articles)
+            UserDefaults.standard.set(data, forKey: key)
+            return
+        }
+        catch {
+            let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorWritingLocalData.rawValue)
+            throw vsError
+        }
     }
     
-    func getArticles() -> AnyPublisher<[Article]?, VSError> {
+    func getArticles() async throws -> [Article]? {
         let key = Keys.articlesKey
-        return Future { promise in
-            if let data = UserDefaults.standard.data(forKey: key) {
-                do {
-                    let articles = try JSONDecoder().decode([Article].self, from: data)
-                    promise(.success(articles))
-                }
-                catch {
-                    let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorReadingLocalData.rawValue)
-                    promise(.failure(vsError))
-                }
+        if let data = UserDefaults.standard.data(forKey: key) {
+            do {
+                let articles = try JSONDecoder().decode([Article].self, from: data)
+                return articles
             }
-            else {
-                // If no data was yet saved, it's not an error. Return nil.
-                promise(.success(nil))
+            catch {
+                let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorReadingLocalData.rawValue)
+                throw vsError
             }
-        }.eraseToAnyPublisher()
+        }
+        else {
+            // If no data was yet saved, it's not an error. Return nil.
+            return nil
+        }
     }
 }
