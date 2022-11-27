@@ -11,4 +11,5 @@ import Combine
 protocol ILocalData {
     func writeArticles(articles: [Article]) async throws
     func getArticles() async throws -> [Article]?
+    func clearArticles()
 }

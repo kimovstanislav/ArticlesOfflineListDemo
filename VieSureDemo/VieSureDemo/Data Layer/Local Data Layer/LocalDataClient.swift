@@ -44,4 +44,8 @@ class LocalDataClient: ILocalData {
             return nil
         }
     }
+    
+    func clearArticles() {
+        UserDefaults.standard.set(nil, forKey: Keys.articlesKey)
+    }
 }

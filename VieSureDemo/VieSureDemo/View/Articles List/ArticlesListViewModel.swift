@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class ArticlesListViewModel: BaseViewModel {
     private var localDataClient: ILocalData!
@@ -22,7 +23,7 @@ class ArticlesListViewModel: BaseViewModel {
         super.init()
         self.localDataClient = localDataClient
         self.apiClient = apiClient
-        handleEvent(.onAppear)
+        handleEvent(.onAppear) 
     }
     
     private func updateArticlesList(_ articles: [Article]) {
@@ -208,6 +209,27 @@ extension ArticlesListViewModel {
             // Don't care for error, if failed to save to local data. Still display the loaded articles
             ErrorLogger.logError(error)
             updateArticlesList(articles)
+        }
+    }
+}
+
+extension ArticlesListViewModel.ViewState: Equatable {
+    static func ==(lhs: ArticlesListViewModel.ViewState, rhs: ArticlesListViewModel.ViewState) -> Bool {
+        switch (lhs, rhs) {
+        case (.loading, .loading):
+            return true
+            
+        case (.showEmptyList, .showEmptyList):
+            return true
+            
+        case (let .showArticles(articles1), let .showArticles(articles2)):
+            return articles1.sorted { a, b in a.id < b.id } == articles2.sorted { a, b in a.id < b.id }
+            
+        case (let .showError(error1), let .showError(error2)):
+            return error1 == error2
+
+        default:
+            return false
         }
     }
 }
