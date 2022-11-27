@@ -11,8 +11,7 @@ import Combine
 
 final class ArticlesListTest: XCTestCase {
     var localDataClient: ILocalData = LocalDataClient()
-    var apiClient: MockAPIClient = MockAPIClient()
-    
+   
     private var bag: Set<AnyCancellable> = []
     
     override func setUpWithError() throws {
@@ -23,6 +22,7 @@ final class ArticlesListTest: XCTestCase {
     func testLoadArticles() throws {
         let expectation = self.expectation(description: "States")
         
+        let apiClient = MockAPIClient()
         let viewModel = ArticlesListViewModel(localDataClient: localDataClient, apiClient: apiClient)
         let apiArticles = try apiClient.loadSyncArticlesList()
         let toCompareArticles: [Article] = apiArticles.map({ Article(apiResponse: $0) })

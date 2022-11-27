@@ -42,6 +42,8 @@
 		85B4867629314EE80006D3DF /* ApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867529314EE80006D3DF /* ApiTest.swift */; };
 		85B4867829314F050006D3DF /* LocalDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867729314F050006D3DF /* LocalDataTest.swift */; };
 		85B4867A29314F520006D3DF /* ArticlesListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867929314F520006D3DF /* ArticlesListTest.swift */; };
+		85B4867D293424690006D3DF /* FailingLocalDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867C293424690006D3DF /* FailingLocalDataClient.swift */; };
+		85B486802934264C0006D3DF /* FailingAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867F2934264C0006D3DF /* FailingAPIClient.swift */; };
 		B4DA92EA1FCC2767C379C0F8 /* Pods_VieSureDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EFA9627843E088991A640B /* Pods_VieSureDemoTests.framework */; };
 		CDF93E82A1F351B476561647 /* Pods_VieSureDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +111,8 @@
 		85B4867529314EE80006D3DF /* ApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTest.swift; sourceTree = "<group>"; };
 		85B4867729314F050006D3DF /* LocalDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataTest.swift; sourceTree = "<group>"; };
 		85B4867929314F520006D3DF /* ArticlesListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListTest.swift; sourceTree = "<group>"; };
+		85B4867C293424690006D3DF /* FailingLocalDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailingLocalDataClient.swift; sourceTree = "<group>"; };
+		85B4867F2934264C0006D3DF /* FailingAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailingAPIClient.swift; sourceTree = "<group>"; };
 		8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieSureDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCE5254D364211823726D7E /* Pods-VieSureDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo.release.xcconfig"; path = "Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +193,7 @@
 		850C7473291E542F0058BB99 /* VieSureDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				85B4867E293425F10006D3DF /* Utility */,
 				850C7474291E542F0058BB99 /* VieSureDemoTests.swift */,
 				85B4867529314EE80006D3DF /* ApiTest.swift */,
 				85B4867729314F050006D3DF /* LocalDataTest.swift */,
@@ -329,6 +334,15 @@
 				85B4866F2930CF880006D3DF /* articles_list.json */,
 			);
 			path = "Mock Json";
+			sourceTree = "<group>";
+		};
+		85B4867E293425F10006D3DF /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				85B4867C293424690006D3DF /* FailingLocalDataClient.swift */,
+				85B4867F2934264C0006D3DF /* FailingAPIClient.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		8D4B7906EA71722BAEE369F1 /* Pods */ = {
@@ -607,6 +621,7 @@
 				85B486692930BA090006D3DF /* ILocalData.swift in Sources */,
 				85B48650292CF55C0006D3DF /* IVSAPI.swift in Sources */,
 				85B48645292A41AB0006D3DF /* ArticlesListViewModel.swift in Sources */,
+				85B4867D293424690006D3DF /* FailingLocalDataClient.swift in Sources */,
 				850C7494292183DC0058BB99 /* TypeAliases.swift in Sources */,
 				850C7464291E542D0058BB99 /* VieSureDemoApp.swift in Sources */,
 				850C74A82922981E0058BB99 /* VSError.swift in Sources */,
@@ -628,6 +643,7 @@
 				85B4867A29314F520006D3DF /* ArticlesListTest.swift in Sources */,
 				85B4867829314F050006D3DF /* LocalDataTest.swift in Sources */,
 				85B4867629314EE80006D3DF /* ApiTest.swift in Sources */,
+				85B486802934264C0006D3DF /* FailingAPIClient.swift in Sources */,
 				850C7475291E542F0058BB99 /* VieSureDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

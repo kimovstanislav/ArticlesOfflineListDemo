@@ -12,8 +12,7 @@ class ArticlesListViewModel: BaseViewModel {
     private var localDataClient: ILocalData!
     private var apiClient: IVSAPI!
     
-    // The only property to update the UI. Is made sure to always be assigned on the main thread.
-    @MainActor @Published var viewState: ViewState = .loading
+    @Published var viewState: ViewState = .loading
     
     var retryCount = 0
     let maxNumberOfRetries = 3
@@ -120,8 +119,10 @@ extension ArticlesListViewModel {
         }
         else {
             retryCount = 0
-            // If local data exists, show it (if not, we still show an empty list).
-            loadArticlesFromLocalData()
+            // If any data is displayed, do nothing. If loading is displayed - show "no articles".
+            if viewState == .loading {
+                setViewState(.showEmptyList)
+            }
             // And display an alert for the error for failing to load articles from API.
             DispatchQueue.main.async {
                 self.showAlert(title: VSStrings.Error.API.title, message: VSStrings.Error.API.loadingArticlesFromServerErrorMessage)
