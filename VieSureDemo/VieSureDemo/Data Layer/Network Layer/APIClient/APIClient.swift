@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-// TODO: if using Combine, here's how we retry with delay (still tricky though) - https://www.donnywals.com/retrying-a-network-request-with-a-delay-in-combine/
+// If using Combine, here's how we retry with delay (still tricky though) - https://www.donnywals.com/retrying-a-network-request-with-a-delay-in-combine/
 class APIClient: IVSAPI {
     let session = URLSession.shared
     
@@ -29,7 +29,7 @@ class APIClient: IVSAPI {
         return url
     }
     
-    
+    // TODO: move retry with delay here to API client?
     func loadArticlesList() async throws -> [APIModel.Response.Article] {
         let url = makeUrl(host: URLs.host, apiVersion: URLs.apiVersion, endpoint: URLs.Endpoints.articlesList)
         return try await performRequest(url: url)
@@ -52,17 +52,6 @@ extension APIClient {
             let apiError = APIClient.ErrorMapper.convertToAPIError(error)
             let vsError = VSError(apiError: apiError)
             throw vsError
-        }
-    }
-    
-    private func decodeApiResponse<T: Decodable>(data: Data) throws -> T {
-        do {
-            let object: T = try JSONDecoder().decode(T.self, from: data)
-            return object
-        }
-        catch {
-            let error: VSError = VSError.makeDecodingError()
-            throw error
         }
     }
 }

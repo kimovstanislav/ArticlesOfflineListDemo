@@ -24,7 +24,6 @@ class ArticlesListViewModel: BaseViewModel {
         handleEvent(.onAppear)
     }
     
-    // TODO: create articles var and tie output to it, then on change call this function. For nicer Combine code?
     private func updateArticlesList(_ articles: [Article]) {
         if articles.isEmpty {
             setViewState(.showEmptyList)

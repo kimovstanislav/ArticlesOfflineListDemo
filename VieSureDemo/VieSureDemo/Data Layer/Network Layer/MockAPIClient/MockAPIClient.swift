@@ -8,32 +8,20 @@
 import Foundation
 import Combine
 
-// TODO: change to async/await and uncomment
-/*
 class MockAPIClient: IVSAPI {
     enum MockJsonFiles {
         static let articlesList = "articles_list"
     }
     
-    func articlesList() -> AnyPublisher<[APIModel.Response.Article], VSError> {
-        return Future { [unowned self] promise in
-            let result: Result<[APIModel.Response.Article], VSError> = self.getObject(fileName: MockJsonFiles.articlesList)
-            promise(result)
-        }.eraseToAnyPublisher()
+    func loadArticlesList() async throws -> [APIModel.Response.Article] {
+        return try getObject(fileName: MockJsonFiles.articlesList)
     }
 }
 
 extension MockAPIClient {
-    func getObject<T: Decodable>(fileName: String) -> Result<T, VSError> {
-        do {
-            let jsonString = JsonHelper.readJsonString(named: fileName)
-            let data = jsonString.data(using: .utf8)!
-            let decodeObject = try JSONDecoder().decode(T.self, from: data)
-            return .success(decodeObject)
-        }
-        catch {
-            let error: VSError = VSError.makeDecodingError()
-            return .failure(error)
-        }
+    func getObject<T: Decodable>(fileName: String) throws -> T {
+        let jsonString = JsonHelper.readJsonString(named: fileName)
+        let data = jsonString.data(using: .utf8)!
+        return try decodeApiResponse(data: data)
     }
-}*/
+}
