@@ -38,30 +38,25 @@ final class LocalDataTest: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
     func testSaveArticles() throws {
+        let dataClient = localDataClient
         let initialArticles = generateArticles(count: 10)
         
-        localDataClient.writeArticles(articles: initialArticles).sink { [weak self] completion in
-            switch completion {
-            case let .failure(error):
-                XCTFail(error.message)
-            case .finished:
-                self?.localDataClient.getArticles().sink { completion in
-                    switch completion {
-                    case let .failure(error):
-                        XCTFail(error.message)
-                    case .finished:
-                        break
-                    }
-                } receiveValue: { articles in
-                    // TODO: actually compare arrays
-                    XCTAssert(initialArticles.count == articles!.count)
-                }.store(in: &self!.cancellables)
+        Task {
+            do {
+                try await dataClient.writeArticles(articles: initialArticles)
+                let articles = try await dataClient.getArticles()
+                guard let loadedArticles = articles else {
+                    XCTFail("Loaded articles is nil.")
+                    return
+                }
+                XCTAssert(initialArticles.count == loadedArticles.count)
             }
-        } receiveValue: {
-            // Nothing
-        }.store(in: &cancellables)
+            catch let error as VSError {
+                XCTFail(error.message)
+            }
+        }
     }
 }
 

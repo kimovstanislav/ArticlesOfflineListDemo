@@ -37,18 +37,15 @@ final class ApiTest: XCTestCase {
         }
     }
 
-    // TODO: async/await is better here. An option to wrap around - https://medium.com/geekculture/from-combine-to-async-await-c08bf1d15b77
-    // TODO: OR, to change APIClient to async/await too, as local data
     func testDecodeData() throws {
-        mockApiClient.articlesList().sink { completion in
-            switch completion {
-            case let .failure(error):
-                XCTFail(error.message)
-            case .finished:
-                break
+        Task {
+            do {
+                let articles = try await mockApiClient.loadArticlesList()
+                XCTAssert(articles.count == 60)
             }
-        } receiveValue: { articles in
-            XCTAssert(articles.count == 60)
-        }.store(in: &cancellables)
+            catch let error as VSError  {
+                XCTFail(error.message)
+            }
+        }
     }
 }

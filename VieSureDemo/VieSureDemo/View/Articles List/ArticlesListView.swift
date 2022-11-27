@@ -58,6 +58,8 @@ struct ArticlesListView: View {
     private func articleCell(article: Article) -> some View {
         HStack(spacing: 16) {
             // AsyncImage is available from iOS 15, so had to use a Pod here.
+            // TODO: OR if don't want to use external dependencies replace with stolen code (AsyncImage imlpementation, but first check if it's simple enough)
+            //Sources: here https://www.vadimbulavin.com/modern-mvvm-ios-app-architecture-with-combine-and-swiftui/ or here https://github.com/phetsana/BoardGameList-MVVM-Input-Output
             WebImage(url: URL(string: article.image))
                 .resizable()
                 .placeholder(Image(systemName: "photo"))

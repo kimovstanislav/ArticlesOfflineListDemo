@@ -35,10 +35,10 @@ final class VieSureDemoTests: XCTestCase {
 }
     
     // API test
-    // 1. Test mock api decoding articles response
+    // + 1. Test mock api decoding articles response
     
     // Local test
-    // 2. Test local client save/load articles
+    // + 2. Test local client save/load articles
     
     // ViewModel test
     // 3. Test ListViewModel load only mock API - loaded list ok

@@ -30,6 +30,7 @@ class APIClient: IVSAPI {
     }
     
     // TODO: move retry with delay here to API client?
+    // Hints: https://www.swiftbysundell.com/articles/retrying-an-async-swift-task/ - https://twitter.com/christianselig/status/1520796529526726668
     func loadArticlesList() async throws -> [APIModel.Response.Article] {
         let url = makeUrl(host: URLs.host, apiVersion: URLs.apiVersion, endpoint: URLs.Endpoints.articlesList)
         return try await performRequest(url: url)
