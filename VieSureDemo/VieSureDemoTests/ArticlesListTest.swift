@@ -37,7 +37,86 @@ final class ArticlesListTest: XCTestCase {
                     return
                 }
                 step += 1
-                if step == 3 {
+                if step == toCompareStates.count {
+                    expectation.fulfill()
+                }
+            }
+            .store(in: &bag)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testLoadArticlesFailingLocal() throws {
+        let expectation = self.expectation(description: "States")
+        
+        let localDataFailingClient = FailingLocalDataClient()
+        let apiClient = MockAPIClient()
+        let viewModel = ArticlesListViewModel(localDataClient: localDataFailingClient, apiClient: apiClient)
+        let apiArticles = try apiClient.loadSyncArticlesList()
+        let toCompareArticles: [Article] = apiArticles.map({ Article(apiResponse: $0) })
+        let toCompareStates = [ArticlesListViewModel.ViewState.loading, ArticlesListViewModel.ViewState.showArticles(articles: toCompareArticles)]
+        var step: Int = 0
+        
+        let _ = viewModel.$viewState
+            .sink { value in
+                let stateToCompare = toCompareStates[step]
+                guard stateToCompare == value else {
+                    XCTFail("Wrong state")
+                    return
+                }
+                step += 1
+                if step == toCompareStates.count {
+                    expectation.fulfill()
+                }
+            }
+            .store(in: &bag)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testLoadArticlesFailingAPI() throws {
+        let expectation = self.expectation(description: "States")
+        
+        let apiClient = FailingAPIClient()
+        let viewModel = ArticlesListViewModel(localDataClient: localDataClient, apiClient: apiClient)
+        let toCompareStates = [ArticlesListViewModel.ViewState.loading, ArticlesListViewModel.ViewState.loading, ArticlesListViewModel.ViewState.showEmptyList]
+        var step: Int = 0
+        
+        let _ = viewModel.$viewState
+            .sink { value in
+                let stateToCompare = toCompareStates[step]
+                guard stateToCompare == value else {
+                    XCTFail("Wrong state")
+                    return
+                }
+                step += 1
+                if step == toCompareStates.count {
+                    expectation.fulfill()
+                }
+            }
+            .store(in: &bag)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testLoadArticlesFailingBoth() throws {
+        let expectation = self.expectation(description: "States")
+        
+        let localDataFailingClient = FailingLocalDataClient()
+        let apiClient = FailingAPIClient()
+        let viewModel = ArticlesListViewModel(localDataClient: localDataFailingClient, apiClient: apiClient)
+        let toCompareStates = [ArticlesListViewModel.ViewState.loading, ArticlesListViewModel.ViewState.showEmptyList]
+        var step: Int = 0
+        
+        let _ = viewModel.$viewState
+            .sink { value in
+                let stateToCompare = toCompareStates[step]
+                guard stateToCompare == value else {
+                    XCTFail("Wrong state")
+                    return
+                }
+                step += 1
+                if step == toCompareStates.count {
                     expectation.fulfill()
                 }
             }

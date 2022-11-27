@@ -9,7 +9,10 @@ import Foundation
 @testable import VieSureDemo
 
 class FailingAPIClient: IVSAPI {
+    // Can set any error we like
+    var failingError: VSError = VSError.unknown
+    
     func loadArticlesList() async throws -> [APIModel.Response.Article] {
-        throw VSError.unknown
+        throw failingError
     }
 }

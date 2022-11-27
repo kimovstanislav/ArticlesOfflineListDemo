@@ -42,8 +42,8 @@
 		85B4867629314EE80006D3DF /* ApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867529314EE80006D3DF /* ApiTest.swift */; };
 		85B4867829314F050006D3DF /* LocalDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867729314F050006D3DF /* LocalDataTest.swift */; };
 		85B4867A29314F520006D3DF /* ArticlesListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867929314F520006D3DF /* ArticlesListTest.swift */; };
-		85B4867D293424690006D3DF /* FailingLocalDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867C293424690006D3DF /* FailingLocalDataClient.swift */; };
 		85B486802934264C0006D3DF /* FailingAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867F2934264C0006D3DF /* FailingAPIClient.swift */; };
+		85B4868129342A790006D3DF /* FailingLocalDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867C293424690006D3DF /* FailingLocalDataClient.swift */; };
 		B4DA92EA1FCC2767C379C0F8 /* Pods_VieSureDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EFA9627843E088991A640B /* Pods_VieSureDemoTests.framework */; };
 		CDF93E82A1F351B476561647 /* Pods_VieSureDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */; };
 /* End PBXBuildFile section */
@@ -621,7 +621,6 @@
 				85B486692930BA090006D3DF /* ILocalData.swift in Sources */,
 				85B48650292CF55C0006D3DF /* IVSAPI.swift in Sources */,
 				85B48645292A41AB0006D3DF /* ArticlesListViewModel.swift in Sources */,
-				85B4867D293424690006D3DF /* FailingLocalDataClient.swift in Sources */,
 				850C7494292183DC0058BB99 /* TypeAliases.swift in Sources */,
 				850C7464291E542D0058BB99 /* VieSureDemoApp.swift in Sources */,
 				850C74A82922981E0058BB99 /* VSError.swift in Sources */,
@@ -640,6 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85B4868129342A790006D3DF /* FailingLocalDataClient.swift in Sources */,
 				85B4867A29314F520006D3DF /* ArticlesListTest.swift in Sources */,
 				85B4867829314F050006D3DF /* LocalDataTest.swift in Sources */,
 				85B4867629314EE80006D3DF /* ApiTest.swift in Sources */,
