@@ -14,7 +14,7 @@ class FailingLocalDataClient: ILocalData {
     }
 
     func getArticles() async throws -> [Article]? {
-        throw VSError.unknown
+        throw VSError(localDataError: VSError.unknown, code: VSError.ErrorCode.errorReadingLocalData.rawValue)
     }
 
     func clearArticles() {

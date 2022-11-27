@@ -10,7 +10,7 @@ import Foundation
 
 class FailingAPIClient: IVSAPI {
     // Can set any error we like
-    var failingError: VSError = VSError.unknown
+    var failingError: VSError = VSError.Factory.makeDecodingError(cause: nil)
     
     func loadArticlesList() async throws -> [APIModel.Response.Article] {
         throw failingError

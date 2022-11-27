@@ -18,7 +18,7 @@ final class ArticlesListTest: XCTestCase {
         localDataClient.clearArticles()
     }
 
-    // A bit rought, but it's ok for unit test. Works fine.
+    // A bit rought, could refactor some code for less copy-paste, but it's ok for unit test. Works fine.
     func testLoadArticles() throws {
         let expectation = self.expectation(description: "States")
         
@@ -104,6 +104,61 @@ final class ArticlesListTest: XCTestCase {
         
         let localDataFailingClient = FailingLocalDataClient()
         let apiClient = FailingAPIClient()
+        let viewModel = ArticlesListViewModel(localDataClient: localDataFailingClient, apiClient: apiClient)
+        let toCompareStates = [ArticlesListViewModel.ViewState.loading, ArticlesListViewModel.ViewState.showEmptyList]
+        var step: Int = 0
+        
+        let _ = viewModel.$viewState
+            .sink { value in
+                let stateToCompare = toCompareStates[step]
+                guard stateToCompare == value else {
+                    XCTFail("Wrong state")
+                    return
+                }
+                step += 1
+                if step == toCompareStates.count {
+                    expectation.fulfill()
+                }
+            }
+            .store(in: &bag)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testLoadArticlesFailingApiWithRetryState() throws {
+        let expectation = self.expectation(description: "States")
+        
+        let localDataFailingClient = FailingLocalDataClient()
+        let apiClient = FailingAPIClient()
+        apiClient.failingError = VSError(apiError: VSError.unknown, code: HTTPStatusCode.internalServerError.rawValue, title: VSStrings.Error.API.internalServerErrorTitle, message: VSStrings.Error.API.internalServerErrorMessage)
+        let viewModel = ArticlesListViewModel(localDataClient: localDataFailingClient, apiClient: apiClient)
+        let toCompareStates = [ArticlesListViewModel.ViewState.loading, ArticlesListViewModel.ViewState.showEmptyList]
+        var step: Int = 0
+        
+        let _ = viewModel.$viewState
+            .sink { value in
+                let stateToCompare = toCompareStates[step]
+                guard stateToCompare == value else {
+                    XCTFail("Wrong state")
+                    return
+                }
+                step += 1
+                if step == toCompareStates.count {
+                    expectation.fulfill()
+                }
+            }
+            .store(in: &bag)
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testLoadArticlesFailingApiWithRetryTime() throws {
+        let expectation = self.expectation(description: "States")
+        expectation.isInverted = true
+        
+        let localDataFailingClient = FailingLocalDataClient()
+        let apiClient = FailingAPIClient()
+        apiClient.failingError = VSError(apiError: VSError.unknown, code: HTTPStatusCode.internalServerError.rawValue, title: VSStrings.Error.API.internalServerErrorTitle, message: VSStrings.Error.API.internalServerErrorMessage)
         let viewModel = ArticlesListViewModel(localDataClient: localDataFailingClient, apiClient: apiClient)
         let toCompareStates = [ArticlesListViewModel.ViewState.loading, ArticlesListViewModel.ViewState.showEmptyList]
         var step: Int = 0
