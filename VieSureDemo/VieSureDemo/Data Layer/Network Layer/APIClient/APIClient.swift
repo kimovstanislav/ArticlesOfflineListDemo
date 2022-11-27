@@ -8,7 +8,10 @@
 import Foundation
 import Combine
 
+// TODO: if using Combine, here's how we retry with delay (still tricky though) - https://www.donnywals.com/retrying-a-network-request-with-a-delay-in-combine/
 class APIClient: IVSAPI {
+    let session = URLSession.shared
+    
     enum URLs {
         static let host = "https://run.mocky.io"
         static let apiVersion = "/v3"
@@ -25,34 +28,41 @@ class APIClient: IVSAPI {
         }
         return url
     }
-
-    /// Load articles list - GET 'https://run.mocky.io/v3/de42e6d9-2d03-40e2-a426-8953c7c94fb8'
-     func articlesList() -> AnyPublisher<[APIModel.Response.Article], VSError> {
+    
+    
+    func loadArticlesList() async throws -> [APIModel.Response.Article] {
         let url = makeUrl(host: URLs.host, apiVersion: URLs.apiVersion, endpoint: URLs.Endpoints.articlesList)
-        guard let request = URLComponents(url: url, resolvingAgainstBaseURL: true)?
-            .request else {
-            unexpectedCodePath(message: "Failed to create request.")
-        }
-        return self.performRequest(request)
-    }
-}
-
-private extension URLComponents {
-    var request: URLRequest? {
-        url.map { URLRequest.init(url: $0) }
+        return try await performRequest(url: url)
     }
 }
 
 extension APIClient {
-    func performRequest<T: Decodable>(_ request: URLRequest) -> AnyPublisher<T, VSError> {
-        return URLSession.shared
-            .dataTaskPublisher(for: request)
-            .map { $0.data }
-            .handleEvents(receiveOutput: { print(NSString(data: $0, encoding: String.Encoding.utf8.rawValue)!) })
-            .decode(type: T.self, decoder: JSONDecoder())
-            .mapError { APIClient.ErrorMapper.convertToAPIError($0) }
-            .mapError { VSError(apiError: $0) }
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+    private func performRequest<T: Decodable>(url: URL) async throws -> T {
+        let data: Data = try await getDataFromApi(url: url)
+        let object: T = try decodeApiResponse(data: data)
+        return object
+    }
+    
+    private func getDataFromApi(url: URL) async throws -> Data {
+        do {
+            let (data, _) = try await session.data(from: url)
+            return data
+        }
+        catch let error {
+            let apiError = APIClient.ErrorMapper.convertToAPIError(error)
+            let vsError = VSError(apiError: apiError)
+            throw vsError
+        }
+    }
+    
+    private func decodeApiResponse<T: Decodable>(data: Data) throws -> T {
+        do {
+            let object: T = try JSONDecoder().decode(T.self, from: data)
+            return object
+        }
+        catch {
+            let error: VSError = VSError.makeDecodingError()
+            throw error
+        }
     }
 }

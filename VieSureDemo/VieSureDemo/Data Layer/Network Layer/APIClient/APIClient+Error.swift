@@ -8,6 +8,7 @@
 import Foundation
 
 // TODO: see that APIError and VSError are both not overengineered later.
+// TODO: just make a VSError factory methods to create these errors there, remove from here
 extension APIClient {
     enum APIError: Error, Equatable {
         case notConnectedToInternet

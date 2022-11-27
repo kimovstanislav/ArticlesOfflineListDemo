@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+// TODO: change to async/await and uncomment
+/*
 class MockAPIClient: IVSAPI {
     enum MockJsonFiles {
         static let articlesList = "articles_list"
@@ -34,4 +36,4 @@ extension MockAPIClient {
             return .failure(error)
         }
     }
-}
+}*/

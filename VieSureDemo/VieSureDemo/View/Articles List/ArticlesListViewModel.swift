@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 class ArticlesListViewModel: BaseViewModel {
     private var localDataClient: ILocalData!
@@ -17,11 +16,6 @@ class ArticlesListViewModel: BaseViewModel {
     var retryCount = 0
     let maxNumberOfRetries = 3
     let retryInterval = 2.0
-    
-    // TODO: make sure we handle it correctly
-    // TODO: split to server and local?
-    // TODO: cancel before starting a new request?
-    private var cancellables: Set<AnyCancellable> = []
     
     init(localDataClient: ILocalData, apiClient: IVSAPI) {
         super.init()
@@ -85,16 +79,15 @@ extension ArticlesListViewModel {
 
 extension ArticlesListViewModel {
     private func loadArticlesFromServer() {
-        apiClient.articlesList().sink { [weak self] completion in
-            switch completion {
-            case let .failure(error):
-                self?.handleEvent(.onFailedToLoadApiArticles(error))
-            case .finished:
-                break
+        Task { [weak self] in
+            do {
+                let articles = try await apiClient.loadArticlesList()
+                self?.handleEvent(.onApiArticlesLoaded(articles))
             }
-        } receiveValue: { [weak self] articles in
-            self?.handleEvent(.onApiArticlesLoaded(articles))
-        }.store(in: &cancellables)
+            catch let error as VSError  {
+                self?.handleEvent(.onFailedToLoadApiArticles(error))
+            }
+        }
     }
 }
 

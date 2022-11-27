@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import Combine
 
 protocol IVSAPI {
-    func articlesList() -> AnyPublisher<[APIModel.Response.Article], VSError>
+    /// Throws VSError
+    func loadArticlesList() async throws -> [APIModel.Response.Article]
 }

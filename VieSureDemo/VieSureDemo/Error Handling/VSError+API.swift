@@ -27,6 +27,7 @@ extension VSError {
     }
 }
 
+// TODO: make a VSErrorFactory or something like that
 extension VSError {
     static func makeDecodingError() -> VSError {
         VSError(
