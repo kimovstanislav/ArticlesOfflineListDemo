@@ -61,3 +61,7 @@ extension VSError {
         case errorDecryptingLocalData = 1004
     }
 }
+
+extension VSError {
+    enum Factory {}
+}

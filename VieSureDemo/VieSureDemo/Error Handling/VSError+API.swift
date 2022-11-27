@@ -7,13 +7,12 @@
 
 import Foundation
 
-extension VSError {
-    init(apiError: APIClient.APIError, file: String = #file, function: String = #function, line: Int = #line) {
+extension VSError {    
+    init(apiError: Error, code: Int, title: String, message: String, file: String = #file, function: String = #function, line: Int = #line) {
         self.init(
             source: .api,
-            code: apiError.code,
-            title: apiError.title,
-            message: apiError.message,
+            code: code,
+            message: message,
             isSilent: false,
             cause: apiError,
             file: file,
@@ -27,15 +26,15 @@ extension VSError {
     }
 }
 
-// TODO: make a VSErrorFactory or something like that
-extension VSError {
-    static func makeDecodingError() -> VSError {
+extension VSError.Factory {
+    static func makeDecodingError(cause: Error? = nil) -> VSError {
         VSError(
                 source: .api,
-                code: ErrorCode.errorDecodingApiResponse.rawValue,
+                code: VSError.ErrorCode.errorDecodingApiResponse.rawValue,
                 title: VSStrings.Error.API.title,
                 message: VSStrings.Error.API.decodingApiResponseFailedMessage,
-                isSilent: false
+                isSilent: false,
+                cause: cause
             )
     }
 }

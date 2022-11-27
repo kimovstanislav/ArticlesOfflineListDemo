@@ -9,29 +9,24 @@ import Foundation
 
 extension APIClient {
     enum ErrorMapper {
-        static func convertToAPIError(_ error: Error) -> APIClient.APIError {
+        static func convertToVSError(_ error: Error) -> VSError {
             if let error = error as NSError? {
                 return parseError(error)
             }
             else {
-                return APIClient.APIError.custom(APIClient.CustomError.unknown)
+                return VSError.unknown
             }
         }
 
-        private static func parseError(_ error: NSError) -> APIClient.APIError {
-            if error.code == APIClient.APIError.notConnectedToInternet.code {
-                return APIClient.APIError.notConnectedToInternet
+        private static func parseError(_ error: NSError) -> VSError{
+            if error.code == URLError.notConnectedToInternet.rawValue || error.code == URLError.cannotConnectToHost.rawValue {
+                return VSError(apiError: error, code: error.code, title: VSStrings.Error.API.noInternetConnectionTitle, message: VSStrings.Error.API.noInternetConnectionMessage)
             }
-            else if error.code == APIClient.APIError.cannotConnectToHost.code {
-                return APIClient.APIError.cannotConnectToHost
+            else if error.code == HTTPStatusCode.internalServerError.rawValue {
+                return VSError(apiError: error, code: error.code, title: VSStrings.Error.API.internalServerErrorTitle, message: VSStrings.Error.API.internalServerErrorMessage)
             }
-            else if error.code == APIClient.APIError.internalServerError.code {
-                return APIClient.APIError.internalServerError
-            }
-
-            let defaultErrorMessage = VSStrings.Error.API.unknownMessage
-            let customError = APIClient.CustomError(statusCode: error.code, message: error.localizedFailureReason ?? defaultErrorMessage)
-            return APIClient.APIError.custom(customError)
+//            let defaultErrorMessage = VSStrings.Error.API.unknownMessage
+            return VSError(apiError: error, code: error.code, title: VSStrings.Error.API.title, message: error.localizedDescription)
         }
     }
 }

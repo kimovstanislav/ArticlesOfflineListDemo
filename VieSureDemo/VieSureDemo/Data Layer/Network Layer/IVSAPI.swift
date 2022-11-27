@@ -18,9 +18,9 @@ extension IVSAPI {
             let object: T = try JSONDecoder().decode(T.self, from: data)
             return object
         }
-        catch {
-            let error: VSError = VSError.makeDecodingError()
-            throw error
+        catch let error {
+            let vsError: VSError = VSError.Factory.makeDecodingError(cause: error)
+            throw vsError
         }
     }
 }

@@ -50,8 +50,7 @@ extension APIClient {
             return data
         }
         catch let error {
-            let apiError = APIClient.ErrorMapper.convertToAPIError(error)
-            let vsError = VSError(apiError: apiError)
+            let vsError = APIClient.ErrorMapper.convertToVSError(error)
             throw vsError
         }
     }

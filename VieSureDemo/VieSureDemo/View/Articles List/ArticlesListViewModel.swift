@@ -11,7 +11,8 @@ class ArticlesListViewModel: BaseViewModel {
     private var localDataClient: ILocalData!
     private var apiClient: IVSAPI!
     
-    @Published var viewState: ViewState = .loading
+    // The only property to update the UI. Is made sure to always be assigned on the main thread.
+    @MainActor @Published var viewState: ViewState = .loading
     
     var retryCount = 0
     let maxNumberOfRetries = 3

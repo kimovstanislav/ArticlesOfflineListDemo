@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: add a processError function, that either displays the alert and logs, or just silently logs if error.isSilent?
 class BaseViewModel: ObservableObject {
     @Published var alertModel: AlertViewModel = AlertViewModel()
     
