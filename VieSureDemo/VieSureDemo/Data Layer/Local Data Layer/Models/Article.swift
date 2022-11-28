@@ -33,3 +33,11 @@ struct Article: Codable, Identifiable, Equatable {
         self.image = image
     }
 }
+
+extension Article {
+    var releaseDateAsDate: Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = DateFormats.monthDayYear
+        return dateFormatter.date(from: releaseDate)
+    }
+}

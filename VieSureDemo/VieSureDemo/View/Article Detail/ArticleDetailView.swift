@@ -12,21 +12,36 @@ struct ArticleDetailView: View {
     @ObservedObject var viewModel: ArticleDetailViewModel
     
     var body: some View {
-        VStack {
+        VStack(spacing: 8) {
             WebImage(url: URL(string: viewModel.article.image))
                 .resizable()
                 .placeholder(Image(systemName: "photo"))
-                .scaledToFill()
-                .frame(width: 40, height: 40, alignment: .center)
-                .clipShape(Circle())
+                .frame(height: 250)
+                .scaledToFit()
 
-            Text(viewModel.article.title)
-                .font(.system(size: 14, weight: .medium))
-                .lineLimit(1)
-            
-            Text(viewModel.article.description)
-                    .font(.system(size: 12, weight: .regular))
-                    .lineLimit(2)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(viewModel.article.title)
+                    .font(.system(size: 18, weight: .semibold))
+                    .lineLimit(1)
+                
+                HStack {
+                    Spacer()
+                    Text(viewModel.article.getDetailReleaseDate())
+                        .font(.system(size: 12, weight: .regular))
+                        .lineLimit(1)
+                }
+                
+                ScrollView(.vertical) {
+                    Text(viewModel.article.description)
+                        .font(.system(size: 14, weight: .regular))
+                }
+                
+                Text("Author: ").font(.system(size: 14, weight: .semibold)) + Text(viewModel.article.author).font(.system(size: 12, weight: .regular))
             }
+            .padding(.horizontal, 8)
+            
+            Spacer()
         }
+        
     }
+}

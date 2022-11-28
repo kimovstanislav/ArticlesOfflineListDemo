@@ -9,4 +9,5 @@ import Foundation
 
 enum DateFormats {
     static let monthDayYear = "MM/dd/YYYY"
+    static let articleDetail = "E, MMM d, ''YY"     // ' is an escape symbol for date format
 }
