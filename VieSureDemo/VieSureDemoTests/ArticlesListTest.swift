@@ -180,6 +180,42 @@ final class ArticlesListTest: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
     }
+    
+    func testLoadArticlesFailureAlert() throws {
+        let expectation = self.expectation(description: "States")
+        
+        let failingLocalDataClient = FailingLocalDataClient()
+        let failingApiClient = FailingAPIClient()
+        let viewModel = ArticlesListViewModel(localDataClient: failingLocalDataClient, apiClient: failingApiClient)
+        
+        let _ = viewModel.alertModel.$showAlert
+            .sink { value in
+                if value == true {
+                    expectation.fulfill()
+                }
+            }
+            .store(in: &bag)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testLoadArticlesSuccessNoAlert() throws {
+        let expectation = self.expectation(description: "States")
+        expectation.isInverted = true
+        
+        let apiClient = MockAPIClient()
+        let viewModel = ArticlesListViewModel(localDataClient: localDataClient, apiClient: apiClient)
+        
+        let _ = viewModel.alertModel.$showAlert
+            .sink { value in
+                if value == true {
+                    expectation.fulfill()
+                }
+            }
+            .store(in: &bag)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
 }
 
 extension MockAPIClient {
