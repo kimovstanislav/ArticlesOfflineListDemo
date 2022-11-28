@@ -24,6 +24,7 @@ struct ArticleDetailView: View {
                 Text(viewModel.article.title)
                     .font(.system(size: 18, weight: .semibold))
                     .lineLimit(1)
+                    .accessibility(identifier: AccessibilityIdentifiers.ArticleDetail.title)
                 
                 HStack {
                     Spacer()

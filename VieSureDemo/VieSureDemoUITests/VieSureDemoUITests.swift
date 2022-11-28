@@ -21,13 +21,21 @@ final class VieSureDemoUITests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    
+    func testArticlesListLoad() throws {
         let app = XCUIApplication()
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertTrue(app.collectionViews[AccessibilityIdentifiers.ArticlesList.list].waitForExistence(timeout: 10))
+    }
+    
+    func testOpenArticleDetail() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.collectionViews[AccessibilityIdentifiers.ArticlesList.list].buttons[String(format: AccessibilityIdentifiers.ArticlesList.listCellFormat, 0)].tap()
+        
+        XCTAssertTrue(app.staticTexts[AccessibilityIdentifiers.ArticleDetail.title].waitForExistence(timeout: 10))
     }
 
     func testLaunchPerformance() throws {

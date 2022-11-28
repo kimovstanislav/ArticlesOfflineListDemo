@@ -50,11 +50,13 @@ struct ArticlesListView: View {
     // MARK: - Articles list
     
     private func articlesListView(articles: [Article]) -> some View {
-        List(articles) { article in
-            NavigationLink(destination: ArticleDetailView(viewModel: ArticleDetailViewModel(article: article))) {
-                articleCell(article: article)
+        List(articles.indices, id: \.self) { index in
+            NavigationLink(destination: ArticleDetailView(viewModel: ArticleDetailViewModel(article: articles[index]))) {
+                articleCell(article: articles[index])
             }
+            .accessibility(identifier: String(format: AccessibilityIdentifiers.ArticlesList.listCellFormat, index))
         }
+        .accessibility(identifier: AccessibilityIdentifiers.ArticlesList.list)
     }
     
     private func articleCell(article: Article) -> some View {
