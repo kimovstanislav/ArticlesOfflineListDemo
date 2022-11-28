@@ -30,7 +30,6 @@ struct ArticleDetailView: View {
                     Spacer()
                     Text(viewModel.article.getDetailReleaseDate())
                         .font(.system(size: 12, weight: .regular))
-                        .lineLimit(1)
                 }
                 
                 ScrollView(.vertical) {

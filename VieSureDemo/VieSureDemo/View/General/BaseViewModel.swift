@@ -7,15 +7,24 @@
 
 import Foundation
 
-// TODO: add a processError function, that either displays the alert and logs, or just silently logs if error.isSilent?
 class BaseViewModel: ObservableObject {
     @Published var alertModel: AlertViewModel = AlertViewModel()
     
     func showAlert(title: String, message: String) {
-        alertModel.show(title: title, message: message)
+        DispatchQueue.main.async {
+            self.alertModel.show(title: title, message: message)
+        }
     }
 
-    func hide() {
-        alertModel.hide()
+    func hideAlert() {
+        DispatchQueue.main.async {
+            self.alertModel.hide()
+        }
+    }
+    
+    func processError(_ error: VSError) {
+        ErrorLogger.logError(error)
+        if error.isSilent { return }
+        showAlert(title: error.title, message: error.message)
     }
 }

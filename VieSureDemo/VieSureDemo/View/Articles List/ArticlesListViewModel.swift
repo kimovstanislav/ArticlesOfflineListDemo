@@ -109,7 +109,6 @@ extension ArticlesListViewModel {
         writeArticlesToLocalData(sortedArticles)
     }
     
-    // TODO: will know if it works properly with retry after creating unit tests.
     private func handleGetApiArticlesFailure(_ error: VSError) {
         if error.isDataSynchronizationError == true && retryCount < maxNumberOfRetries {
             retryCount += 1
@@ -124,9 +123,7 @@ extension ArticlesListViewModel {
                 setViewState(.showEmptyList)
             }
             // And display an alert for the error for failing to load articles from API.
-            DispatchQueue.main.async {
-                self.showAlert(title: VSStrings.Error.API.title, message: VSStrings.Error.API.loadingArticlesFromServerErrorMessage)
-            }
+            self.processError(error)
         }
     }
 }
