@@ -144,10 +144,6 @@ extension ArticlesListViewModel {
         /// UI lifecycle
         case onAppear
         
-        /// User input
-        case onSelectArticle(Article)
-        case onReloadArticles
-        
         /// Internal
         /// Load local
         case onLocalArticlesLoaded([Article]?)
@@ -167,14 +163,6 @@ extension ArticlesListViewModel {
         /// UI lifecycle
         case .onAppear:
             loadArticlesFromLocalData()
-            
-        /// User input
-        case let .onSelectArticle(article):
-            print("TODO: display fullscreen article: \(article.title)")
-            break
-            
-        case .onReloadArticles:
-            break
             
         /// Internal
         /// Load local

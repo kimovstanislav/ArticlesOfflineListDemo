@@ -50,8 +50,6 @@ extension VSError {
     enum ErrorCode: Int {
         case unknown = -1
         case unexpectedCodePath = 0
-        // TODO: check on how to design error codes, see where errorDecodingApiResponse would go.
-        // TODO: or to call it errorDecodingJson? To think on this later too.
         // Let's have API response decoding failed error code 901
         case errorDecodingApiResponse = 901
         // Very rough, just for this example. Say.., 1000+ is for non-api errors. 1000-1100 is for local data errors.
