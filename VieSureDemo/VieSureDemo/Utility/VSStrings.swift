@@ -21,7 +21,6 @@ enum VSStrings {
             static let internalServerErrorTitle = "Server error"
             static let internalServerErrorMessage = "Server error description"
             static let decodingApiResponseFailedMessage = "Api response object decoding failed"
-            static let loadingArticlesFromServerErrorMessage = "Failed to load articles from server"
         }
         
         enum LocalData {
