@@ -17,8 +17,9 @@ struct ArticleDetailView: View {
             WebImage(url: URL(string: viewModel.article.image))
                 .resizable()
                 .placeholder(Image(systemName: "photo"))
-                .frame(height: 250)
-                .scaledToFit()
+                .scaledToFill()
+                .frame(height: 250, alignment: .center)
+                .clipped()
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(viewModel.article.title)
