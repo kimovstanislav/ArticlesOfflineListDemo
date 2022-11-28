@@ -8,6 +8,7 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+// The most basic UI (and ViewModel) to just display the data with 0 extra logic.
 struct ArticleDetailView: View {
     @ObservedObject var viewModel: ArticleDetailViewModel
     
