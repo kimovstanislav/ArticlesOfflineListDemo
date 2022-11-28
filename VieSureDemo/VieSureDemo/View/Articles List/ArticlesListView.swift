@@ -12,7 +12,7 @@ struct ArticlesListView: View {
     @ObservedObject var viewModel: ArticlesListViewModel
     
     var body: some View {
-        Group {
+        NavigationView {
             switch viewModel.viewState {
             case .loading:
                 loaderView()
@@ -51,7 +51,9 @@ struct ArticlesListView: View {
     
     private func articlesListView(articles: [Article]) -> some View {
         List(articles) { article in
-            articleCell(article: article)
+            NavigationLink(destination: ArticleDetailView(viewModel: ArticleDetailViewModel(article: article))) {
+                articleCell(article: article)
+            }
         }
     }
     

@@ -18,7 +18,7 @@ final class ArticlesListTest: XCTestCase {
         localDataClient.clearArticles()
     }
 
-    // A bit rought, could refactor some code for less copy-paste, but it's ok for unit test. Works fine.
+    // A bit rought, could refactor some code for less copy-paste, but it's ok for unit tests. Works fine.
     func testLoadArticles() throws {
         let expectation = self.expectation(description: "States")
         
@@ -152,6 +152,7 @@ final class ArticlesListTest: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
     }
     
+    // 3 retrys with 2s delay is > 5s, must timeout
     func testLoadArticlesFailingApiWithRetryTime() throws {
         let expectation = self.expectation(description: "States")
         expectation.isInverted = true

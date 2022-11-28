@@ -16,7 +16,6 @@
 		850C747F291E542F0058BB99 /* VieSureDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C747E291E542F0058BB99 /* VieSureDemoUITests.swift */; };
 		850C7481291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7480291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift */; };
 		850C748F292180310058BB99 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C748E292180310058BB99 /* APIModel.swift */; };
-		850C7494292183DC0058BB99 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7493292183DC0058BB99 /* TypeAliases.swift */; };
 		850C7496292185040058BB99 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7495292185040058BB99 /* APIClient.swift */; };
 		850C749D29226E6D0058BB99 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C749C29226E6D0058BB99 /* HTTPStatusCodes.swift */; };
 		850C74A1292275BB0058BB99 /* APIClient+ErrorMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */; };
@@ -44,6 +43,8 @@
 		85B4867A29314F520006D3DF /* ArticlesListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867929314F520006D3DF /* ArticlesListTest.swift */; };
 		85B486802934264C0006D3DF /* FailingAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867F2934264C0006D3DF /* FailingAPIClient.swift */; };
 		85B4868129342A790006D3DF /* FailingLocalDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4867C293424690006D3DF /* FailingLocalDataClient.swift */; };
+		85B48684293491D70006D3DF /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48683293491D70006D3DF /* ArticleDetailView.swift */; };
+		85B48686293491E60006D3DF /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48685293491E60006D3DF /* ArticleDetailViewModel.swift */; };
 		B4DA92EA1FCC2767C379C0F8 /* Pods_VieSureDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EFA9627843E088991A640B /* Pods_VieSureDemoTests.framework */; };
 		CDF93E82A1F351B476561647 /* Pods_VieSureDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */; };
 /* End PBXBuildFile section */
@@ -84,7 +85,6 @@
 		850C747E291E542F0058BB99 /* VieSureDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieSureDemoUITests.swift; sourceTree = "<group>"; };
 		850C7480291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieSureDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		850C748E292180310058BB99 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
-		850C7493292183DC0058BB99 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		850C7495292185040058BB99 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		850C749C29226E6D0058BB99 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
 		850C74A0292275BB0058BB99 /* APIClient+ErrorMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+ErrorMapping.swift"; sourceTree = "<group>"; };
@@ -113,6 +113,8 @@
 		85B4867929314F520006D3DF /* ArticlesListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListTest.swift; sourceTree = "<group>"; };
 		85B4867C293424690006D3DF /* FailingLocalDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailingLocalDataClient.swift; sourceTree = "<group>"; };
 		85B4867F2934264C0006D3DF /* FailingAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailingAPIClient.swift; sourceTree = "<group>"; };
+		85B48683293491D70006D3DF /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
+		85B48685293491E60006D3DF /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
 		8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieSureDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCE5254D364211823726D7E /* Pods-VieSureDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo.release.xcconfig"; path = "Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,7 +228,6 @@
 		850C7492292183C70058BB99 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				850C7493292183DC0058BB99 /* TypeAliases.swift */,
 				850C74AB29229ECD0058BB99 /* UnexpectedCodePath.swift */,
 				85B48658292DA6FA0006D3DF /* DateFormats.swift */,
 				85B48660292FA70A0006D3DF /* ErrorLogger.swift */,
@@ -260,6 +261,7 @@
 				85B486662930B2910006D3DF /* ViewModelFactory.swift */,
 				85B4865B292E2E160006D3DF /* General */,
 				85B4865A292E2E0D0006D3DF /* Articles List */,
+				85B48682293491B80006D3DF /* Article Detail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +345,15 @@
 				85B4867F2934264C0006D3DF /* FailingAPIClient.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		85B48682293491B80006D3DF /* Article Detail */ = {
+			isa = PBXGroup;
+			children = (
+				85B48683293491D70006D3DF /* ArticleDetailView.swift */,
+				85B48685293491E60006D3DF /* ArticleDetailViewModel.swift */,
+			);
+			path = "Article Detail";
 			sourceTree = "<group>";
 		};
 		8D4B7906EA71722BAEE369F1 /* Pods */ = {
@@ -615,18 +626,19 @@
 				85B4866C2930C6410006D3DF /* MockAPIClient.swift in Sources */,
 				850C74AA29229B110058BB99 /* VSError+API.swift in Sources */,
 				850C7466291E542D0058BB99 /* ArticlesListView.swift in Sources */,
+				85B48684293491D70006D3DF /* ArticleDetailView.swift in Sources */,
 				85B4865D292E2EF60006D3DF /* AlertViewModel.swift in Sources */,
 				850C748F292180310058BB99 /* APIModel.swift in Sources */,
 				85B48663292FCDA70006D3DF /* EncryptionManager.swift in Sources */,
 				85B486692930BA090006D3DF /* ILocalData.swift in Sources */,
 				85B48650292CF55C0006D3DF /* IVSAPI.swift in Sources */,
 				85B48645292A41AB0006D3DF /* ArticlesListViewModel.swift in Sources */,
-				850C7494292183DC0058BB99 /* TypeAliases.swift in Sources */,
 				850C7464291E542D0058BB99 /* VieSureDemoApp.swift in Sources */,
 				850C74A82922981E0058BB99 /* VSError.swift in Sources */,
 				85B48659292DA6FA0006D3DF /* DateFormats.swift in Sources */,
 				85B4865F292E30260006D3DF /* BaseViewModel.swift in Sources */,
 				85B48652292CF8140006D3DF /* VSError+LocalData.swift in Sources */,
+				85B48686293491E60006D3DF /* ArticleDetailViewModel.swift in Sources */,
 				85B48657292D86A80006D3DF /* VSStrings.swift in Sources */,
 				85B4864B292BE1AE0006D3DF /* LocalDataClient.swift in Sources */,
 				850C749D29226E6D0058BB99 /* HTTPStatusCodes.swift in Sources */,
