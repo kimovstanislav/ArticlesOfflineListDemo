@@ -7,7 +7,6 @@
 
 import Foundation
 
-// TODO: find a better name for it, maybe
 class AlertViewModel: ObservableObject {
     @Published var showAlert = false
     var title: String = ""

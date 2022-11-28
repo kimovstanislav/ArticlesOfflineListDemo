@@ -25,7 +25,6 @@ extension APIClient {
             else if error.code == HTTPStatusCode.internalServerError.rawValue {
                 return VSError(apiError: error, code: error.code, title: VSStrings.Error.API.internalServerErrorTitle, message: VSStrings.Error.API.internalServerErrorMessage)
             }
-//            let defaultErrorMessage = VSStrings.Error.API.unknownMessage
             return VSError(apiError: error, code: error.code, title: VSStrings.Error.API.title, message: error.localizedDescription)
         }
     }

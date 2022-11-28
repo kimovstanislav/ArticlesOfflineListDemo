@@ -31,7 +31,6 @@
 		85B4865D292E2EF60006D3DF /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4865C292E2EF60006D3DF /* AlertViewModel.swift */; };
 		85B4865F292E30260006D3DF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4865E292E30260006D3DF /* BaseViewModel.swift */; };
 		85B48661292FA70A0006D3DF /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48660292FA70A0006D3DF /* ErrorLogger.swift */; };
-		85B48663292FCDA70006D3DF /* EncryptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B48662292FCDA70006D3DF /* EncryptionManager.swift */; };
 		85B486672930B2910006D3DF /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486662930B2910006D3DF /* ViewModelFactory.swift */; };
 		85B486692930BA090006D3DF /* ILocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486682930BA090006D3DF /* ILocalData.swift */; };
 		85B4866C2930C6410006D3DF /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4866B2930C6410006D3DF /* MockAPIClient.swift */; };
@@ -103,7 +102,6 @@
 		85B4865C292E2EF60006D3DF /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		85B4865E292E30260006D3DF /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		85B48660292FA70A0006D3DF /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
-		85B48662292FCDA70006D3DF /* EncryptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManager.swift; sourceTree = "<group>"; };
 		85B486662930B2910006D3DF /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		85B486682930BA090006D3DF /* ILocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocalData.swift; sourceTree = "<group>"; };
 		85B4866B2930C6410006D3DF /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
@@ -275,7 +273,6 @@
 			children = (
 				85B486682930BA090006D3DF /* ILocalData.swift */,
 				85B4864A292BE1AE0006D3DF /* LocalDataClient.swift */,
-				85B48662292FCDA70006D3DF /* EncryptionManager.swift */,
 				85B4864E292CEF4D0006D3DF /* Models */,
 			);
 			path = "Local Data Layer";
@@ -634,7 +631,6 @@
 				85B48684293491D70006D3DF /* ArticleDetailView.swift in Sources */,
 				85B4865D292E2EF60006D3DF /* AlertViewModel.swift in Sources */,
 				850C748F292180310058BB99 /* APIModel.swift in Sources */,
-				85B48663292FCDA70006D3DF /* EncryptionManager.swift in Sources */,
 				85B486692930BA090006D3DF /* ILocalData.swift in Sources */,
 				85B48650292CF55C0006D3DF /* IVSAPI.swift in Sources */,
 				85B48645292A41AB0006D3DF /* ArticlesListViewModel.swift in Sources */,

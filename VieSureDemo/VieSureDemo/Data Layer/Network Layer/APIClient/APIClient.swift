@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-// If using Combine, here's how we retry with delay (still tricky though) - https://www.donnywals.com/retrying-a-network-request-with-a-delay-in-combine/
 class APIClient: IVSAPI {
     let session = URLSession.shared
     
@@ -29,8 +28,6 @@ class APIClient: IVSAPI {
         return url
     }
     
-    // TODO: move retry with delay here to API client?
-    // Hints: https://www.swiftbysundell.com/articles/retrying-an-async-swift-task/ - https://twitter.com/christianselig/status/1520796529526726668
     func loadArticlesList() async throws -> [APIModel.Response.Article] {
         let url = makeUrl(host: URLs.host, apiVersion: URLs.apiVersion, endpoint: URLs.Endpoints.articlesList)
         return try await performRequest(url: url)

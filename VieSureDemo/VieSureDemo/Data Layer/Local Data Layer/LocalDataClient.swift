@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-// TODO: consider encryption.
 class LocalDataClient: ILocalData {
     enum Keys {
         static let articlesKey = "Articles"
