@@ -46,6 +46,8 @@
 		85B486882934AB7E0006D3DF /* ArtilcleDetailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486872934AB7E0006D3DF /* ArtilcleDetailTest.swift */; };
 		85B4868A2934AEC80006D3DF /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486892934AEC80006D3DF /* AccessibilityIdentifiers.swift */; };
 		85B4868B2934B98C0006D3DF /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486892934AEC80006D3DF /* AccessibilityIdentifiers.swift */; };
+		85EA8FB829350D9B00AA11EB /* IEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EA8FB729350D9B00AA11EB /* IEncryption.swift */; };
+		85EA8FBA29350DC400AA11EB /* EncryptionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EA8FB929350DC400AA11EB /* EncryptionClient.swift */; };
 		B4DA92EA1FCC2767C379C0F8 /* Pods_VieSureDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EFA9627843E088991A640B /* Pods_VieSureDemoTests.framework */; };
 		CDF93E82A1F351B476561647 /* Pods_VieSureDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */; };
 /* End PBXBuildFile section */
@@ -116,6 +118,8 @@
 		85B48685293491E60006D3DF /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
 		85B486872934AB7E0006D3DF /* ArtilcleDetailTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtilcleDetailTest.swift; sourceTree = "<group>"; };
 		85B486892934AEC80006D3DF /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		85EA8FB729350D9B00AA11EB /* IEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEncryption.swift; sourceTree = "<group>"; };
+		85EA8FB929350DC400AA11EB /* EncryptionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionClient.swift; sourceTree = "<group>"; };
 		8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieSureDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCE5254D364211823726D7E /* Pods-VieSureDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo.release.xcconfig"; path = "Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -271,6 +275,7 @@
 		85B48649292BE0680006D3DF /* Local Data Layer */ = {
 			isa = PBXGroup;
 			children = (
+				85EA8FB629350D8700AA11EB /* Encryption */,
 				85B486682930BA090006D3DF /* ILocalData.swift */,
 				85B4864A292BE1AE0006D3DF /* LocalDataClient.swift */,
 				85B4864E292CEF4D0006D3DF /* Models */,
@@ -355,6 +360,15 @@
 				85B48685293491E60006D3DF /* ArticleDetailViewModel.swift */,
 			);
 			path = "Article Detail";
+			sourceTree = "<group>";
+		};
+		85EA8FB629350D8700AA11EB /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				85EA8FB729350D9B00AA11EB /* IEncryption.swift */,
+				85EA8FB929350DC400AA11EB /* EncryptionClient.swift */,
+			);
+			path = Encryption;
 			sourceTree = "<group>";
 		};
 		8D4B7906EA71722BAEE369F1 /* Pods */ = {
@@ -641,6 +655,8 @@
 				85B48652292CF8140006D3DF /* VSError+LocalData.swift in Sources */,
 				85B48686293491E60006D3DF /* ArticleDetailViewModel.swift in Sources */,
 				85B48657292D86A80006D3DF /* VSStrings.swift in Sources */,
+				85EA8FB829350D9B00AA11EB /* IEncryption.swift in Sources */,
+				85EA8FBA29350DC400AA11EB /* EncryptionClient.swift in Sources */,
 				85B4864B292BE1AE0006D3DF /* LocalDataClient.swift in Sources */,
 				850C749D29226E6D0058BB99 /* HTTPStatusCodes.swift in Sources */,
 				850C7496292185040058BB99 /* APIClient.swift in Sources */,

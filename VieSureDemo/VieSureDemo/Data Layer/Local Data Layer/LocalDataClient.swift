@@ -13,10 +13,19 @@ class LocalDataClient: ILocalData {
         static let articlesKey = "Articles"
     }
     
+    var encryptionClient: IEncryption? = nil
+    
+    init(encryptionClient: IEncryption? = nil) {
+        self.encryptionClient = encryptionClient
+    }
+    
     func writeArticles(articles: [Article]) async throws {
         let key = Keys.articlesKey
         do {
-            let data = try JSONEncoder().encode(articles)
+            var data = try JSONEncoder().encode(articles)
+            if let encryption = encryptionClient {
+                data = try await encryption.encryptData(data: data)
+            }
             UserDefaults.standard.set(data, forKey: key)
             return
         }
@@ -28,8 +37,11 @@ class LocalDataClient: ILocalData {
     
     func getArticles() async throws -> [Article]? {
         let key = Keys.articlesKey
-        if let data = UserDefaults.standard.data(forKey: key) {
+        if var data = UserDefaults.standard.data(forKey: key) {
             do {
+                if let encryption = encryptionClient {
+                    data = try await encryption.decryptData(data: data)
+                }
                 let articles = try JSONDecoder().decode([Article].self, from: data)
                 return articles
             }
