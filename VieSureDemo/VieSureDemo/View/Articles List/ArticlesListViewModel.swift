@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 class ArticlesListViewModel: BaseViewModel {
-    private var localDataClient: ILocalData!
-    private var apiClient: IVSAPI!
+    private let localDataClient: ILocalData
+    private let apiClient: IVSAPI
     
     @Published var viewState: ViewState = .loading
     
@@ -19,9 +19,9 @@ class ArticlesListViewModel: BaseViewModel {
     let retryInterval = 2.0
     
     init(localDataClient: ILocalData, apiClient: IVSAPI) {
-        super.init()
         self.localDataClient = localDataClient
         self.apiClient = apiClient
+        super.init()
         handleEvent(.onAppear) 
     }
     
