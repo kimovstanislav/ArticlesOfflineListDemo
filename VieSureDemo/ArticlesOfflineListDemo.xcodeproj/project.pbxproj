@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D3CD9AF0BDE0199521ABA4B /* Pods_VieSureDemo_VieSureDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67070F923058F7F21959C7A9 /* Pods_VieSureDemo_VieSureDemoUITests.framework */; };
+		3514F9D9A380A7B8C4D7D387 /* Pods_ArticlesOfflineListDemo_ArticlesOfflineListDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902C4434F81D269D73BD0113 /* Pods_ArticlesOfflineListDemo_ArticlesOfflineListDemoUITests.framework */; };
 		850C7464291E542D0058BB99 /* VieSureDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7463291E542D0058BB99 /* VieSureDemoApp.swift */; };
 		850C7466291E542D0058BB99 /* ArticlesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7465291E542D0058BB99 /* ArticlesListView.swift */; };
 		850C7468291E542F0058BB99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850C7467291E542F0058BB99 /* Assets.xcassets */; };
@@ -46,8 +46,8 @@
 		85B486882934AB7E0006D3DF /* ArtilcleDetailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486872934AB7E0006D3DF /* ArtilcleDetailTest.swift */; };
 		85B4868A2934AEC80006D3DF /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486892934AEC80006D3DF /* AccessibilityIdentifiers.swift */; };
 		85B4868B2934B98C0006D3DF /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B486892934AEC80006D3DF /* AccessibilityIdentifiers.swift */; };
-		B4DA92EA1FCC2767C379C0F8 /* Pods_VieSureDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EFA9627843E088991A640B /* Pods_VieSureDemoTests.framework */; };
-		CDF93E82A1F351B476561647 /* Pods_VieSureDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */; };
+		86DDA29FA50D528AB2C8A734 /* Pods_ArticlesOfflineListDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5AEA5BA7C070455E191E80 /* Pods_ArticlesOfflineListDemoTests.framework */; };
+		CA343C191D6AAD0D8063C3C6 /* Pods_ArticlesOfflineListDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B3614A23BA0DD44F12BEFB /* Pods_ArticlesOfflineListDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,20 +68,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01EFA9627843E088991A640B /* Pods_VieSureDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieSureDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021206F1E7F81A76CDF84F7B /* Pods-VieSureDemo-VieSureDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo-VieSureDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-VieSureDemo-VieSureDemoUITests/Pods-VieSureDemo-VieSureDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		08578D789360AE8161BBEFAE /* Pods-ArticlesOfflineListDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticlesOfflineListDemoTests.release.xcconfig"; path = "Target Support Files/Pods-ArticlesOfflineListDemoTests/Pods-ArticlesOfflineListDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		2DD8E6B79E4FC55857F51A9F /* Pods-ArticlesOfflineListDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticlesOfflineListDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-ArticlesOfflineListDemoTests/Pods-ArticlesOfflineListDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37152A2915FD7939D75FA242 /* Pods-VieSureDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-VieSureDemoTests/Pods-VieSureDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D0D4ADE7FBDE90BF58F3419 /* Pods-VieSureDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo.debug.xcconfig"; path = "Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		5C2DA178F14AEAB9F130CE50 /* Pods-VieSureDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemoTests.release.xcconfig"; path = "Target Support Files/Pods-VieSureDemoTests/Pods-VieSureDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		67070F923058F7F21959C7A9 /* Pods_VieSureDemo_VieSureDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieSureDemo_VieSureDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		646AE5537893CB516E739B50 /* Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests/Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6A3841E530B69C5DCDB2D353 /* Pods-VieSureDemo-VieSureDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo-VieSureDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-VieSureDemo-VieSureDemoUITests/Pods-VieSureDemo-VieSureDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		850C7460291E542D0058BB99 /* VieSureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VieSureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81CF06FBE7E19A75C631E9CA /* Pods-ArticlesOfflineListDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticlesOfflineListDemo.release.xcconfig"; path = "Target Support Files/Pods-ArticlesOfflineListDemo/Pods-ArticlesOfflineListDemo.release.xcconfig"; sourceTree = "<group>"; };
+		850C7460291E542D0058BB99 /* ArticlesOfflineListDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticlesOfflineListDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		850C7463291E542D0058BB99 /* VieSureDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieSureDemoApp.swift; sourceTree = "<group>"; };
 		850C7465291E542D0058BB99 /* ArticlesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListView.swift; sourceTree = "<group>"; };
 		850C7467291E542F0058BB99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		850C746A291E542F0058BB99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		850C7470291E542F0058BB99 /* VieSureDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VieSureDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		850C747A291E542F0058BB99 /* VieSureDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VieSureDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		850C7470291E542F0058BB99 /* ArticlesOfflineListDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArticlesOfflineListDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		850C747A291E542F0058BB99 /* ArticlesOfflineListDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArticlesOfflineListDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		850C747E291E542F0058BB99 /* VieSureDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieSureDemoUITests.swift; sourceTree = "<group>"; };
 		850C7480291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieSureDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		850C748E292180310058BB99 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
@@ -116,8 +118,12 @@
 		85B48685293491E60006D3DF /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
 		85B486872934AB7E0006D3DF /* ArtilcleDetailTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtilcleDetailTest.swift; sourceTree = "<group>"; };
 		85B486892934AEC80006D3DF /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
-		8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieSureDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		902C4434F81D269D73BD0113 /* Pods_ArticlesOfflineListDemo_ArticlesOfflineListDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArticlesOfflineListDemo_ArticlesOfflineListDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		982D0614AA5F9FC02B8E818D /* Pods-ArticlesOfflineListDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticlesOfflineListDemo.debug.xcconfig"; path = "Target Support Files/Pods-ArticlesOfflineListDemo/Pods-ArticlesOfflineListDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C7B3614A23BA0DD44F12BEFB /* Pods_ArticlesOfflineListDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArticlesOfflineListDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5AEA5BA7C070455E191E80 /* Pods_ArticlesOfflineListDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArticlesOfflineListDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCE5254D364211823726D7E /* Pods-VieSureDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo.release.xcconfig"; path = "Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo.release.xcconfig"; sourceTree = "<group>"; };
+		E35AE558CD15D200158DFDBA /* Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests/Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF93E82A1F351B476561647 /* Pods_VieSureDemo.framework in Frameworks */,
+				CA343C191D6AAD0D8063C3C6 /* Pods_ArticlesOfflineListDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4DA92EA1FCC2767C379C0F8 /* Pods_VieSureDemoTests.framework in Frameworks */,
+				86DDA29FA50D528AB2C8A734 /* Pods_ArticlesOfflineListDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D3CD9AF0BDE0199521ABA4B /* Pods_VieSureDemo_VieSureDemoUITests.framework in Frameworks */,
+				3514F9D9A380A7B8C4D7D387 /* Pods_ArticlesOfflineListDemo_ArticlesOfflineListDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,9 +169,9 @@
 		850C7461291E542D0058BB99 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				850C7460291E542D0058BB99 /* VieSureDemo.app */,
-				850C7470291E542F0058BB99 /* VieSureDemoTests.xctest */,
-				850C747A291E542F0058BB99 /* VieSureDemoUITests.xctest */,
+				850C7460291E542D0058BB99 /* ArticlesOfflineListDemo.app */,
+				850C7470291E542F0058BB99 /* ArticlesOfflineListDemoTests.xctest */,
+				850C747A291E542F0058BB99 /* ArticlesOfflineListDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -366,6 +372,12 @@
 				6A3841E530B69C5DCDB2D353 /* Pods-VieSureDemo-VieSureDemoUITests.release.xcconfig */,
 				37152A2915FD7939D75FA242 /* Pods-VieSureDemoTests.debug.xcconfig */,
 				5C2DA178F14AEAB9F130CE50 /* Pods-VieSureDemoTests.release.xcconfig */,
+				982D0614AA5F9FC02B8E818D /* Pods-ArticlesOfflineListDemo.debug.xcconfig */,
+				81CF06FBE7E19A75C631E9CA /* Pods-ArticlesOfflineListDemo.release.xcconfig */,
+				E35AE558CD15D200158DFDBA /* Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests.debug.xcconfig */,
+				646AE5537893CB516E739B50 /* Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests.release.xcconfig */,
+				2DD8E6B79E4FC55857F51A9F /* Pods-ArticlesOfflineListDemoTests.debug.xcconfig */,
+				08578D789360AE8161BBEFAE /* Pods-ArticlesOfflineListDemoTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -373,9 +385,9 @@
 		ACC4A2FF2D5AB0C77CF1E57F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8A005A705BA6EA533B367459 /* Pods_VieSureDemo.framework */,
-				67070F923058F7F21959C7A9 /* Pods_VieSureDemo_VieSureDemoUITests.framework */,
-				01EFA9627843E088991A640B /* Pods_VieSureDemoTests.framework */,
+				C7B3614A23BA0DD44F12BEFB /* Pods_ArticlesOfflineListDemo.framework */,
+				902C4434F81D269D73BD0113 /* Pods_ArticlesOfflineListDemo_ArticlesOfflineListDemoUITests.framework */,
+				DA5AEA5BA7C070455E191E80 /* Pods_ArticlesOfflineListDemoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -383,9 +395,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		850C745F291E542D0058BB99 /* VieSureDemo */ = {
+		850C745F291E542D0058BB99 /* ArticlesOfflineListDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 850C7484291E542F0058BB99 /* Build configuration list for PBXNativeTarget "VieSureDemo" */;
+			buildConfigurationList = 850C7484291E542F0058BB99 /* Build configuration list for PBXNativeTarget "ArticlesOfflineListDemo" */;
 			buildPhases = (
 				C89A80B8952614C8F7624EE9 /* [CP] Check Pods Manifest.lock */,
 				850C745C291E542D0058BB99 /* Sources */,
@@ -397,14 +409,14 @@
 			);
 			dependencies = (
 			);
-			name = VieSureDemo;
+			name = ArticlesOfflineListDemo;
 			productName = VieSureDemo;
-			productReference = 850C7460291E542D0058BB99 /* VieSureDemo.app */;
+			productReference = 850C7460291E542D0058BB99 /* ArticlesOfflineListDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		850C746F291E542F0058BB99 /* VieSureDemoTests */ = {
+		850C746F291E542F0058BB99 /* ArticlesOfflineListDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 850C7487291E542F0058BB99 /* Build configuration list for PBXNativeTarget "VieSureDemoTests" */;
+			buildConfigurationList = 850C7487291E542F0058BB99 /* Build configuration list for PBXNativeTarget "ArticlesOfflineListDemoTests" */;
 			buildPhases = (
 				DDBDB3F7EB194285B2493252 /* [CP] Check Pods Manifest.lock */,
 				850C746C291E542F0058BB99 /* Sources */,
@@ -416,14 +428,14 @@
 			dependencies = (
 				850C7472291E542F0058BB99 /* PBXTargetDependency */,
 			);
-			name = VieSureDemoTests;
+			name = ArticlesOfflineListDemoTests;
 			productName = VieSureDemoTests;
-			productReference = 850C7470291E542F0058BB99 /* VieSureDemoTests.xctest */;
+			productReference = 850C7470291E542F0058BB99 /* ArticlesOfflineListDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		850C7479291E542F0058BB99 /* VieSureDemoUITests */ = {
+		850C7479291E542F0058BB99 /* ArticlesOfflineListDemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 850C748A291E542F0058BB99 /* Build configuration list for PBXNativeTarget "VieSureDemoUITests" */;
+			buildConfigurationList = 850C748A291E542F0058BB99 /* Build configuration list for PBXNativeTarget "ArticlesOfflineListDemoUITests" */;
 			buildPhases = (
 				7D29067E1520CAE21A29592C /* [CP] Check Pods Manifest.lock */,
 				850C7476291E542F0058BB99 /* Sources */,
@@ -436,9 +448,9 @@
 			dependencies = (
 				850C747C291E542F0058BB99 /* PBXTargetDependency */,
 			);
-			name = VieSureDemoUITests;
+			name = ArticlesOfflineListDemoUITests;
 			productName = VieSureDemoUITests;
-			productReference = 850C747A291E542F0058BB99 /* VieSureDemoUITests.xctest */;
+			productReference = 850C747A291E542F0058BB99 /* ArticlesOfflineListDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -464,7 +476,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 850C745B291E542D0058BB99 /* Build configuration list for PBXProject "VieSureDemo" */;
+			buildConfigurationList = 850C745B291E542D0058BB99 /* Build configuration list for PBXProject "ArticlesOfflineListDemo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -477,9 +489,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				850C745F291E542D0058BB99 /* VieSureDemo */,
-				850C746F291E542F0058BB99 /* VieSureDemoTests */,
-				850C7479291E542F0058BB99 /* VieSureDemoUITests */,
+				850C745F291E542D0058BB99 /* ArticlesOfflineListDemo */,
+				850C746F291E542F0058BB99 /* ArticlesOfflineListDemoTests */,
+				850C7479291E542F0058BB99 /* ArticlesOfflineListDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -518,15 +530,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ArticlesOfflineListDemo/Pods-ArticlesOfflineListDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ArticlesOfflineListDemo/Pods-ArticlesOfflineListDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VieSureDemo/Pods-VieSureDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArticlesOfflineListDemo/Pods-ArticlesOfflineListDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7D29067E1520CAE21A29592C /* [CP] Check Pods Manifest.lock */ = {
@@ -544,7 +556,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VieSureDemo-VieSureDemoUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -557,15 +569,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VieSureDemo-VieSureDemoUITests/Pods-VieSureDemo-VieSureDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests/Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VieSureDemo-VieSureDemoUITests/Pods-VieSureDemo-VieSureDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests/Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VieSureDemo-VieSureDemoUITests/Pods-VieSureDemo-VieSureDemoUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests/Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C89A80B8952614C8F7624EE9 /* [CP] Check Pods Manifest.lock */ = {
@@ -583,7 +595,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VieSureDemo-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ArticlesOfflineListDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -605,7 +617,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VieSureDemoTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ArticlesOfflineListDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -676,12 +688,12 @@
 /* Begin PBXTargetDependency section */
 		850C7472291E542F0058BB99 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 850C745F291E542D0058BB99 /* VieSureDemo */;
+			target = 850C745F291E542D0058BB99 /* ArticlesOfflineListDemo */;
 			targetProxy = 850C7471291E542F0058BB99 /* PBXContainerItemProxy */;
 		};
 		850C747C291E542F0058BB99 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 850C745F291E542D0058BB99 /* VieSureDemo */;
+			target = 850C745F291E542D0058BB99 /* ArticlesOfflineListDemo */;
 			targetProxy = 850C747B291E542F0058BB99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -803,7 +815,7 @@
 		};
 		850C7485291E542F0058BB99 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D0D4ADE7FBDE90BF58F3419 /* Pods-VieSureDemo.debug.xcconfig */;
+			baseConfigurationReference = 982D0614AA5F9FC02B8E818D /* Pods-ArticlesOfflineListDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -835,7 +847,7 @@
 		};
 		850C7486291E542F0058BB99 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBCE5254D364211823726D7E /* Pods-VieSureDemo.release.xcconfig */;
+			baseConfigurationReference = 81CF06FBE7E19A75C631E9CA /* Pods-ArticlesOfflineListDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -867,7 +879,7 @@
 		};
 		850C7488291E542F0058BB99 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37152A2915FD7939D75FA242 /* Pods-VieSureDemoTests.debug.xcconfig */;
+			baseConfigurationReference = 2DD8E6B79E4FC55857F51A9F /* Pods-ArticlesOfflineListDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -882,13 +894,13 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VieSureDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VieSureDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArticlesOfflineListDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ArticlesOfflineListDemo";
 			};
 			name = Debug;
 		};
 		850C7489291E542F0058BB99 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C2DA178F14AEAB9F130CE50 /* Pods-VieSureDemoTests.release.xcconfig */;
+			baseConfigurationReference = 08578D789360AE8161BBEFAE /* Pods-ArticlesOfflineListDemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -903,13 +915,13 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VieSureDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VieSureDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArticlesOfflineListDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ArticlesOfflineListDemo";
 			};
 			name = Release;
 		};
 		850C748B291E542F0058BB99 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 021206F1E7F81A76CDF84F7B /* Pods-VieSureDemo-VieSureDemoUITests.debug.xcconfig */;
+			baseConfigurationReference = E35AE558CD15D200158DFDBA /* Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -928,7 +940,7 @@
 		};
 		850C748C291E542F0058BB99 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A3841E530B69C5DCDB2D353 /* Pods-VieSureDemo-VieSureDemoUITests.release.xcconfig */;
+			baseConfigurationReference = 646AE5537893CB516E739B50 /* Pods-ArticlesOfflineListDemo-ArticlesOfflineListDemoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -948,7 +960,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		850C745B291E542D0058BB99 /* Build configuration list for PBXProject "VieSureDemo" */ = {
+		850C745B291E542D0058BB99 /* Build configuration list for PBXProject "ArticlesOfflineListDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				850C7482291E542F0058BB99 /* Debug */,
@@ -957,7 +969,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		850C7484291E542F0058BB99 /* Build configuration list for PBXNativeTarget "VieSureDemo" */ = {
+		850C7484291E542F0058BB99 /* Build configuration list for PBXNativeTarget "ArticlesOfflineListDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				850C7485291E542F0058BB99 /* Debug */,
@@ -966,7 +978,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		850C7487291E542F0058BB99 /* Build configuration list for PBXNativeTarget "VieSureDemoTests" */ = {
+		850C7487291E542F0058BB99 /* Build configuration list for PBXNativeTarget "ArticlesOfflineListDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				850C7488291E542F0058BB99 /* Debug */,
@@ -975,7 +987,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		850C748A291E542F0058BB99 /* Build configuration list for PBXNativeTarget "VieSureDemoUITests" */ = {
+		850C748A291E542F0058BB99 /* Build configuration list for PBXNativeTarget "ArticlesOfflineListDemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				850C748B291E542F0058BB99 /* Debug */,

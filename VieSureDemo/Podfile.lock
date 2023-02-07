@@ -1,8 +1,8 @@
 PODS:
-  - SDWebImage (5.14.2):
-    - SDWebImage/Core (= 5.14.2)
-  - SDWebImage/Core (5.14.2)
-  - SDWebImageSwiftUI (2.2.1):
+  - SDWebImage (5.15.2):
+    - SDWebImage/Core (= 5.15.2)
+  - SDWebImage/Core (5.15.2)
+  - SDWebImageSwiftUI (2.2.2):
     - SDWebImage (~> 5.10)
 
 DEPENDENCIES:
@@ -14,9 +14,9 @@ SPEC REPOS:
     - SDWebImageSwiftUI
 
 SPEC CHECKSUMS:
-  SDWebImage: b9a731e1d6307f44ca703b3976d18c24ca561e84
-  SDWebImageSwiftUI: 2ecf5ab6f574526326b10ecb155e72a88059d0f0
+  SDWebImage: 8ab87d4b3e5cc4927bd47f78db6ceb0b94442577
+  SDWebImageSwiftUI: 54ded4115b4ac6cd60b78f61415f86d070892d98
 
-PODFILE CHECKSUM: 99c3e55f83269279e51e1990227f34d1c45c6c83
+PODFILE CHECKSUM: c04337b7b89fb80462179ad7e76237b461daaf4c
 
 COCOAPODS: 1.11.3
