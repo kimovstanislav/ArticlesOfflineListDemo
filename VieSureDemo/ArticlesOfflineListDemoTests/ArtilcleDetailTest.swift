@@ -1,12 +1,12 @@
 //
 //  ArtilcleDetailTest.swift
-//  VieSureDemoTests
+//  ArticlesOfflineListDemoTests
 //
 //  Created by Stanislav Kimov on 28.11.22.
 //
 
 import XCTest
-@testable import VieSureDemo
+@testable import ArticlesOfflineListDemo
 
 final class ArtilcleDetailTest: XCTestCase {
 

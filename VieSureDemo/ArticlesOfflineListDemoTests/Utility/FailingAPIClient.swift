@@ -1,12 +1,12 @@
 //
 //  FailingAPIClient.swift
-//  VieSureDemoTests
+//  ArticlesOfflineListDemoTests
 //
 //  Created by Stanislav Kimov on 28.11.22.
 //
 
 import Foundation
-@testable import VieSureDemo
+@testable import ArticlesOfflineListDemo
 
 class FailingAPIClient: IVSAPI {
     // Can set any error we like

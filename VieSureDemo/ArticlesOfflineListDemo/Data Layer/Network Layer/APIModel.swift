@@ -1,6 +1,6 @@
 //
 //  APIModel.swift
-//  VieSureDemo
+//  ArticlesOfflineListDemo
 //
 //  Created by Stanislav Kimov on 13.11.22.
 //

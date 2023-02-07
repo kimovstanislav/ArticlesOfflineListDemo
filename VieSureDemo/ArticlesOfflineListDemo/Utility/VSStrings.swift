@@ -1,6 +1,6 @@
 //
 //  VSStrings.swift
-//  VieSureDemo
+//  ArticlesOfflineListDemo
 //
 //  Created by Stanislav Kimov on 22.11.22.
 //

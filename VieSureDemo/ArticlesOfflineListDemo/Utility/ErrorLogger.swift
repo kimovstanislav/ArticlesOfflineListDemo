@@ -1,6 +1,6 @@
 //
 //  ErrorLogger.swift
-//  VieSureDemo
+//  ArticlesOfflineListDemo
 //
 //  Created by Stanislav Kimov on 24.11.22.
 //

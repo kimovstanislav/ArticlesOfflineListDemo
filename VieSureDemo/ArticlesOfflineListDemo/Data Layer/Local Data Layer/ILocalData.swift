@@ -1,6 +1,6 @@
 //
 //  ILocalData.swift
-//  VieSureDemo
+//  ArticlesOfflineListDemo
 //
 //  Created by Stanislav Kimov on 25.11.22.
 //

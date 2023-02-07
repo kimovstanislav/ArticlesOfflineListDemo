@@ -1,6 +1,6 @@
 //
 //  DateFormats.swift
-//  VieSureDemo
+//  ArticlesOfflineListDemo
 //
 //  Created by Stanislav Kimov on 23.11.22.
 //

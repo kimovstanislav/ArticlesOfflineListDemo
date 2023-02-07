@@ -1,13 +1,13 @@
 //
-//  VieSureDemoUITestsLaunchTests.swift
-//  VieSureDemoUITests
+//  ArticlesOfflineListDemoUITestsLaunchTests.swift
+//  ArticlesOfflineListDemoUITests
 //
 //  Created by Stanislav Kimov on 11.11.22.
 //
 
 import XCTest
 
-final class VieSureDemoUITestsLaunchTests: XCTestCase {
+final class ArticlesOfflineListDemoUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

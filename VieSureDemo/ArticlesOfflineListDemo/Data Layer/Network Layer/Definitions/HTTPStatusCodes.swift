@@ -1,6 +1,6 @@
 //
 //  HTTPStatusCodes.swift
-//  VieSureDemo
+//  ArticlesOfflineListDemo
 //
 //  Created by Stanislav Kimov on 14.11.22.
 //

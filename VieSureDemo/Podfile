@@ -5,7 +5,7 @@ target 'ArticlesOfflineListDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for VieSureDemo
+  # Pods for ArticlesOfflineListDemo
   pod 'SDWebImageSwiftUI'
 
   target 'ArticlesOfflineListDemoTests' do

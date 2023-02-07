@@ -1,13 +1,13 @@
 //
-//  VieSureDemoUITests.swift
-//  VieSureDemoUITests
+//  ArticlesOfflineListDemoUITests.swift
+//  ArticlesOfflineListDemoUITests
 //
 //  Created by Stanislav Kimov on 11.11.22.
 //
 
 import XCTest
 
-final class VieSureDemoUITests: XCTestCase {
+final class ArticlesOfflineListDemoUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
