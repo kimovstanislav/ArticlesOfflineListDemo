@@ -2,7 +2,7 @@
 
 Just a test project.
 
-To run the project, run "pod install" in the terminal in root folder. Then open VieSureDemo.xcworkspace
+To run the project, run "pod install" in the terminal in root folder. Then open ArticlesOfflineListDemo.xcworkspace
 
 Comments on implementation details (is also a TODO):
 
