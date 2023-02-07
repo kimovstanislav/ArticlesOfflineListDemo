@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3514F9D9A380A7B8C4D7D387 /* Pods_ArticlesOfflineListDemo_ArticlesOfflineListDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902C4434F81D269D73BD0113 /* Pods_ArticlesOfflineListDemo_ArticlesOfflineListDemoUITests.framework */; };
-		850C7464291E542D0058BB99 /* VieSureDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7463291E542D0058BB99 /* VieSureDemoApp.swift */; };
+		850C7464291E542D0058BB99 /* ArticlesOfflineListDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7463291E542D0058BB99 /* ArticlesOfflineListDemoApp.swift */; };
 		850C7466291E542D0058BB99 /* ArticlesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C7465291E542D0058BB99 /* ArticlesListView.swift */; };
 		850C7468291E542F0058BB99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850C7467291E542F0058BB99 /* Assets.xcassets */; };
 		850C746B291E542F0058BB99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850C746A291E542F0058BB99 /* Preview Assets.xcassets */; };
@@ -78,7 +78,7 @@
 		6A3841E530B69C5DCDB2D353 /* Pods-VieSureDemo-VieSureDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieSureDemo-VieSureDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-VieSureDemo-VieSureDemoUITests/Pods-VieSureDemo-VieSureDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		81CF06FBE7E19A75C631E9CA /* Pods-ArticlesOfflineListDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticlesOfflineListDemo.release.xcconfig"; path = "Target Support Files/Pods-ArticlesOfflineListDemo/Pods-ArticlesOfflineListDemo.release.xcconfig"; sourceTree = "<group>"; };
 		850C7460291E542D0058BB99 /* ArticlesOfflineListDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticlesOfflineListDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		850C7463291E542D0058BB99 /* VieSureDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieSureDemoApp.swift; sourceTree = "<group>"; };
+		850C7463291E542D0058BB99 /* ArticlesOfflineListDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesOfflineListDemoApp.swift; sourceTree = "<group>"; };
 		850C7465291E542D0058BB99 /* ArticlesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListView.swift; sourceTree = "<group>"; };
 		850C7467291E542F0058BB99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		850C746A291E542F0058BB99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 				850C74A62922980E0058BB99 /* Error Handling */,
 				850C7492292183C70058BB99 /* Utility */,
 				85B4866D2930CF0F0006D3DF /* Data Layer */,
-				850C7463291E542D0058BB99 /* VieSureDemoApp.swift */,
+				850C7463291E542D0058BB99 /* ArticlesOfflineListDemoApp.swift */,
 				850C7467291E542F0058BB99 /* Assets.xcassets */,
 				850C7469291E542F0058BB99 /* Preview Content */,
 			);
@@ -646,7 +646,7 @@
 				85B486692930BA090006D3DF /* ILocalData.swift in Sources */,
 				85B48650292CF55C0006D3DF /* IVSAPI.swift in Sources */,
 				85B48645292A41AB0006D3DF /* ArticlesListViewModel.swift in Sources */,
-				850C7464291E542D0058BB99 /* VieSureDemoApp.swift in Sources */,
+				850C7464291E542D0058BB99 /* ArticlesOfflineListDemoApp.swift in Sources */,
 				850C74A82922981E0058BB99 /* VSError.swift in Sources */,
 				85B48659292DA6FA0006D3DF /* DateFormats.swift in Sources */,
 				85B4865F292E30260006D3DF /* BaseViewModel.swift in Sources */,

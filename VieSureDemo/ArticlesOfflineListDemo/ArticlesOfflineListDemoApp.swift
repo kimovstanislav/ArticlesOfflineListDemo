@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 @main
-struct VieSureDemoApp: App {
+struct ArticlesOfflineListDemoApp: App {
     var body: some Scene {
         WindowGroup {
             ArticlesListView(viewModel: ViewModelFactory.shared.makeArticlesListViewModel())
