@@ -1,10 +1,10 @@
-# VieSureDemo
+# ArticlesOfflineListDemo
 
 Just a test project.
 
 To run the project, run "pod install" in the terminal in root folder. Then open VieSureDemo.xcworkspace
 
-Comments on implementation details:
+Comments on implementation details (is also a TODO):
 
 SDWebImage is used for async image loading and caching, because AsyncImage is only available from iOS15, and the current requirement is to support iOS14.
 Not to use pods, as an alternative could use something like custom AsyncImage implementation in https://www.vadimbulavin.com/modern-mvvm-ios-app-architecture-with-combine-and-swiftui/ or https://github.com/phetsana/BoardGameList-MVVM-Input-Output . But it would be too much needless work, and also the need to provide code coverage.
