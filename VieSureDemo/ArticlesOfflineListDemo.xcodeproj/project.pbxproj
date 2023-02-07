@@ -157,9 +157,9 @@
 		850C7457291E542D0058BB99 = {
 			isa = PBXGroup;
 			children = (
-				850C7462291E542D0058BB99 /* VieSureDemo */,
-				850C7473291E542F0058BB99 /* VieSureDemoTests */,
-				850C747D291E542F0058BB99 /* VieSureDemoUITests */,
+				850C7462291E542D0058BB99 /* ArticlesOfflineListDemo */,
+				850C7473291E542F0058BB99 /* ArticlesOfflineListDemoTests */,
+				850C747D291E542F0058BB99 /* ArticlesOfflineListDemoUITests */,
 				850C7461291E542D0058BB99 /* Products */,
 				8D4B7906EA71722BAEE369F1 /* Pods */,
 				ACC4A2FF2D5AB0C77CF1E57F /* Frameworks */,
@@ -176,7 +176,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		850C7462291E542D0058BB99 /* VieSureDemo */ = {
+		850C7462291E542D0058BB99 /* ArticlesOfflineListDemo */ = {
 			isa = PBXGroup;
 			children = (
 				85B48648292BC3590006D3DF /* Info.plist */,
@@ -188,7 +188,7 @@
 				850C7467291E542F0058BB99 /* Assets.xcassets */,
 				850C7469291E542F0058BB99 /* Preview Content */,
 			);
-			path = VieSureDemo;
+			path = ArticlesOfflineListDemo;
 			sourceTree = "<group>";
 		};
 		850C7469291E542F0058BB99 /* Preview Content */ = {
@@ -199,7 +199,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		850C7473291E542F0058BB99 /* VieSureDemoTests */ = {
+		850C7473291E542F0058BB99 /* ArticlesOfflineListDemoTests */ = {
 			isa = PBXGroup;
 			children = (
 				85B4867E293425F10006D3DF /* Utility */,
@@ -208,16 +208,16 @@
 				85B4867929314F520006D3DF /* ArticlesListTest.swift */,
 				85B486872934AB7E0006D3DF /* ArtilcleDetailTest.swift */,
 			);
-			path = VieSureDemoTests;
+			path = ArticlesOfflineListDemoTests;
 			sourceTree = "<group>";
 		};
-		850C747D291E542F0058BB99 /* VieSureDemoUITests */ = {
+		850C747D291E542F0058BB99 /* ArticlesOfflineListDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
 				850C747E291E542F0058BB99 /* VieSureDemoUITests.swift */,
 				850C7480291E542F0058BB99 /* VieSureDemoUITestsLaunchTests.swift */,
 			);
-			path = VieSureDemoUITests;
+			path = ArticlesOfflineListDemoUITests;
 			sourceTree = "<group>";
 		};
 		850C748D291EDB440058BB99 /* Network Layer */ = {
@@ -821,11 +821,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VieSureDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = 6VB98JTGYY;
+				DEVELOPMENT_ASSET_PATHS = "\"ArticlesOfflineListDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = QNMYS92JJY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VieSureDemo/Info.plist;
+				INFOPLIST_FILE = ArticlesOfflineListDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -853,11 +853,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VieSureDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = 6VB98JTGYY;
+				DEVELOPMENT_ASSET_PATHS = "\"ArticlesOfflineListDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = QNMYS92JJY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VieSureDemo/Info.plist;
+				INFOPLIST_FILE = ArticlesOfflineListDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
