@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: remove comment, think how can do it better.
 class ViewModelFactory {
     // Could create in App and pass through EnvironmentVariable, but prefer to avoid SwiftUI specific approach.
     static let shared = ViewModelFactory()
