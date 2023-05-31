@@ -9,26 +9,19 @@ import XCTest
 @testable import ArticlesOfflineListDemo
 
 final class LocalDataTest: XCTestCase {
-    var localDataClient: ILocalData = LocalDataClient()
+    var localDataClient: LocalData = LocalDataClient()
     
-    func testSaveArticles() throws {
+    func testSaveArticles() async throws {
         let dataClient = localDataClient
         let initialArticles = generateArticles(count: 10)
         
-        Task {
-            do {
-                try await dataClient.writeArticles(articles: initialArticles)
-                let articles = try await dataClient.getArticles()
-                guard let loadedArticles = articles else {
-                    XCTFail("Loaded articles is nil.")
-                    return
-                }
-                XCTAssert(initialArticles == loadedArticles)
-            }
-            catch let error as VSError {
-                XCTFail(error.message)
-            }
+        try await dataClient.writeArticles(articles: initialArticles)
+        let articles = try await dataClient.getArticles()
+        guard let loadedArticles = articles else {
+            XCTFail("Loaded articles is nil.")
+            return
         }
+        XCTAssert(initialArticles == loadedArticles)
     }
 }
 

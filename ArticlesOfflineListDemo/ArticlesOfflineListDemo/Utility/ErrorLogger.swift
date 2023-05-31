@@ -8,7 +8,7 @@
 import Foundation
 
 class ErrorLogger {
-    static func logError(_ error: VSError) {
+    static func logError(_ error: DetailedError) {
         // Could properly log an error here like with Firebase of whatever
         print("Error \(error.code): \(error.message)")
     }

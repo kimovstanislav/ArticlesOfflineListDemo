@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class APIClient: IVSAPI {
+class APIClient: API {
     let session = URLSession.shared
     
     enum URLs {

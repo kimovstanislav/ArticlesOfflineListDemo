@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol ILocalData {
+protocol LocalData {
     func writeArticles(articles: [Article]) async throws
     func getArticles() async throws -> [Article]?
     func clearArticles()

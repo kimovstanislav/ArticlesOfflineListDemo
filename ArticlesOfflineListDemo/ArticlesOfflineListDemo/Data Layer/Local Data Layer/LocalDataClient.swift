@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class LocalDataClient: ILocalData {
+class LocalDataClient: LocalData {
     enum Keys {
         static let articlesKey = "Articles"
     }
@@ -21,7 +21,7 @@ class LocalDataClient: ILocalData {
             return
         }
         catch {
-            let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorWritingLocalData.rawValue)
+            let vsError = DetailedError(localDataError: error, code: DetailedError.ErrorCode.errorWritingLocalData.rawValue)
             throw vsError
         }
     }
@@ -34,7 +34,7 @@ class LocalDataClient: ILocalData {
                 return articles
             }
             catch {
-                let vsError = VSError(localDataError: error, code: VSError.ErrorCode.errorReadingLocalData.rawValue)
+                let vsError = DetailedError(localDataError: error, code: DetailedError.ErrorCode.errorReadingLocalData.rawValue)
                 throw vsError
             }
         }

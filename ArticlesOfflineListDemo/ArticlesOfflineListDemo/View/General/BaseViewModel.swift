@@ -22,7 +22,7 @@ class BaseViewModel: ObservableObject {
         }
     }
     
-    func processError(_ error: VSError) {
+    func processError(_ error: DetailedError) {
         ErrorLogger.logError(error)
         if error.isSilent { return }
         showAlert(title: error.title, message: error.message)

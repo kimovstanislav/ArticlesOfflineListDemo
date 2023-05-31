@@ -12,8 +12,8 @@ class ViewModelFactory {
     // Could create in App and pass through EnvironmentVariable, but prefer to avoid SwiftUI specific approach.
     static let shared = ViewModelFactory()
     
-    private let localDataClient: ILocalData = LocalDataClient()
-    private let apiClient: IVSAPI = APIClient()
+    private let localDataClient: LocalData = LocalDataClient()
+    private let apiClient: API = APIClient()
     
     func makeArticlesListViewModel() -> ArticlesListViewModel {
         return ArticlesListViewModel(localDataClient: localDataClient, apiClient: apiClient)

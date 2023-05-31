@@ -8,13 +8,13 @@
 import Foundation
 @testable import ArticlesOfflineListDemo
 
-class FailingLocalDataClient: ILocalData {
+class FailingLocalDataClient: LocalData {
     func writeArticles(articles: [Article]) async throws {
-        throw VSError.unknown
+        throw DetailedError.unknown
     }
 
     func getArticles() async throws -> [Article]? {
-        throw VSError(localDataError: VSError.unknown, code: VSError.ErrorCode.errorReadingLocalData.rawValue)
+        throw DetailedError(localDataError: DetailedError.unknown, code: DetailedError.ErrorCode.errorReadingLocalData.rawValue)
     }
 
     func clearArticles() {

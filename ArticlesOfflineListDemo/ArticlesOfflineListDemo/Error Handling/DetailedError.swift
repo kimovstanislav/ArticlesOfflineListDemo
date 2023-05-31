@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VSError: Error {
+struct DetailedError: Error {
     let source: Source
     /// The status code of the error
     let code: Int
@@ -22,7 +22,7 @@ struct VSError: Error {
     /// Error location in code, for internal logging
     let location: String
     
-    init(source: VSError.Source = .unknown, code: Int, title: String = VSStrings.Error.API.title, message: String, isSilent: Bool = false, cause: Error? = nil, file: String = #file, function: String = #function, line: Int = #line) {
+    init(source: DetailedError.Source = .unknown, code: Int, title: String = VSStrings.Error.API.title, message: String, isSilent: Bool = false, cause: Error? = nil, file: String = #file, function: String = #function, line: Int = #line) {
         self.source = source
         self.code = code
         self.title = title
@@ -32,7 +32,7 @@ struct VSError: Error {
         location = "\(file):\(line), \(function)"
     }
     
-    static let unknown = VSError(
+    static let unknown = DetailedError(
         source: .unknown,
         code: ErrorCode.unknown.rawValue,
         title: VSStrings.Error.API.title,
@@ -40,13 +40,13 @@ struct VSError: Error {
     )
 }
 
-extension VSError {
+extension DetailedError {
     enum Source: String {
         case api, localData, unknown
     }
 }
 
-extension VSError {
+extension DetailedError {
     enum ErrorCode: Int {
         case unknown = -1
         case unexpectedCodePath = 0
@@ -60,6 +60,6 @@ extension VSError {
     }
 }
 
-extension VSError {
+extension DetailedError {
     enum Factory {}
 }

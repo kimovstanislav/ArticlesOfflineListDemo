@@ -9,17 +9,10 @@ import XCTest
 @testable import ArticlesOfflineListDemo
 
 final class ApiTest: XCTestCase {
-    var mockApiClient: IVSAPI = MockAPIClient()
+    var mockApiClient: API = MockAPIClient()
 
-    func testDecodeData() throws {
-        Task {
-            do {
-                let articles = try await mockApiClient.loadArticlesList()
-                XCTAssert(articles.count == 60)
-            }
-            catch let error as VSError  {
-                XCTFail(error.message)
-            }
-        }
+    func testDecodeData() async throws {
+        let articles = try await mockApiClient.loadArticlesList()
+        XCTAssert(articles.count == 60)
     }
 }

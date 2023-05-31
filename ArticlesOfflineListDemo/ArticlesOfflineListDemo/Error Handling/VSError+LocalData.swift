@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension VSError {
+extension DetailedError {
     init(localDataError: Error, code: Int, file: String = #file, function: String = #function, line: Int = #line) {
         self.init(
             source: .localData,

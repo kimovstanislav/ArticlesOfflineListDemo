@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension VSError {    
+extension DetailedError {    
     init(apiError: Error, code: Int, title: String, message: String, file: String = #file, function: String = #function, line: Int = #line) {
         self.init(
             source: .api,
@@ -26,11 +26,11 @@ extension VSError {
     }
 }
 
-extension VSError.Factory {
-    static func makeDecodingError(cause: Error? = nil) -> VSError {
-        VSError(
+extension DetailedError.Factory {
+    static func makeDecodingError(cause: Error? = nil) -> DetailedError {
+        DetailedError(
                 source: .api,
-                code: VSError.ErrorCode.errorDecodingApiResponse.rawValue,
+                code: DetailedError.ErrorCode.errorDecodingApiResponse.rawValue,
                 title: VSStrings.Error.API.title,
                 message: VSStrings.Error.API.decodingApiResponseFailedMessage,
                 isSilent: false,

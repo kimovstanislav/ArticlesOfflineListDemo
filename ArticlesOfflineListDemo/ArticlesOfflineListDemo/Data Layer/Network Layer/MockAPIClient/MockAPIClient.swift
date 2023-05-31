@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class MockAPIClient: IVSAPI {
+class MockAPIClient: API {
     enum MockJsonFiles {
         static let articlesList = "articles_list"
     }

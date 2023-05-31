@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 class ArticlesListViewModel: BaseViewModel {
-    private let localDataClient: ILocalData
-    private let apiClient: IVSAPI
+    private let localDataClient: LocalData
+    private let apiClient: API
     
     @Published var viewState: ViewState = .loading
     
@@ -18,7 +18,7 @@ class ArticlesListViewModel: BaseViewModel {
     let maxNumberOfRetries = 3
     let retryInterval = 2.0
     
-    init(localDataClient: ILocalData, apiClient: IVSAPI) {
+    init(localDataClient: LocalData, apiClient: API) {
         self.localDataClient = localDataClient
         self.apiClient = apiClient
         super.init()
@@ -55,7 +55,7 @@ extension ArticlesListViewModel {
                 let articles = try await localDataClient.getArticles()
                 self?.handleEvent(.onLocalArticlesLoaded(articles))
             }
-            catch let error as VSError  {
+            catch let error as DetailedError  {
                 self?.handleEvent(.onFailedToLoadLocalArticles(error))
             }
         }
@@ -67,7 +67,7 @@ extension ArticlesListViewModel {
                 try await localDataClient.writeArticles(articles: articles)
                 self?.handleEvent(.onArticlesSavedToLocalData(articles))
             }
-            catch let error as VSError {
+            catch let error as DetailedError {
                 self?.handleEvent(.onFailedToSaveArticlesToLocalData(articles, error))
             }
         }
@@ -84,7 +84,7 @@ extension ArticlesListViewModel {
                 let articles = try await apiClient.loadArticlesList()
                 self?.handleEvent(.onApiArticlesLoaded(articles))
             }
-            catch let error as VSError  {
+            catch let error as DetailedError  {
                 self?.handleEvent(.onFailedToLoadApiArticles(error))
             }
         }
@@ -109,7 +109,7 @@ extension ArticlesListViewModel {
         writeArticlesToLocalData(sortedArticles)
     }
     
-    private func handleGetApiArticlesFailure(_ error: VSError) {
+    private func handleGetApiArticlesFailure(_ error: DetailedError) {
         if error.isDataSynchronizationError == true && retryCount < maxNumberOfRetries {
             retryCount += 1
             DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + retryInterval) { [weak self] in
@@ -147,15 +147,15 @@ extension ArticlesListViewModel {
         /// Internal
         /// Load local
         case onLocalArticlesLoaded([Article]?)
-        case onFailedToLoadLocalArticles(VSError)
+        case onFailedToLoadLocalArticles(DetailedError)
         
         /// Load API
         case onApiArticlesLoaded([APIModel.Response.Article])
-        case onFailedToLoadApiArticles(VSError)
+        case onFailedToLoadApiArticles(DetailedError)
         
         /// Save to local
         case onArticlesSavedToLocalData([Article])
-        case onFailedToSaveArticlesToLocalData([Article], VSError)
+        case onFailedToSaveArticlesToLocalData([Article], DetailedError)
     }
     
     func handleEvent(_ event: Event) {

@@ -7,19 +7,19 @@
 
 import Foundation
 
-protocol IVSAPI {
+protocol API {
     /// Throws VSError
     func loadArticlesList() async throws -> [APIModel.Response.Article]
 }
 
-extension IVSAPI {
+extension API {
     func decodeApiResponse<T: Decodable>(data: Data) throws -> T {
         do {
             let object: T = try JSONDecoder().decode(T.self, from: data)
             return object
         }
         catch let error {
-            let vsError: VSError = VSError.Factory.makeDecodingError(cause: error)
+            let vsError: DetailedError = DetailedError.Factory.makeDecodingError(cause: error)
             throw vsError
         }
     }

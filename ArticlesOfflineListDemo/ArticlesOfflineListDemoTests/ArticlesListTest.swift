@@ -10,7 +10,7 @@ import XCTest
 import Combine
 
 final class ArticlesListTest: XCTestCase {
-    var localDataClient: ILocalData = LocalDataClient()
+    var localDataClient: LocalData = LocalDataClient()
    
     private var bag: Set<AnyCancellable> = []
     
@@ -43,7 +43,7 @@ final class ArticlesListTest: XCTestCase {
             }
             .store(in: &bag)
         
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testLoadArticlesFailingLocal() throws {
@@ -71,7 +71,7 @@ final class ArticlesListTest: XCTestCase {
             }
             .store(in: &bag)
         
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testLoadArticlesFailingAPI() throws {
@@ -96,7 +96,7 @@ final class ArticlesListTest: XCTestCase {
             }
             .store(in: &bag)
         
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testLoadArticlesFailingBoth() throws {
@@ -122,7 +122,7 @@ final class ArticlesListTest: XCTestCase {
             }
             .store(in: &bag)
         
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testLoadArticlesFailingApiWithRetryState() throws {
@@ -130,7 +130,7 @@ final class ArticlesListTest: XCTestCase {
         
         let localDataFailingClient = FailingLocalDataClient()
         let apiClient = FailingAPIClient()
-        apiClient.failingError = VSError(apiError: VSError.unknown, code: HTTPStatusCode.internalServerError.rawValue, title: VSStrings.Error.API.internalServerErrorTitle, message: VSStrings.Error.API.internalServerErrorMessage)
+        apiClient.failingError = DetailedError(apiError: DetailedError.unknown, code: HTTPStatusCode.internalServerError.rawValue, title: VSStrings.Error.API.internalServerErrorTitle, message: VSStrings.Error.API.internalServerErrorMessage)
         let viewModel = ArticlesListViewModel(localDataClient: localDataFailingClient, apiClient: apiClient)
         let toCompareStates = [ArticlesListViewModel.ViewState.loading, .showError(errorMessage: VSStrings.Error.API.loadingArticlesFromServerErrorMessage)]
         var step: Int = 0
@@ -159,7 +159,7 @@ final class ArticlesListTest: XCTestCase {
         
         let localDataFailingClient = FailingLocalDataClient()
         let apiClient = FailingAPIClient()
-        apiClient.failingError = VSError(apiError: VSError.unknown, code: HTTPStatusCode.internalServerError.rawValue, title: VSStrings.Error.API.internalServerErrorTitle, message: VSStrings.Error.API.internalServerErrorMessage)
+        apiClient.failingError = DetailedError(apiError: DetailedError.unknown, code: HTTPStatusCode.internalServerError.rawValue, title: VSStrings.Error.API.internalServerErrorTitle, message: VSStrings.Error.API.internalServerErrorMessage)
         let viewModel = ArticlesListViewModel(localDataClient: localDataFailingClient, apiClient: apiClient)
         let toCompareStates = [ArticlesListViewModel.ViewState.loading, ArticlesListViewModel.ViewState.showEmptyList]
         var step: Int = 0
@@ -214,7 +214,7 @@ final class ArticlesListTest: XCTestCase {
             }
             .store(in: &bag)
         
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
 }
 
