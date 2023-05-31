@@ -79,7 +79,7 @@ final class ArticlesListTest: XCTestCase {
         
         let apiClient = FailingAPIClient()
         let viewModel = ArticlesListViewModel(localDataClient: localDataClient, apiClient: apiClient)
-        let toCompareStates = [ArticlesListViewModel.ViewState.loading, ArticlesListViewModel.ViewState.loading, .showError(errorMessage: VSStrings.Error.API.loadingArticlesFromServerErrorMessage)]
+        let toCompareStates = [ArticlesListViewModel.ViewState.loading, ArticlesListViewModel.ViewState.loading, .showError(errorMessage: Strings.Error.API.loadingArticlesFromServerErrorMessage)]
         var step: Int = 0
         
         let _ = viewModel.$viewState
@@ -105,7 +105,7 @@ final class ArticlesListTest: XCTestCase {
         let localDataFailingClient = FailingLocalDataClient()
         let apiClient = FailingAPIClient()
         let viewModel = ArticlesListViewModel(localDataClient: localDataFailingClient, apiClient: apiClient)
-        let toCompareStates = [ArticlesListViewModel.ViewState.loading, .showError(errorMessage: VSStrings.Error.API.loadingArticlesFromServerErrorMessage)]
+        let toCompareStates = [ArticlesListViewModel.ViewState.loading, .showError(errorMessage: Strings.Error.API.loadingArticlesFromServerErrorMessage)]
         var step: Int = 0
         
         let _ = viewModel.$viewState
@@ -130,9 +130,9 @@ final class ArticlesListTest: XCTestCase {
         
         let localDataFailingClient = FailingLocalDataClient()
         let apiClient = FailingAPIClient()
-        apiClient.failingError = DetailedError(apiError: DetailedError.unknown, code: HTTPStatusCode.internalServerError.rawValue, title: VSStrings.Error.API.internalServerErrorTitle, message: VSStrings.Error.API.internalServerErrorMessage)
+        apiClient.failingError = DetailedError(apiError: DetailedError.unknown, code: HTTPStatusCode.internalServerError.rawValue, title: Strings.Error.API.internalServerErrorTitle, message: Strings.Error.API.internalServerErrorMessage)
         let viewModel = ArticlesListViewModel(localDataClient: localDataFailingClient, apiClient: apiClient)
-        let toCompareStates = [ArticlesListViewModel.ViewState.loading, .showError(errorMessage: VSStrings.Error.API.loadingArticlesFromServerErrorMessage)]
+        let toCompareStates = [ArticlesListViewModel.ViewState.loading, .showError(errorMessage: Strings.Error.API.loadingArticlesFromServerErrorMessage)]
         var step: Int = 0
         
         let _ = viewModel.$viewState
@@ -159,7 +159,7 @@ final class ArticlesListTest: XCTestCase {
         
         let localDataFailingClient = FailingLocalDataClient()
         let apiClient = FailingAPIClient()
-        apiClient.failingError = DetailedError(apiError: DetailedError.unknown, code: HTTPStatusCode.internalServerError.rawValue, title: VSStrings.Error.API.internalServerErrorTitle, message: VSStrings.Error.API.internalServerErrorMessage)
+        apiClient.failingError = DetailedError(apiError: DetailedError.unknown, code: HTTPStatusCode.internalServerError.rawValue, title: Strings.Error.API.internalServerErrorTitle, message: Strings.Error.API.internalServerErrorMessage)
         let viewModel = ArticlesListViewModel(localDataClient: localDataFailingClient, apiClient: apiClient)
         let toCompareStates = [ArticlesListViewModel.ViewState.loading, ArticlesListViewModel.ViewState.showEmptyList]
         var step: Int = 0

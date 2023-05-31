@@ -1,5 +1,5 @@
 //
-//  VSError.swift
+//  DetailedError.swift
 //  ArticlesOfflineListDemo
 //
 //  Created by Stanislav Kimov on 14.11.22.
@@ -22,11 +22,11 @@ struct DetailedError: Error {
     /// Error location in code, for internal logging
     let location: String
     
-    init(source: DetailedError.Source = .unknown, code: Int, title: String = VSStrings.Error.API.title, message: String, isSilent: Bool = false, cause: Error? = nil, file: String = #file, function: String = #function, line: Int = #line) {
+    init(source: DetailedError.Source = .unknown, code: Int, title: String = Strings.Error.API.title, message: String, isSilent: Bool = false, cause: Error? = nil, file: String = #file, function: String = #function, line: Int = #line) {
         self.source = source
         self.code = code
         self.title = title
-        self.message = message + String(format: VSStrings.Error.API.formattedErrorCode, code)
+        self.message = message + String(format: Strings.Error.API.formattedErrorCode, code)
         self.isSilent = isSilent
         self.cause = cause
         location = "\(file):\(line), \(function)"
@@ -35,8 +35,8 @@ struct DetailedError: Error {
     static let unknown = DetailedError(
         source: .unknown,
         code: ErrorCode.unknown.rawValue,
-        title: VSStrings.Error.API.title,
-        message: VSStrings.Error.API.unknownMessage
+        title: Strings.Error.API.title,
+        message: Strings.Error.API.unknownMessage
     )
 }
 

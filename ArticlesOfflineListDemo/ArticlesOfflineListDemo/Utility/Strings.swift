@@ -9,7 +9,7 @@ import Foundation
 
 // If did things properly, would use SwiftGen — https://github.com/SwiftGen/SwiftGen to generate enums for easy access to localized strings.
 
-enum VSStrings {
+enum Strings {
     enum Error {
         enum API {
             static let title = "Error"

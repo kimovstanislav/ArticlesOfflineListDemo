@@ -31,8 +31,8 @@ extension DetailedError.Factory {
         DetailedError(
                 source: .api,
                 code: DetailedError.ErrorCode.errorDecodingApiResponse.rawValue,
-                title: VSStrings.Error.API.title,
-                message: VSStrings.Error.API.decodingApiResponseFailedMessage,
+                title: Strings.Error.API.title,
+                message: Strings.Error.API.decodingApiResponseFailedMessage,
                 isSilent: false,
                 cause: cause
             )

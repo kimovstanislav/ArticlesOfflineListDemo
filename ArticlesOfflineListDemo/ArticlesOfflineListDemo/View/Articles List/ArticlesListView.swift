@@ -28,7 +28,7 @@ struct ArticlesListView: View {
             }
         }
         .alert(isPresented: $viewModel.alertModel.showAlert, content: { () -> Alert in
-            Alert(title: Text(viewModel.alertModel.title), message: Text(viewModel.alertModel.message), dismissButton: .default(Text(VSStrings.Button.close)))
+            Alert(title: Text(viewModel.alertModel.title), message: Text(viewModel.alertModel.message), dismissButton: .default(Text(Strings.Button.close)))
         })
     }
     

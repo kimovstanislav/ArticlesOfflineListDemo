@@ -120,7 +120,7 @@ extension ArticlesListViewModel {
             retryCount = 0
             // If any data is displayed, do nothing. If loading is displayed (no data available) - go to error state.
             if viewState == .loading {
-                setViewState(.showError(errorMessage: VSStrings.Error.API.loadingArticlesFromServerErrorMessage))
+                setViewState(.showError(errorMessage: Strings.Error.API.loadingArticlesFromServerErrorMessage))
             }
             // And display an alert for the API error.
             self.processError(error)

@@ -20,12 +20,12 @@ extension APIClient {
 
         private static func parseError(_ error: NSError) -> DetailedError{
             if error.code == URLError.notConnectedToInternet.rawValue || error.code == URLError.cannotConnectToHost.rawValue {
-                return DetailedError(apiError: error, code: error.code, title: VSStrings.Error.API.noInternetConnectionTitle, message: VSStrings.Error.API.noInternetConnectionMessage)
+                return DetailedError(apiError: error, code: error.code, title: Strings.Error.API.noInternetConnectionTitle, message: Strings.Error.API.noInternetConnectionMessage)
             }
             else if error.code == HTTPStatusCode.internalServerError.rawValue {
-                return DetailedError(apiError: error, code: error.code, title: VSStrings.Error.API.internalServerErrorTitle, message: VSStrings.Error.API.internalServerErrorMessage)
+                return DetailedError(apiError: error, code: error.code, title: Strings.Error.API.internalServerErrorTitle, message: Strings.Error.API.internalServerErrorMessage)
             }
-            return DetailedError(apiError: error, code: error.code, title: VSStrings.Error.API.title, message: error.localizedDescription)
+            return DetailedError(apiError: error, code: error.code, title: Strings.Error.API.title, message: error.localizedDescription)
         }
     }
 }
